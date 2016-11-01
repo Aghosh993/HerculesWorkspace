@@ -1,7 +1,9 @@
 # HerculesWorkspace
 
 ##Overview:
-This repo contains the codebase to compile and load C code onto a TI Hercules RM48L MCU-based autopilot board 
+This repo contains the codebase to compile and load C code onto a TI Hercules RM48L MCU-based autopilot board.
+
+For the purposes of this README, the assumption is usage of a Linux or UNIX-like Operating System on the development machine.
 
 ##Requirements:
 
