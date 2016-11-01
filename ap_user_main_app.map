@@ -1,0 +1,1374 @@
+Archive member included because of file (symbol)
+
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/crt0.o (__register_exitproc)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/crt0.o (exit)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fini.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/crt0.o (__libc_fini_array)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o) (_global_impure_ptr)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-init.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/crt0.o (__libc_init_array)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memset.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/crt0.o (memset)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o) (__call_exitprocs)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o) (atexit)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_udivsi3.o)
+                              source/het.o (__aeabi_uidiv)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_dvmd_tls.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_addsubdf3.o)
+                              source/sci.o (__aeabi_dsub)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_muldivdf3.o)
+                              source/het.o (__aeabi_dmul)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_fixunsdfsi.o)
+                              source/sci.o (__aeabi_d2uiz)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_addsubsf3.o)
+                              fsw_source/iir_filters.o (__aeabi_fsub)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_muldivsf3.o)
+                              fsw_source/iir_filters.o (__aeabi_fmul)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_cmpsf2.o)
+                              fsw_source/basic_pid_controller.o (__aeabi_fcmplt)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+                              ap_user_main_app.o (malloc)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-malloc.o) (_malloc_r)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+                              source/het.o (memcpy)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o) (__malloc_lock)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-puts.o)
+                              ap_user_main_app.o (puts)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reent.o)
+                              fsw_source/newlib_stubs.o (errno)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-sbrkr.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o) (_sbrk_r)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-strlen.o)
+                              ap_user_main_app.o (strlen)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-freer.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-malloc.o) (_free_r)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fvwrite.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-puts.o) (__sfvwrite_r)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memchr.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fvwrite.o) (memchr)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memmove.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fvwrite.o) (memmove)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reallocr.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fvwrite.o) (_realloc_r)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-wsetup.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fvwrite.o) (__swsetup_r)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fflush.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fvwrite.o) (_fflush_r)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-wsetup.o) (__sinit)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fwalk.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o) (_fwalk)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-makebuf.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-wsetup.o) (__smakebuf_r)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o) (__sread)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-writer.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o) (_write_r)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-closer.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o) (_close_r)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fclose.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o) (fclose)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fstatr.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-makebuf.o) (_fstat_r)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-isattyr.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-makebuf.o) (_isatty_r)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-lseekr.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o) (_lseek_r)
+/home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-readr.o)
+                              /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o) (_read_r)
+
+Allocating common symbols
+Common symbol       size              file
+
+errno               0x4               /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reent.o)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crti.o
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crti.o
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crti.o
+ .data          0x00000000        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtbegin.o
+ .text          0x00000000      0x110 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/crt0.o
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/crt0.o
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/crt0.o
+ .ARM.extab     0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/crt0.o
+ .ARM.exidx     0x00000000        0x8 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/crt0.o
+ .ARM.attributes
+                0x00000000       0x14 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/crt0.o
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o)
+ .debug_frame   0x00000000       0x34 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o)
+ .debug_frame   0x00000000       0x28 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fini.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fini.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fini.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fini.o)
+ .debug_frame   0x00000000       0x2c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fini.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-init.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-init.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-init.o)
+ .text.__libc_init_array
+                0x00000000       0x88 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-init.o)
+ .debug_frame   0x00000000       0x2c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-init.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .debug_frame   0x00000000       0x28 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+ .debug_frame   0x00000000       0x50 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o)
+ .debug_frame   0x00000000       0x28 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o)
+ .data          0x00000000        0x0 source/esm.o
+ .bss           0x00000000        0x0 source/esm.o
+ .data          0x00000000        0x0 source/mibspi.o
+ .bss           0x00000000        0x0 source/mibspi.o
+ .data          0x00000000        0x0 source/pinmux.o
+ .bss           0x00000000        0x0 source/pinmux.o
+ .data          0x00000000        0x0 source/sci.o
+ .text          0x00000000      0xf34 source/het.o
+ .data          0x00000000      0x740 source/het.o
+ .bss           0x00000000        0x0 source/het.o
+ .rodata        0x00000000       0x40 source/het.o
+ .debug_info    0x00000000      0x946 source/het.o
+ .debug_abbrev  0x00000000      0x183 source/het.o
+ .debug_aranges
+                0x00000000       0x20 source/het.o
+ .debug_line    0x00000000      0x25e source/het.o
+ .debug_str     0x00000000      0x500 source/het.o
+ .comment       0x00000000       0x71 source/het.o
+ .ARM.attributes
+                0x00000000       0x36 source/het.o
+ .debug_frame   0x00000000      0x1bc source/het.o
+ .text          0x00000000      0xa08 source/sys_dma.o
+ .data          0x00000000        0x0 source/sys_dma.o
+ .bss           0x00000000        0x0 source/sys_dma.o
+ .debug_info    0x00000000      0xc27 source/sys_dma.o
+ .debug_abbrev  0x00000000      0x200 source/sys_dma.o
+ .debug_aranges
+                0x00000000       0x20 source/sys_dma.o
+ .debug_line    0x00000000      0x1b6 source/sys_dma.o
+ .debug_str     0x00000000      0x849 source/sys_dma.o
+ .comment       0x00000000       0x71 source/sys_dma.o
+ .ARM.attributes
+                0x00000000       0x36 source/sys_dma.o
+ .debug_frame   0x00000000      0x190 source/sys_dma.o
+ .data          0x00000000        0x0 source/sys_vim.o
+ .bss           0x00000000        0x0 source/sys_vim.o
+ .data          0x00000000        0x0 source/gio.o
+ .bss           0x00000000        0x0 source/gio.o
+ .data          0x00000000        0x0 source/system.o
+ .bss           0x00000000        0x0 source/system.o
+ .data          0x00000000        0x0 source/sys_startup.o
+ .bss           0x00000000        0x0 source/sys_startup.o
+ .text          0x00000000      0x77c source/sys_pmm.o
+ .data          0x00000000        0x0 source/sys_pmm.o
+ .bss           0x00000000        0x0 source/sys_pmm.o
+ .debug_info    0x00000000      0x4b8 source/sys_pmm.o
+ .debug_abbrev  0x00000000      0x13e source/sys_pmm.o
+ .debug_aranges
+                0x00000000       0x20 source/sys_pmm.o
+ .debug_line    0x00000000      0x1f3 source/sys_pmm.o
+ .debug_str     0x00000000      0x4b6 source/sys_pmm.o
+ .comment       0x00000000       0x71 source/sys_pmm.o
+ .ARM.attributes
+                0x00000000       0x36 source/sys_pmm.o
+ .debug_frame   0x00000000      0x100 source/sys_pmm.o
+ .text          0x00000000      0xeec source/spi.o
+ .data          0x00000000        0x0 source/spi.o
+ .bss           0x00000000       0x78 source/spi.o
+ .debug_info    0x00000000      0x99c source/spi.o
+ .debug_abbrev  0x00000000      0x17e source/spi.o
+ .debug_aranges
+                0x00000000       0x20 source/spi.o
+ .debug_line    0x00000000      0x400 source/spi.o
+ .debug_str     0x00000000      0x598 source/spi.o
+ .comment       0x00000000       0x71 source/spi.o
+ .ARM.attributes
+                0x00000000       0x36 source/spi.o
+ .debug_frame   0x00000000      0x178 source/spi.o
+ .data          0x00000000        0x0 source/sys_selftest.o
+ .bss           0x00000000        0x0 source/sys_selftest.o
+ .data          0x00000000        0x0 source/sys_phantom.o
+ .bss           0x00000000        0x0 source/sys_phantom.o
+ .data          0x00000000        0x0 source/notification.o
+ .bss           0x00000000        0x0 source/notification.o
+ .text          0x00000000     0x1270 source/can.o
+ .data          0x00000000        0x0 source/can.o
+ .bss           0x00000000        0x0 source/can.o
+ .debug_info    0x00000000      0xbb5 source/can.o
+ .debug_abbrev  0x00000000      0x181 source/can.o
+ .debug_aranges
+                0x00000000       0x20 source/can.o
+ .debug_line    0x00000000      0x309 source/can.o
+ .debug_str     0x00000000      0x630 source/can.o
+ .comment       0x00000000       0x71 source/can.o
+ .ARM.attributes
+                0x00000000       0x36 source/can.o
+ .debug_frame   0x00000000      0x268 source/can.o
+ .text          0x00000000      0xaf0 source/i2c.o
+ .data          0x00000000        0x0 source/i2c.o
+ .bss           0x00000000        0xc source/i2c.o
+ .debug_info    0x00000000      0xa6f source/i2c.o
+ .debug_abbrev  0x00000000      0x177 source/i2c.o
+ .debug_aranges
+                0x00000000       0x20 source/i2c.o
+ .debug_line    0x00000000      0x21a source/i2c.o
+ .debug_str     0x00000000      0x6c7 source/i2c.o
+ .comment       0x00000000       0x71 source/i2c.o
+ .ARM.attributes
+                0x00000000       0x36 source/i2c.o
+ .debug_frame   0x00000000      0x26c source/i2c.o
+ .text          0x00000000      0x89c source/rti.o
+ .data          0x00000000        0x0 source/rti.o
+ .bss           0x00000000        0x0 source/rti.o
+ .debug_info    0x00000000      0x7b9 source/rti.o
+ .debug_abbrev  0x00000000      0x19d source/rti.o
+ .debug_aranges
+                0x00000000       0x20 source/rti.o
+ .debug_line    0x00000000      0x1b5 source/rti.o
+ .debug_str     0x00000000      0x6ae source/rti.o
+ .comment       0x00000000       0x71 source/rti.o
+ .ARM.attributes
+                0x00000000       0x36 source/rti.o
+ .debug_frame   0x00000000      0x208 source/rti.o
+ .text          0x00000000      0x980 source/sys_pcr.o
+ .data          0x00000000        0x0 source/sys_pcr.o
+ .bss           0x00000000        0x0 source/sys_pcr.o
+ .debug_info    0x00000000      0x803 source/sys_pcr.o
+ .debug_abbrev  0x00000000       0xff source/sys_pcr.o
+ .debug_aranges
+                0x00000000       0x20 source/sys_pcr.o
+ .debug_line    0x00000000      0x1b9 source/sys_pcr.o
+ .debug_str     0x00000000      0x85f source/sys_pcr.o
+ .comment       0x00000000       0x71 source/sys_pcr.o
+ .ARM.attributes
+                0x00000000       0x36 source/sys_pcr.o
+ .debug_frame   0x00000000      0x208 source/sys_pcr.o
+ .text          0x00000000     0x1130 source/adc.o
+ .data          0x00000000        0x0 source/adc.o
+ .bss           0x00000000        0x0 source/adc.o
+ .rodata        0x00000000       0x30 source/adc.o
+ .debug_info    0x00000000      0xb55 source/adc.o
+ .debug_abbrev  0x00000000      0x15a source/adc.o
+ .debug_aranges
+                0x00000000       0x20 source/adc.o
+ .debug_line    0x00000000      0x2d0 source/adc.o
+ .debug_str     0x00000000      0x8ac source/adc.o
+ .comment       0x00000000       0x71 source/adc.o
+ .ARM.attributes
+                0x00000000       0x36 source/adc.o
+ .debug_frame   0x00000000      0x178 source/adc.o
+ .data          0x00000000        0x0 source/sys_pmu.o
+ .bss           0x00000000        0x0 source/sys_pmu.o
+ .data          0x00000000        0x0 source/dabort.o
+ .bss           0x00000000        0x0 source/dabort.o
+ .data          0x00000000        0x0 source/sys_core.o
+ .bss           0x00000000        0x0 source/sys_core.o
+ .text          0x00000000      0x2d8 source/sys_mpu.o
+ .data          0x00000000        0x0 source/sys_mpu.o
+ .bss           0x00000000        0x0 source/sys_mpu.o
+ .ARM.attributes
+                0x00000000       0x25 source/sys_mpu.o
+ .debug_line    0x00000000      0x106 source/sys_mpu.o
+ .debug_info    0x00000000       0x5a source/sys_mpu.o
+ .debug_abbrev  0x00000000       0x14 source/sys_mpu.o
+ .debug_aranges
+                0x00000000       0x20 source/sys_mpu.o
+ .text          0x00000000        0x0 source/sys_intvecs.o
+ .data          0x00000000        0x0 source/sys_intvecs.o
+ .bss           0x00000000        0x0 source/sys_intvecs.o
+ .text          0x00000000        0x8 fsw_source/ugly_asm.o
+ .data          0x00000000        0x0 fsw_source/ugly_asm.o
+ .bss           0x00000000        0x0 fsw_source/ugly_asm.o
+ .ARM.attributes
+                0x00000000       0x25 fsw_source/ugly_asm.o
+ .debug_line    0x00000000       0x46 fsw_source/ugly_asm.o
+ .debug_info    0x00000000       0x5f fsw_source/ugly_asm.o
+ .debug_abbrev  0x00000000       0x14 fsw_source/ugly_asm.o
+ .debug_aranges
+                0x00000000       0x20 fsw_source/ugly_asm.o
+ .data          0x00000000        0x0 ap_user_main_app.o
+ .bss           0x00000000        0x0 ap_user_main_app.o
+ .data          0x00000000        0x4 fsw_source/newlib_stubs.o
+ .text          0x00000000      0x500 fsw_source/mission_timekeeper.o
+ .data          0x00000000        0x0 fsw_source/mission_timekeeper.o
+ .bss           0x00000000       0x18 fsw_source/mission_timekeeper.o
+ .debug_info    0x00000000      0x399 fsw_source/mission_timekeeper.o
+ .debug_abbrev  0x00000000      0x190 fsw_source/mission_timekeeper.o
+ .debug_aranges
+                0x00000000       0x20 fsw_source/mission_timekeeper.o
+ .debug_line    0x00000000      0x172 fsw_source/mission_timekeeper.o
+ .debug_str     0x00000000      0x325 fsw_source/mission_timekeeper.o
+ .comment       0x00000000       0x71 fsw_source/mission_timekeeper.o
+ .ARM.attributes
+                0x00000000       0x36 fsw_source/mission_timekeeper.o
+ .debug_frame   0x00000000       0xd8 fsw_source/mission_timekeeper.o
+ .text          0x00000000      0x248 fsw_source/iir_filters.o
+ .data          0x00000000        0x0 fsw_source/iir_filters.o
+ .bss           0x00000000        0x0 fsw_source/iir_filters.o
+ .debug_info    0x00000000      0x20f fsw_source/iir_filters.o
+ .debug_abbrev  0x00000000       0xca fsw_source/iir_filters.o
+ .debug_aranges
+                0x00000000       0x20 fsw_source/iir_filters.o
+ .debug_line    0x00000000       0x86 fsw_source/iir_filters.o
+ .debug_str     0x00000000      0x1f0 fsw_source/iir_filters.o
+ .comment       0x00000000       0x71 fsw_source/iir_filters.o
+ .ARM.attributes
+                0x00000000       0x36 fsw_source/iir_filters.o
+ .debug_frame   0x00000000       0x88 fsw_source/iir_filters.o
+ .text          0x00000000      0xbf0 fsw_source/basic_pid_controller.o
+ .data          0x00000000        0x0 fsw_source/basic_pid_controller.o
+ .bss           0x00000000        0x0 fsw_source/basic_pid_controller.o
+ .debug_info    0x00000000      0x7c2 fsw_source/basic_pid_controller.o
+ .debug_abbrev  0x00000000      0x1b2 fsw_source/basic_pid_controller.o
+ .debug_aranges
+                0x00000000       0x20 fsw_source/basic_pid_controller.o
+ .debug_line    0x00000000      0x1d4 fsw_source/basic_pid_controller.o
+ .debug_str     0x00000000      0x5fe fsw_source/basic_pid_controller.o
+ .comment       0x00000000       0x71 fsw_source/basic_pid_controller.o
+ .ARM.attributes
+                0x00000000       0x36 fsw_source/basic_pid_controller.o
+ .debug_frame   0x00000000      0x1e0 fsw_source/basic_pid_controller.o
+ .text          0x00000000      0x114 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_udivsi3.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_udivsi3.o)
+ .debug_frame   0x00000000       0x20 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000000       0x18 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_udivsi3.o)
+ .text          0x00000000        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_dvmd_tls.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000000       0x18 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_dvmd_tls.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_addsubdf3.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_addsubdf3.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_muldivdf3.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_muldivdf3.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_fixunsdfsi.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_fixunsdfsi.o)
+ .text          0x00000000      0x2ac /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_addsubsf3.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_addsubsf3.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_addsubsf3.o)
+ .ARM.attributes
+                0x00000000       0x18 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_addsubsf3.o)
+ .text          0x00000000      0x2f8 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_muldivsf3.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_muldivsf3.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_muldivsf3.o)
+ .ARM.attributes
+                0x00000000       0x18 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_muldivsf3.o)
+ .text          0x00000000      0x114 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_cmpsf2.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_cmpsf2.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_cmpsf2.o)
+ .ARM.attributes
+                0x00000000       0x18 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_cmpsf2.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-puts.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-puts.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-puts.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reent.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reent.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reent.o)
+ .text.cleanup_glue
+                0x00000000       0x2c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reent.o)
+ .text._reclaim_reent
+                0x00000000       0xfc /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reent.o)
+ .text._wrapup_reent
+                0x00000000       0x74 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reent.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-sbrkr.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-sbrkr.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-sbrkr.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-strlen.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-strlen.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-strlen.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-freer.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-freer.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-freer.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fvwrite.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fvwrite.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fvwrite.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memchr.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memchr.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memchr.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memmove.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memmove.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memmove.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reallocr.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reallocr.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reallocr.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-wsetup.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-wsetup.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-wsetup.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fflush.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fflush.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fflush.o)
+ .text.fflush   0x00000000       0x40 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fflush.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .text.__fp_lock
+                0x00000000        0x8 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .text.__fp_unlock
+                0x00000000        0x8 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .text.__sfmoreglue
+                0x00000000       0x48 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .text._cleanup
+                0x00000000       0x10 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .text.__sfp    0x00000000       0xf8 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .text.__sinit_lock_acquire
+                0x00000000        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .text.__sinit_lock_release
+                0x00000000        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .text.__fp_lock_all
+                0x00000000       0x24 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .text.__fp_unlock_all
+                0x00000000       0x24 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fwalk.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fwalk.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fwalk.o)
+ .text._fwalk_reent
+                0x00000000       0x8c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fwalk.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-makebuf.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-makebuf.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-makebuf.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o)
+ .text.__seofread
+                0x00000000        0x8 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-writer.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-writer.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-writer.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-closer.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-closer.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-closer.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fclose.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fclose.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fclose.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fstatr.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fstatr.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fstatr.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-isattyr.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-isattyr.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-isattyr.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-lseekr.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-lseekr.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-lseekr.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-readr.o)
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-readr.o)
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-readr.o)
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtend.o
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtend.o
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtend.o
+ .eh_frame      0x00000000        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtend.o
+ .jcr           0x00000000        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtend.o
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtend.o
+ .text          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtn.o
+ .data          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtn.o
+ .bss           0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+VECTORS          0x00000000         0x00000020         xr
+FLASH            0x00000020         0x002fffe0         xr
+CPU_STACK        0x08000000         0x00001500         rw
+RAM              0x08001500         0x0003eb00         xrw
+MEMORY_B1        0x60000000         0x00000000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crti.o
+LOAD /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtbegin.o
+LOAD /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/crt0.o
+                0x08040000                _estack = 0x8040000
+                0x00000400                _Min_Heap_Size = 0x400
+
+.intvecs        0x00000000       0x20
+                0x00000000                . = ALIGN (0x4)
+ *(.intvecs)
+ .intvecs       0x00000000       0x20 source/sys_intvecs.o
+                0x00000000                resetEntry
+                0x00000020                . = ALIGN (0x4)
+
+.text           0x00000020     0xcdc0
+                0x00000020                . = ALIGN (0x4)
+ *(.text)
+ .text          0x00000020       0x94 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtbegin.o
+ .text          0x000000b4      0x8c0 source/esm.o
+                0x000000b4                esmInit
+                0x00000220                esmError
+                0x00000250                esmEnableError
+                0x00000298                esmDisableError
+                0x000002e0                esmTriggerErrorPinReset
+                0x00000304                esmActivateNormalOperation
+                0x00000328                esmEnableInterrupt
+                0x00000370                esmDisableInterrupt
+                0x000003b8                esmSetInterruptLevel
+                0x00000464                esmClearStatus
+                0x000004cc                esmClearStatusBuffer
+                0x000004f8                esmSetCounterPreloadValue
+                0x00000528                esmGetStatus
+                0x000005d4                esmGetStatusBuffer
+                0x00000620                esmEnterSelfTest
+                0x000006d0                esmSelfTestStatus
+                0x0000073c                esmGetConfigValue
+                0x00000870                esmHighInterrupt
+ .text          0x00000974     0x192c source/mibspi.o
+                0x00000974                mibspiInit
+                0x000012f0                mibspiSetFunctional
+                0x0000131c                mibspiSetData
+                0x00001448                mibspiGetData
+                0x000015c8                mibspiTransfer
+                0x0000160c                mibspiIsTransferComplete
+                0x00001694                mibspiEnableLoopback
+                0x000016d8                mibspiDisableLoopback
+                0x00001700                mibspiPmodeSet
+                0x00001770                mibspiEnableGroupNotification
+                0x00001828                mibspiDisableGroupNotification
+                0x00001874                mibspi1GetConfigValue
+                0x00001bd8                mibspi3GetConfigValue
+                0x00001f3c                mibspi5GetConfigValue
+ .text          0x000022a0      0x768 source/pinmux.o
+                0x000022a0                muxInit
+                0x0000276c                pinmuxGetConfigValue
+ .text          0x00002a08      0xc98 source/sci.o
+                0x00002a08                sciInit
+                0x00002c9c                sciSetFunctional
+                0x00002cc8                sciSetBaudrate
+                0x00002d84                sciIsTxReady
+                0x00002db0                sciSendByte
+                0x00002df8                sciSend
+                0x00002fc4                sciIsRxReady
+                0x00002ff0                sciIsIdleDetected
+                0x0000301c                sciRxError
+                0x0000305c                sciReceiveByte
+                0x000030a0                sciReceive
+                0x000031b8                sciEnableLoopback
+                0x000031fc                sciDisableLoopback
+                0x00003224                sciEnableNotification
+                0x000032c8                sciDisableNotification
+                0x00003370                sciGetConfigValue
+                0x00003508                scilinGetConfigValue
+ .text          0x000036a0      0xc1c source/sys_vim.o
+                0x000036a0                vimInit
+                0x000037b0                vimChannelMap
+                0x00003898                vimEnableInterrupt
+                0x00003a74                vimDisableInterrupt
+                0x00003b0c                vimGetConfigValue
+                0x00004040                vimParityErrorHandler
+ .text          0x000042bc      0x554 source/gio.o
+                0x000042bc                gioInit
+                0x000043e0                gioSetDirection
+                0x0000440c                gioSetBit
+                0x00004468                gioSetPort
+                0x00004494                gioGetBit
+                0x000044cc                gioGetPort
+                0x000044f4                gioToggleBit
+                0x0000455c                gioEnableNotification
+                0x000045dc                gioDisableNotification
+                0x0000465c                gioGetConfigValue
+ .text          0x00004810      0xc1c source/system.o
+                0x00004810                setupPLL
+                0x00004894                trimLPO
+                0x000048f4                setupFlash
+                0x0000495c                periphInit
+                0x000049d8                mapClocks
+                0x00004b20                systemInit
+                0x00004c10                systemPowerDown
+                0x00004c54                systemGetConfigValue
+                0x000050b4                tcmflashGetConfigValue
+                0x000052b0                sramGetConfigValue
+ .text          0x0000542c      0x358 source/sys_startup.o
+                0x0000542c                _c_int00
+ .text          0x00005784     0x3738 source/sys_selftest.o
+                0x00005784                selftestFailNotification
+                0x000057a0                ccmSelfCheck
+                0x00005920                memoryInit
+                0x00005978                stcSelfCheck
+                0x00005a10                cpuSelfTest
+                0x00005ac0                pbistSelfCheck
+                0x00005d14                pbistRun
+                0x00005e00                pbistStop
+                0x00005e4c                pbistIsTestCompleted
+                0x00005e80                pbistIsTestPassed
+                0x00005ec8                pbistPortTestStatus
+                0x00005f20                efcCheck
+                0x00005fc0                efcStuckZeroTest
+                0x000060a4                efcSelfTest
+                0x000060ec                checkefcSelfTest
+                0x000061c0                fmcBus2Check
+                0x00006214                fmcECCcheck
+                0x000062f8                checkB0RAMECC
+                0x0000655c                checkB1RAMECC
+                0x000067d4                checkFlashECC
+                0x0000691c                custom_dabort
+                0x00006930                stcSelfCheckFail
+                0x0000693c                cpuSelfTestFail
+                0x00006948                vimParityCheck
+                0x00006a40                dmaParityCheck
+                0x00006b38                het1ParityCheck
+                0x00006c20                htu1ParityCheck
+                0x00006d18                het2ParityCheck
+                0x00006e40                htu2ParityCheck
+                0x00006f38                adc1ParityCheck
+                0x00007020                adc2ParityCheck
+                0x00007108                can1ParityCheck
+                0x00007220                can2ParityCheck
+                0x00007338                can3ParityCheck
+                0x00007450                mibspi1ParityCheck
+                0x000075bc                mibspi3ParityCheck
+                0x00007728                mibspi5ParityCheck
+                0x00007894                checkRAMECC
+                0x00007b60                checkClockMonitor
+                0x00007c4c                checkFlashEEPROMECC
+                0x00007e7c                checkPLL1Slip
+                0x00007fa8                checkPLL2Slip
+                0x0000809c                checkRAMAddrParity
+                0x000081e4                checkRAMUERRTest
+                0x000083a4                fmcBus1ParityCheck
+                0x00008548                pbistFail
+                0x000085d8                pbistGetConfigValue
+                0x0000874c                stcGetConfigValue
+                0x00008804                efcGetConfigValue
+                0x000088bc                ccmr4GetConfigValue
+                0x00008910                errata_PBIST_4
+                0x00008d34                enableParity
+                0x00008df8                disableParity
+ .text          0x00008ebc       0x14 source/sys_phantom.o
+                0x00008ebc                phantomInterrupt
+ .text          0x00008ed0      0x288 source/notification.o
+                0x00008ed0                esmGroup1Notification
+                0x00008eec                esmGroup2Notification
+                0x00008f08                memoryPort0TestFailNotification
+                0x00008f30                memoryPort1TestFailNotification
+                0x00008f58                rtiNotification
+                0x00008f74                adcNotification
+                0x00008f94                canErrorNotification
+                0x00008fb4                canStatusChangeNotification
+                0x00008fd4                canMessageNotification
+                0x00008ff4                gioNotification
+                0x00009014                i2cNotification
+                0x00009034                mibspiNotification
+                0x00009054                mibspiGroupNotification
+                0x00009074                sciNotification
+                0x00009094                spiNotification
+                0x000090b4                spiEndNotification
+                0x000090d0                pwmNotification
+                0x000090f4                edgeNotification
+                0x00009114                hetNotification
+                0x00009134                dmaGroupANotification
+ .text          0x00009158       0xe0 source/sys_pmu.o
+                0x00009158                _pmuInit_
+                0x000091a4                _pmuEnableCountersGlobal_
+                0x000091b4                _pmuDisableCountersGlobal_
+                0x000091c4                _pmuResetCycleCounter_
+                0x000091d4                _pmuResetEventCounters_
+                0x000091e4                _pmuResetCounters_
+                0x000091f4                _pmuStartCounters_
+                0x000091fc                _pmuStopCounters_
+                0x00009204                _pmuSetCountEvent_
+                0x00009210                _pmuGetCycleCount_
+                0x00009218                _pmuGetEventCount_
+                0x00009224                _pmuGetOverflow_
+ .text          0x00009238       0xe8 source/dabort.o
+                0x00009238                _dabort
+ .text          0x00009320      0x354 source/sys_core.o
+                0x00009320                _coreInitRegisters_
+                0x0000942c                _coreInitStackPointer_
+                0x00009478                _getCPSRValue_
+                0x00009480                _gotoCPUIdle_
+                0x00009498                _coreEnableVfp_
+                0x000094b0                _coreEnableEventBusExport_
+                0x000094c0                _coreDisableEventBusExport_
+                0x000094d0                _coreEnableRamEcc_
+                0x000094e0                _coreDisableRamEcc_
+                0x000094f0                _coreEnableFlashEcc_
+                0x00009504                _coreDisableFlashEcc_
+                0x00009514                _coreEnableIrqVicOffset_
+                0x00009524                _coreGetDataFault_
+                0x0000952c                _coreClearDataFault_
+                0x00009538                _coreGetInstructionFault_
+                0x00009540                _coreClearInstructionFault_
+                0x0000954c                _coreGetDataFaultAddress_
+                0x00009554                _coreClearDataFaultAddress_
+                0x00009560                _coreGetInstructionFaultAddress_
+                0x00009568                _coreClearInstructionFaultAddress_
+                0x00009574                _coreGetAuxiliaryDataFault_
+                0x0000957c                _coreClearAuxiliaryDataFault_
+                0x00009588                _coreGetAuxiliaryInstructionFault_
+                0x00009590                _coreClearAuxiliaryInstructionFault_
+                0x0000959c                _disable_interrupt_
+                0x000095a4                _disable_IRQ_interrupt_
+                0x000095ac                _disable_FIQ_interrupt_
+                0x000095b4                _enable_interrupt_
+                0x000095bc                _esmCcmErrorsClear_
+                0x00009644                _errata_CORTEXR4_57_
+                0x0000965c                _errata_CORTEXR4_66_
+ .text          0x00009674      0x13c ap_user_main_app.o
+                0x00009674                insert_delay
+                0x000096fc                main
+ .text          0x000097b0      0x52c fsw_source/newlib_stubs.o
+                0x000097b0                _exit
+                0x000097d8                _close
+                0x000097fc                _execve
+                0x00009838                _fork
+                0x00009864                _fstat
+                0x00009898                _getpid
+                0x000098b4                _isatty
+                0x00009900                _kill
+                0x00009938                _link
+                0x00009970                _lseek
+                0x0000999c                _sbrk
+                0x00009a6c                _read
+                0x00009b24                _stat
+                0x00009b58                _times
+                0x00009b7c                _unlink
+                0x00009bb0                _wait
+                0x00009be4                _write
+ .text          0x00009cdc      0x41c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_addsubdf3.o)
+                0x00009cdc                __aeabi_drsub
+                0x00009ce4                __aeabi_dsub
+                0x00009ce4                __subdf3
+                0x00009ce8                __adddf3
+                0x00009ce8                __aeabi_dadd
+                0x00009ff8                __aeabi_ui2d
+                0x00009ff8                __floatunsidf
+                0x0000a01c                __floatsidf
+                0x0000a01c                __aeabi_i2d
+                0x0000a044                __extendsfdf2
+                0x0000a044                __aeabi_f2d
+                0x0000a084                __aeabi_ul2d
+                0x0000a084                __floatundidf
+                0x0000a098                __floatdidf
+                0x0000a098                __aeabi_l2d
+ .text          0x0000a0f8      0x49c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_muldivdf3.o)
+                0x0000a0f8                __aeabi_dmul
+                0x0000a0f8                __muldf3
+                0x0000a388                __aeabi_ddiv
+                0x0000a388                __divdf3
+ .text          0x0000a594       0x54 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_fixunsdfsi.o)
+                0x0000a594                __fixunsdfsi
+                0x0000a594                __aeabi_d2uiz
+ *(.text*)
+ .text.__register_exitproc
+                0x0000a5e8       0xf4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o)
+                0x0000a5e8                __register_exitproc
+ .text.exit     0x0000a6dc       0x34 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o)
+                0x0000a6dc                exit
+ .text.__libc_fini_array
+                0x0000a710       0x44 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fini.o)
+                0x0000a710                __libc_fini_array
+ .text.memset   0x0000a754       0xf8 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memset.o)
+                0x0000a754                memset
+ .text.startup.register_fini
+                0x0000a84c       0x24 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+ .text.__call_exitprocs
+                0x0000a870      0x17c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+                0x0000a870                __call_exitprocs
+ .text.atexit   0x0000a9ec       0x20 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o)
+                0x0000a9ec                atexit
+ .text.malloc   0x0000aa0c       0x20 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+                0x0000aa0c                malloc
+ .text.free     0x0000aa2c       0x20 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+                0x0000aa2c                free
+ .text._malloc_r
+                0x0000aa4c      0x73c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x0000aa4c                _malloc_r
+ .text.memcpy   0x0000b188       0xf4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+                0x0000b188                memcpy
+ .text.__malloc_lock
+                0x0000b27c        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+                0x0000b27c                __malloc_lock
+ .text.__malloc_unlock
+                0x0000b280        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+                0x0000b280                __malloc_unlock
+ .text._puts_r  0x0000b284       0xa4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-puts.o)
+                0x0000b284                _puts_r
+ .text.puts     0x0000b328       0x14 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-puts.o)
+                0x0000b328                puts
+ .text._sbrk_r  0x0000b33c       0x40 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-sbrkr.o)
+                0x0000b33c                _sbrk_r
+ .text.strlen   0x0000b37c       0x60 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-strlen.o)
+                0x0000b37c                strlen
+ .text._malloc_trim_r
+                0x0000b3dc       0xfc /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-freer.o)
+                0x0000b3dc                _malloc_trim_r
+ .text._free_r  0x0000b4d8      0x26c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-freer.o)
+                0x0000b4d8                _free_r
+ .text.__sfvwrite_r
+                0x0000b744      0x4c4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fvwrite.o)
+                0x0000b744                __sfvwrite_r
+ .text.memchr   0x0000bc08      0x11c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memchr.o)
+                0x0000bc08                memchr
+ .text.memmove  0x0000bd24      0x134 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memmove.o)
+                0x0000bd24                memmove
+ .text._realloc_r
+                0x0000be58      0x574 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reallocr.o)
+                0x0000be58                _realloc_r
+ .text.__swsetup_r
+                0x0000c3cc      0x138 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-wsetup.o)
+                0x0000c3cc                __swsetup_r
+ .text._fflush_r
+                0x0000c504      0x250 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fflush.o)
+                0x0000c504                _fflush_r
+ .text._cleanup_r
+                0x0000c754       0x18 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+                0x0000c754                _cleanup_r
+ .text.std.isra.0
+                0x0000c76c       0x7c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .text.__sinit  0x0000c7e8       0x78 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+                0x0000c7e8                __sinit
+ .text.__sfp_lock_acquire
+                0x0000c860        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+                0x0000c860                __sfp_lock_acquire
+ .text.__sfp_lock_release
+                0x0000c864        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+                0x0000c864                __sfp_lock_release
+ .text._fwalk   0x0000c868       0x88 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fwalk.o)
+                0x0000c868                _fwalk
+ .text.__smakebuf_r
+                0x0000c8f0      0x15c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-makebuf.o)
+                0x0000c8f0                __smakebuf_r
+ .text.__sread  0x0000ca4c       0x34 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o)
+                0x0000ca4c                __sread
+ .text.__swrite
+                0x0000ca80       0x58 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o)
+                0x0000ca80                __swrite
+ .text.__sseek  0x0000cad8       0x34 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o)
+                0x0000cad8                __sseek
+ .text.__sclose
+                0x0000cb0c       0x14 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o)
+                0x0000cb0c                __sclose
+ .text._write_r
+                0x0000cb20       0x44 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-writer.o)
+                0x0000cb20                _write_r
+ .text._close_r
+                0x0000cb64       0x3c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-closer.o)
+                0x0000cb64                _close_r
+ .text._fclose_r
+                0x0000cba0       0xf8 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fclose.o)
+                0x0000cba0                _fclose_r
+ .text.fclose   0x0000cc98       0x14 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fclose.o)
+                0x0000cc98                fclose
+ .text._fstat_r
+                0x0000ccac       0x40 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fstatr.o)
+                0x0000ccac                _fstat_r
+ .text._isatty_r
+                0x0000ccec       0x3c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-isattyr.o)
+                0x0000ccec                _isatty_r
+ .text._lseek_r
+                0x0000cd28       0x44 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-lseekr.o)
+                0x0000cd28                _lseek_r
+ .text._read_r  0x0000cd6c       0x44 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-readr.o)
+                0x0000cd6c                _read_r
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.eh_frame)
+ .eh_frame      0x0000cdb0        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtbegin.o
+ *(.init)
+ .init          0x0000cdb0        0xc /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crti.o
+                0x0000cdb0                _init
+ .init          0x0000cdbc        0xc /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtn.o
+ *(.fini)
+ .fini          0x0000cdc8        0xc /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crti.o
+                0x0000cdc8                _fini
+ .fini          0x0000cdd4        0xc /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtn.o
+                0x0000cde0                . = ALIGN (0x4)
+                0x0000cde0                _etext = .
+
+.vfp11_veneer   0x0000cde0        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x0000cde0        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x0000cde0        0x0
+ .iplt          0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtbegin.o
+
+.rodata         0x0000cde0      0x1d8
+                0x0000cde0                . = ALIGN (0x4)
+ *(.rodata)
+ .rodata        0x0000cde0      0x180 source/sys_vim.o
+ .rodata        0x0000cf60       0x28 ap_user_main_app.o
+ .rodata        0x0000cf88       0x24 fsw_source/newlib_stubs.o
+ *(.rodata*)
+ .rodata.str1.4
+                0x0000cfac        0x2 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+                                  0x4 (size before relaxing)
+ *fill*         0x0000cfae        0x2 00
+ .rodata._global_impure_ptr
+                0x0000cfb0        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+                0x0000cfb0                _global_impure_ptr
+ .rodata.str1.4
+                0x0000cfb4        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-puts.o)
+                0x0000cfb8                . = ALIGN (0x4)
+
+.rel.dyn        0x0000cfb8        0x0
+ .rel.iplt      0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtbegin.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x0000cfb8        0x0
+                0x0000cfb8                __exidx_start = .
+ *(.ARM.exidx*)
+                0x0000cfb8                __exidx_end = .
+
+.preinit_array  0x0000cfb8        0x0
+                0x0000cfb8                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array*)
+                0x0000cfb8                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x0000cfb8        0x8
+                0x0000cfb8                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ .init_array.00000
+                0x0000cfb8        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+ *(.init_array*)
+ .init_array    0x0000cfbc        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtbegin.o
+                0x0000cfc0                PROVIDE (__init_array_end, .)
+
+.fini_array     0x0000cfc0        0x4
+                0x0000cfc0                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array*)
+ .fini_array    0x0000cfc0        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtbegin.o
+                0x0000cfc4                PROVIDE (__fini_array_end, .)
+                0x0000cfc8                _sidata = LOADADDR (.data)
+
+.data           0x08001500      0x83c load address 0x0000cfc8
+                0x08001500                . = ALIGN (0x4)
+                0x08001500                _sdata = .
+ *(.data)
+ *(.data*)
+ .data.impure_data
+                0x08001500      0x428 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x08001928        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+                0x08001928                _impure_ptr
+ .data.__malloc_av_
+                0x0800192c      0x408 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x0800192c                __malloc_av_
+ .data.__malloc_trim_threshold
+                0x08001d34        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x08001d34                __malloc_trim_threshold
+ .data.__malloc_sbrk_base
+                0x08001d38        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x08001d38                __malloc_sbrk_base
+                0x08001d3c                . = ALIGN (0x4)
+                0x08001d3c                _edata = .
+
+.jcr            0x08001d3c        0x0 load address 0x0000d804
+ .jcr           0x08001d3c        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtbegin.o
+
+.igot.plt       0x08001d3c        0x0 load address 0x0000d804
+ .igot.plt      0x00000000        0x0 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtbegin.o
+                0x08001d3c                . = ALIGN (0x4)
+
+.bss            0x08001d3c       0x84 load address 0x0000d804
+                0x08001d3c                _sbss = .
+                0x08001d3c                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x08001d3c       0x1c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtbegin.o
+ .bss           0x08001d58       0x28 source/sci.o
+ .bss           0x08001d80        0x8 fsw_source/newlib_stubs.o
+                0x08001d80                __env
+ *(.bss*)
+ .bss.__malloc_max_total_mem
+                0x08001d88        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x08001d88                __malloc_max_total_mem
+ .bss.__malloc_max_sbrked_mem
+                0x08001d8c        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x08001d8c                __malloc_max_sbrked_mem
+ .bss.__malloc_top_pad
+                0x08001d90        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x08001d90                __malloc_top_pad
+ .bss.__malloc_current_mallinfo
+                0x08001d94       0x28 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+                0x08001d94                __malloc_current_mallinfo
+ *(COMMON)
+ COMMON         0x08001dbc        0x4 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reent.o)
+                0x08001dbc                errno
+                0x08001dc0                . = ALIGN (0x4)
+                0x08001dc0                _ebss = .
+                0x08001dc0                __bss_end__ = _ebss
+                0x08001dc0                PROVIDE (end, _ebss)
+                0x08001dc0                PROVIDE (_end, _ebss)
+
+.memory_b1_text
+ *(.mb1text)
+ *(.mb1text*)
+ *(.mb1rodata)
+ *(.mb1rodata*)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+                0x00000000       0x34
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x16 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crti.o
+ .ARM.attributes
+                0x00000016       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtbegin.o
+ .ARM.attributes
+                0x00000046       0x36 source/esm.o
+ .ARM.attributes
+                0x0000007c       0x36 source/mibspi.o
+ .ARM.attributes
+                0x000000b2       0x36 source/pinmux.o
+ .ARM.attributes
+                0x000000e8       0x36 source/sci.o
+ .ARM.attributes
+                0x0000011e       0x36 source/sys_vim.o
+ .ARM.attributes
+                0x00000154       0x36 source/gio.o
+ .ARM.attributes
+                0x0000018a       0x36 source/system.o
+ .ARM.attributes
+                0x000001c0       0x36 source/sys_startup.o
+ .ARM.attributes
+                0x000001f6       0x36 source/sys_selftest.o
+ .ARM.attributes
+                0x0000022c       0x36 source/sys_phantom.o
+ .ARM.attributes
+                0x00000262       0x36 source/notification.o
+ .ARM.attributes
+                0x00000298       0x25 source/sys_pmu.o
+ .ARM.attributes
+                0x000002bd       0x25 source/dabort.o
+ .ARM.attributes
+                0x000002e2       0x25 source/sys_core.o
+ .ARM.attributes
+                0x00000307       0x25 source/sys_intvecs.o
+ .ARM.attributes
+                0x0000032c       0x36 ap_user_main_app.o
+ .ARM.attributes
+                0x00000362       0x36 fsw_source/newlib_stubs.o
+ .ARM.attributes
+                0x00000398       0x18 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_addsubdf3.o)
+ .ARM.attributes
+                0x000003b0       0x18 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_muldivdf3.o)
+ .ARM.attributes
+                0x000003c8       0x18 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a(_arm_fixunsdfsi.o)
+ .ARM.attributes
+                0x000003e0       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+ .ARM.attributes
+                0x00000410       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+ .ARM.attributes
+                0x00000440       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+ .ARM.attributes
+                0x00000470       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+ .ARM.attributes
+                0x000004a0       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-puts.o)
+ .ARM.attributes
+                0x000004d0       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reent.o)
+ .ARM.attributes
+                0x00000500       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-sbrkr.o)
+ .ARM.attributes
+                0x00000530       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-strlen.o)
+ .ARM.attributes
+                0x00000560       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-freer.o)
+ .ARM.attributes
+                0x00000590       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fvwrite.o)
+ .ARM.attributes
+                0x000005c0       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memchr.o)
+ .ARM.attributes
+                0x000005f0       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memmove.o)
+ .ARM.attributes
+                0x00000620       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reallocr.o)
+ .ARM.attributes
+                0x00000650       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-wsetup.o)
+ .ARM.attributes
+                0x00000680       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fflush.o)
+ .ARM.attributes
+                0x000006b0       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .ARM.attributes
+                0x000006e0       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fwalk.o)
+ .ARM.attributes
+                0x00000710       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-makebuf.o)
+ .ARM.attributes
+                0x00000740       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o)
+ .ARM.attributes
+                0x00000770       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-writer.o)
+ .ARM.attributes
+                0x000007a0       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-closer.o)
+ .ARM.attributes
+                0x000007d0       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fclose.o)
+ .ARM.attributes
+                0x00000800       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fstatr.o)
+ .ARM.attributes
+                0x00000830       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-isattyr.o)
+ .ARM.attributes
+                0x00000860       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-lseekr.o)
+ .ARM.attributes
+                0x00000890       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-readr.o)
+ .ARM.attributes
+                0x000008c0       0x18 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtn.o
+LOAD source/esm.o
+LOAD source/mibspi.o
+LOAD source/pinmux.o
+LOAD source/sci.o
+LOAD source/het.o
+LOAD source/sys_dma.o
+LOAD source/sys_vim.o
+LOAD source/gio.o
+LOAD source/system.o
+LOAD source/sys_startup.o
+LOAD source/sys_pmm.o
+LOAD source/spi.o
+LOAD source/sys_selftest.o
+LOAD source/sys_phantom.o
+LOAD source/notification.o
+LOAD source/can.o
+LOAD source/i2c.o
+LOAD source/rti.o
+LOAD source/sys_pcr.o
+LOAD source/adc.o
+LOAD source/sys_pmu.o
+LOAD source/dabort.o
+LOAD source/sys_core.o
+LOAD source/sys_mpu.o
+LOAD source/sys_intvecs.o
+LOAD fsw_source/ugly_asm.o
+LOAD ap_user_main_app.o
+LOAD fsw_source/newlib_stubs.o
+LOAD fsw_source/mission_timekeeper.o
+LOAD fsw_source/iir_filters.o
+LOAD fsw_source/basic_pid_controller.o
+START GROUP
+LOAD /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/libgcc.a
+LOAD /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a
+END GROUP
+LOAD /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtend.o
+LOAD /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/crtn.o
+OUTPUT(ap_user_main_app.elf elf32-littlearm)
+
+.debug_info     0x00000000     0x899f
+ .debug_info    0x00000000      0x606 source/esm.o
+ .debug_info    0x00000606      0xa5e source/mibspi.o
+ .debug_info    0x00001064      0x47d source/pinmux.o
+ .debug_info    0x000014e1      0x7cf source/sci.o
+ .debug_info    0x00001cb0      0x661 source/sys_vim.o
+ .debug_info    0x00002311      0x4c0 source/gio.o
+ .debug_info    0x000027d1      0xf21 source/system.o
+ .debug_info    0x000036f2      0x60e source/sys_startup.o
+ .debug_info    0x00003d00     0x28b6 source/sys_selftest.o
+ .debug_info    0x000065b6       0x9c source/sys_phantom.o
+ .debug_info    0x00006652     0x158e source/notification.o
+ .debug_info    0x00007be0       0x5a source/sys_pmu.o
+ .debug_info    0x00007c3a       0x59 source/dabort.o
+ .debug_info    0x00007c93       0x5b source/sys_core.o
+ .debug_info    0x00007cee       0x5e source/sys_intvecs.o
+ .debug_info    0x00007d4c      0x40a ap_user_main_app.o
+ .debug_info    0x00008156      0x849 fsw_source/newlib_stubs.o
+
+.debug_abbrev   0x00000000     0x114b
+ .debug_abbrev  0x00000000      0x183 source/esm.o
+ .debug_abbrev  0x00000183      0x17c source/mibspi.o
+ .debug_abbrev  0x000002ff       0xe9 source/pinmux.o
+ .debug_abbrev  0x000003e8      0x192 source/sci.o
+ .debug_abbrev  0x0000057a      0x15d source/sys_vim.o
+ .debug_abbrev  0x000006d7       0xf8 source/gio.o
+ .debug_abbrev  0x000007cf      0x189 source/system.o
+ .debug_abbrev  0x00000958       0xff source/sys_startup.o
+ .debug_abbrev  0x00000a57      0x250 source/sys_selftest.o
+ .debug_abbrev  0x00000ca7       0x42 source/sys_phantom.o
+ .debug_abbrev  0x00000ce9      0x119 source/notification.o
+ .debug_abbrev  0x00000e02       0x14 source/sys_pmu.o
+ .debug_abbrev  0x00000e16       0x14 source/dabort.o
+ .debug_abbrev  0x00000e2a       0x14 source/sys_core.o
+ .debug_abbrev  0x00000e3e       0x14 source/sys_intvecs.o
+ .debug_abbrev  0x00000e52      0x145 ap_user_main_app.o
+ .debug_abbrev  0x00000f97      0x1b4 fsw_source/newlib_stubs.o
+
+.debug_aranges  0x00000000      0x220
+ .debug_aranges
+                0x00000000       0x20 source/esm.o
+ .debug_aranges
+                0x00000020       0x20 source/mibspi.o
+ .debug_aranges
+                0x00000040       0x20 source/pinmux.o
+ .debug_aranges
+                0x00000060       0x20 source/sci.o
+ .debug_aranges
+                0x00000080       0x20 source/sys_vim.o
+ .debug_aranges
+                0x000000a0       0x20 source/gio.o
+ .debug_aranges
+                0x000000c0       0x20 source/system.o
+ .debug_aranges
+                0x000000e0       0x20 source/sys_startup.o
+ .debug_aranges
+                0x00000100       0x20 source/sys_selftest.o
+ .debug_aranges
+                0x00000120       0x20 source/sys_phantom.o
+ .debug_aranges
+                0x00000140       0x20 source/notification.o
+ .debug_aranges
+                0x00000160       0x20 source/sys_pmu.o
+ .debug_aranges
+                0x00000180       0x20 source/dabort.o
+ .debug_aranges
+                0x000001a0       0x20 source/sys_core.o
+ .debug_aranges
+                0x000001c0       0x20 source/sys_intvecs.o
+ .debug_aranges
+                0x000001e0       0x20 ap_user_main_app.o
+ .debug_aranges
+                0x00000200       0x20 fsw_source/newlib_stubs.o
+
+.debug_line     0x00000000     0x1f68
+ .debug_line    0x00000000      0x1b9 source/esm.o
+ .debug_line    0x000001b9      0x387 source/mibspi.o
+ .debug_line    0x00000540      0x226 source/pinmux.o
+ .debug_line    0x00000766      0x226 source/sci.o
+ .debug_line    0x0000098c      0x1de source/sys_vim.o
+ .debug_line    0x00000b6a      0x176 source/gio.o
+ .debug_line    0x00000ce0      0x223 source/system.o
+ .debug_line    0x00000f03      0x1c1 source/sys_startup.o
+ .debug_line    0x000010c4      0x6ca source/sys_selftest.o
+ .debug_line    0x0000178e       0x45 source/sys_phantom.o
+ .debug_line    0x000017d3      0x180 source/notification.o
+ .debug_line    0x00001953       0x8d source/sys_pmu.o
+ .debug_line    0x000019e0       0x72 source/dabort.o
+ .debug_line    0x00001a52      0x13f source/sys_core.o
+ .debug_line    0x00001b91       0x4b source/sys_intvecs.o
+ .debug_line    0x00001bdc      0x14c ap_user_main_app.o
+ .debug_line    0x00001d28      0x240 fsw_source/newlib_stubs.o
+
+.debug_str      0x00000000     0x321f
+ .debug_str     0x00000000      0x421 source/esm.o
+                                0x499 (size before relaxing)
+ .debug_str     0x00000421      0x5ba source/mibspi.o
+                                0x790 (size before relaxing)
+ .debug_str     0x000009db      0x27d source/pinmux.o
+                                0x4eb (size before relaxing)
+ .debug_str     0x00000c58      0x2e0 source/sci.o
+                                0x506 (size before relaxing)
+ .debug_str     0x00000f38      0x2d9 source/sys_vim.o
+                                0x56e (size before relaxing)
+ .debug_str     0x00001211      0x1c7 source/gio.o
+                                0x369 (size before relaxing)
+ .debug_str     0x000013d8      0x932 source/system.o
+                                0xc6a (size before relaxing)
+ .debug_str     0x00001d0a      0x274 source/sys_startup.o
+                                0x552 (size before relaxing)
+ .debug_str     0x00001f7e      0xcf9 source/sys_selftest.o
+                               0x1751 (size before relaxing)
+ .debug_str     0x00002c77       0x26 source/sys_phantom.o
+                                0x130 (size before relaxing)
+ .debug_str     0x00002c9d      0x245 source/notification.o
+                                0x99a (size before relaxing)
+ .debug_str     0x00002ee2      0x158 ap_user_main_app.o
+                                0x351 (size before relaxing)
+ .debug_str     0x0000303a      0x1e5 fsw_source/newlib_stubs.o
+                                0x3e4 (size before relaxing)
+
+.comment        0x00000000       0x70
+ .comment       0x00000000       0x70 source/esm.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 source/mibspi.o
+ .comment       0x00000000       0x71 source/pinmux.o
+ .comment       0x00000000       0x71 source/sci.o
+ .comment       0x00000000       0x71 source/sys_vim.o
+ .comment       0x00000000       0x71 source/gio.o
+ .comment       0x00000000       0x71 source/system.o
+ .comment       0x00000000       0x71 source/sys_startup.o
+ .comment       0x00000000       0x71 source/sys_selftest.o
+ .comment       0x00000000       0x71 source/sys_phantom.o
+ .comment       0x00000000       0x71 source/notification.o
+ .comment       0x00000000       0x71 ap_user_main_app.o
+ .comment       0x00000000       0x71 fsw_source/newlib_stubs.o
+
+.debug_frame    0x00000000     0x18a0
+ .debug_frame   0x00000000      0x20c source/esm.o
+ .debug_frame   0x0000020c      0x160 source/mibspi.o
+ .debug_frame   0x0000036c       0x40 source/pinmux.o
+ .debug_frame   0x000003ac      0x1ac source/sci.o
+ .debug_frame   0x00000558       0xa4 source/sys_vim.o
+ .debug_frame   0x000005fc      0x100 source/gio.o
+ .debug_frame   0x000006fc      0x108 source/system.o
+ .debug_frame   0x00000804       0x20 source/sys_startup.o
+ .debug_frame   0x00000824      0x590 source/sys_selftest.o
+ .debug_frame   0x00000db4       0x28 source/sys_phantom.o
+ .debug_frame   0x00000ddc      0x1f0 source/notification.o
+ .debug_frame   0x00000fcc       0x44 ap_user_main_app.o
+ .debug_frame   0x00001010      0x1bc fsw_source/newlib_stubs.o
+ .debug_frame   0x000011cc       0x40 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-malloc.o)
+ .debug_frame   0x0000120c       0x38 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mallocr.o)
+ .debug_frame   0x00001244       0x2c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy.o)
+ .debug_frame   0x00001270       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-mlock.o)
+ .debug_frame   0x000012a0       0x3c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-puts.o)
+ .debug_frame   0x000012dc       0x68 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reent.o)
+ .debug_frame   0x00001344       0x2c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-sbrkr.o)
+ .debug_frame   0x00001370       0x20 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-strlen.o)
+ .debug_frame   0x00001390       0x50 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-freer.o)
+ .debug_frame   0x000013e0       0x38 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fvwrite.o)
+ .debug_frame   0x00001418       0x2c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memchr.o)
+ .debug_frame   0x00001444       0x2c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-memmove.o)
+ .debug_frame   0x00001470       0x38 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-reallocr.o)
+ .debug_frame   0x000014a8       0x2c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-wsetup.o)
+ .debug_frame   0x000014d4       0x48 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fflush.o)
+ .debug_frame   0x0000151c      0x134 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-findfp.o)
+ .debug_frame   0x00001650       0x54 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fwalk.o)
+ .debug_frame   0x000016a4       0x30 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-makebuf.o)
+ .debug_frame   0x000016d4       0x88 /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-stdio.o)
+ .debug_frame   0x0000175c       0x2c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-writer.o)
+ .debug_frame   0x00001788       0x2c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-closer.o)
+ .debug_frame   0x000017b4       0x3c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fclose.o)
+ .debug_frame   0x000017f0       0x2c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-fstatr.o)
+ .debug_frame   0x0000181c       0x2c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-isattyr.o)
+ .debug_frame   0x00001848       0x2c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-lseekr.o)
+ .debug_frame   0x00001874       0x2c /home/aghosh01/gcc-arm-none-eabi-4_7-2012q4/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/libc.a(lib_a-readr.o)

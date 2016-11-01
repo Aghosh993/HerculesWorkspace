@@ -45,20 +45,21 @@ int main(void)
 	sciInit();
 
 	printf("Hello from APv2.4!!\r\n");
-	// char *msg = (char *)malloc(100*sizeof(char));
-	char msg[100];
+	char *msg = (char *)malloc(100*sizeof(char));
+	// char msg[100];
 	// sprintf(msg, "Hello from AP %f!!\r\n", 2.40f);
 	sprintf(msg, "Hi there!!\r\n");
 	sciSend(sciREG, strlen(msg), (uint8_t *)msg);
 	int i = 0;
 	while(1)
 	{
+		char *msg = (char *)malloc(100*sizeof(char));
 		/*Toggle GPIO line to indicate we're alive, and for timing purposes:*/
 		gioToggleBit(mibspiPORT3, PIN_SIMO);
-		sprintf(msg, "Hello, iter %d\r\n", i);
-		sciSend(sciREG, strlen(msg), (uint8_t *)msg);
-		++i;
-		insert_delay(500);
+		// sprintf(msg, "Hello, iter %d\r\n", i);
+		// sciSend(sciREG, strlen(msg), (uint8_t *)msg);
+		// ++i;
+		insert_delay(50);
 	}
 /* USER CODE END */
 }
