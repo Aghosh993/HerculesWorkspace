@@ -1,7 +1,8 @@
 # HerculesWorkspace
-Codebase to compile and load C code onto a TI Hercules RM48L MCU-based autopilot board 
+Overview:
+This repo contains the codebase to compile and load C code onto a TI Hercules RM48L MCU-based autopilot board 
 
-Requirements:
+- Requirements:
 To use this codebase, one must have the "arm-none-eabi-gcc" toolchain 
 installed. Go to https://launchpad.net/gcc-arm-embedded/+download to 
 grab the correct archive for your platform. Download and unzip to a 
@@ -9,7 +10,15 @@ known location. Go to the Makefile in this workspace's root folder, and
 change the TOOLCHAIN_ROOT variable in line 3 to the path to where you 
 unzipped the toolchain.
 
-Usage:
+To be able to flash the target board using JTAG, one must have the 
+J-Link adapter. an EDU version can be obtained for about $60 from 
+Digi-Key. Go to https://www.segger.com/downloads/jlink and download the 
+"J-Link Software and Documentation pack" for Linux (get the TGZ 
+archive.) unzip the archive and put it somewhere in your home directory 
+for convenience. Next, set the JLINK_ROOT variable in line 7 of the Makefile
+to the correct location pointing to the unzipped contents of JLink package.
+
+- Usage:
 Cloning this repo to your local machine:
 
 git clone https://github.com/Aghosh993/HerculesWorkspace.git
