@@ -4,6 +4,7 @@
 // User/flight software libraries:
 #include "basic_pid_controller.h"
 #include "iir_filters.h"
+#include "Quadcopter_PWM_HAL.h"
 
 #include <stdio.h>
 
@@ -28,6 +29,22 @@ void insert_delay(int ms)
 	}
 }
 
+#define __ASM            __asm                                      /*!< asm keyword for GNU Compiler          */
+#define __INLINE         inline                                     /*!< inline keyword for GNU Compiler       */
+#define __STATIC_INLINE  static inline
+
+extern unsigned int _get_SP_(void);
+
+__attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_MSP2(void)
+{
+  register uint32_t result;
+
+  // __ASM volatile ("MRS %0, msp\n" : "=r" (result) ); // What do we do instead for the Cortex-R4???
+  // __ASM volatile ("MOV %0, sp\n" : "=r" (result) );
+  return(_get_SP_());
+}
+
+
 int main(void)
 {
 /* USER CODE BEGIN (3) */
@@ -44,22 +61,42 @@ int main(void)
 	mibspiInit();
 	sciInit();
 
+	// Not using heap:
 	printf("Hello from APv2.4!!\r\n");
+
+	// Attempt to use heap:
 	char *msg = (char *)malloc(100*sizeof(char));
-	// char msg[100];
-	// sprintf(msg, "Hello from AP %f!!\r\n", 2.40f);
-	sprintf(msg, "Hi there!!\r\n");
+	sprintf(msg, "Hello from AP %f!!\r\n", 2.40f);
 	sciSend(sciREG, strlen(msg), (uint8_t *)msg);
+
 	int i = 0;
+
+	printf("Ready to execute loop!!\r\n");
+	
+	printf("addr of msg1 buffer = %0x\r\n", msg);
+
+	QuadRotor_PWM_init();
+	QuadRotor_motor1_start();
+	QuadRotor_motor2_start();
+	QuadRotor_motor3_start();
+	QuadRotor_motor4_start();
+
+	QuadRotor_motor1_setDuty(0.25f);
+	QuadRotor_motor2_setDuty(0.50f);
+	QuadRotor_motor3_setDuty(0.75f);
+	QuadRotor_motor4_setDuty(0.85f);
+
 	while(1)
 	{
-		char *msg = (char *)malloc(100*sizeof(char));
+		char *msg2 = (char *)malloc(10*sizeof(char));
+		// printf("addr of msg2 buffer = %d\r\n", msg2);
+		// free(msg2);
 		/*Toggle GPIO line to indicate we're alive, and for timing purposes:*/
 		gioToggleBit(mibspiPORT3, PIN_SIMO);
 		// sprintf(msg, "Hello, iter %d\r\n", i);
 		// sciSend(sciREG, strlen(msg), (uint8_t *)msg);
 		// ++i;
-		insert_delay(50);
+		insert_delay(500);
 	}
 /* USER CODE END */
 }

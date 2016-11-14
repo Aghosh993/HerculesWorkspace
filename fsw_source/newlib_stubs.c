@@ -43,8 +43,8 @@ __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_MSP(void)
   register uint32_t result;
 
   // __ASM volatile ("MRS %0, msp\n" : "=r" (result) ); // What do we do instead for the Cortex-R4???
-  __ASM volatile ("MOV r0, sp\n" : "=r" (result) );
-  return(result);
+  // __ASM volatile ("MOV %0, sp\n" : "=r" (result) );
+  return(_get_SP_());
 }
 
 /*

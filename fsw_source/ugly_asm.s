@@ -5,8 +5,9 @@
     .arm 
 
 /*-------------------------------------------------------------------------------*/
+    .weak _get_SP_
+    .type _get_SP_, %function
 
-.globl _get_SP_
 _get_SP_:
-	mov r0, sp
-	bx lr
+        mrs   r0, CPSR
+        bx    lr

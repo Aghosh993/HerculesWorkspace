@@ -7,7 +7,7 @@ PREFIX=$(TOOLCHAIN)/arm-none-eabi-
 JLINK_ROOT=../JLink_Linux_V480_x86_64/
 
 ARCHFLAGS=-mcpu=cortex-r4f -march=armv7-r -mfloat-abi=soft -mfpu=vfpv3-d16 -I$(TOOLCHAIN_ROOT)/arm-none-eabi/include  -g -gdwarf-3 -c -mlittle-endian -r
-CFLAGS=-I./include/ -I./fsw_include -g -O0 -Wall
+CFLAGS=-I./hal_include/ -I./fsw_include -I./fsw_include/hal_interface -g -O0 -Wall
 LDFLAGS= -Wl,--gc-sections,-Map,$(TARGET).map,-Tsys_link.ld
 
 CC=$(PREFIX)gcc
@@ -18,10 +18,11 @@ RM=rm -f
 
 TARGET=ap_user_main_app
 
-SRC=$(wildcard source/*.c)
-ASM_SRC=$(wildcard source/*.s)
+SRC=$(wildcard hal_source/*.c)
+ASM_SRC=$(wildcard hal_source/*.s)
 USER_SRC=$(TARGET).c
 FSW_SRC=$(wildcard fsw_source/*.c)
+FSW_SRC+=$(wildcard fsw_source/hal_interface/*.c)
 NEWLIB_ASM_SRC=$(wildcard fsw_source/*.s)
 
 OBJ=$(patsubst %.c, %.o, $(SRC))
