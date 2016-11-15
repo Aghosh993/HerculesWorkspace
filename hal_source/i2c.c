@@ -93,7 +93,7 @@ void i2cInit(void)
                    | (uint32)((uint32)0U << 6U)     /* digital loop back                  */
                    | (uint32)((uint32)0U << 4U)     /* start byte - master only          */
                    | (uint32)((uint32)0U << 3U)           /* free data format                  */
-                   | (uint32)(I2C_2_BIT);   /* bit count                         */
+                   | (uint32)(I2C_8_BIT);   /* bit count                         */
 
 
     /** - set i2c Backward Compatibility mode */
@@ -112,8 +112,8 @@ void i2cInit(void)
     i2cREG1->PSC = 5U;
 
     /** - set clock rate */
-    i2cREG1->CKH = 37U;
-    i2cREG1->CKL = 37U;
+    i2cREG1->CKH = 5U;
+    i2cREG1->CKL = 5U;
 
     /** - set i2c pins functional mode */
     i2cREG1->PFNC = (0U);

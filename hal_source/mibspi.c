@@ -960,10 +960,10 @@ uint32 i ;
                     | (uint32)((uint32)1U << 3U)  /* SCS[3] */
                     | (uint32)((uint32)1U << 4U)  /* SCS[4] */
                     | (uint32)((uint32)1U << 5U)  /* SCS[5] */
-                    | (uint32)((uint32)0U << 8U)  /* ENA */
+                    | (uint32)((uint32)1U << 8U)  /* ENA */
                     | (uint32)((uint32)1U << 9U)  /* CLK */
                     | (uint32)((uint32)1U << 10U)  /* SIMO */
-                    | (uint32)((uint32)0U << 11U); /* SOMI */
+                    | (uint32)((uint32)1U << 11U); /* SOMI */
 
     /** - MIBSPI3 Port open drain enable */
     mibspiREG3->PC6 = (uint32)((uint32)0U << 0U)  /* SCS[0] */
@@ -1011,10 +1011,10 @@ uint32 i ;
                     | (uint32)((uint32)0U << 3U)  /* SCS[3] */
                     | (uint32)((uint32)0U << 4U)  /* SCS[4] */
                     | (uint32)((uint32)0U << 5U)  /* SCS[5] */
-                    | (uint32)((uint32)1U << 8U)  /* ENA */
-                    | (uint32)((uint32)1U << 9U)  /* CLK */
+                    | (uint32)((uint32)0U << 8U)  /* ENA */
+                    | (uint32)((uint32)0U << 9U)  /* CLK */
                     | (uint32)((uint32)0U << 10U)  /* SIMO */
-                    | (uint32)((uint32)1U << 11U); /* SOMI */
+                    | (uint32)((uint32)0U << 11U); /* SOMI */
 
     /** - Finally start MIBSPI3 */
     mibspiREG3->GCR1 = (mibspiREG3->GCR1 & 0xFEFFFFFFU) | 0x01000000U;

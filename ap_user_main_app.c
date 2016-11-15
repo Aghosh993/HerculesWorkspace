@@ -1,5 +1,6 @@
 /*Standard HAL (Hardware Abstraction Layer) includes:*/
 #include "hal_common_includes.h"
+#include "interrupt_utils.h"
 
 // User/flight software libraries:
 #include "basic_pid_controller.h"
@@ -29,20 +30,20 @@ void insert_delay(int ms)
 	}
 }
 
-#define __ASM            __asm                                      /*!< asm keyword for GNU Compiler          */
-#define __INLINE         inline                                     /*!< inline keyword for GNU Compiler       */
-#define __STATIC_INLINE  static inline
+// #define __ASM            __asm                                      /*!< asm keyword for GNU Compiler          */
+// #define __INLINE         inline                                     /*!< inline keyword for GNU Compiler       */
+// #define __STATIC_INLINE  static inline
 
-extern unsigned int _get_SP_(void);
+// extern unsigned int _get_SP_(void);
 
-__attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_MSP2(void)
-{
-  register uint32_t result;
+// __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_MSP2(void)
+// {
+//   register uint32_t result;
 
-  // __ASM volatile ("MRS %0, msp\n" : "=r" (result) ); // What do we do instead for the Cortex-R4???
-  // __ASM volatile ("MOV %0, sp\n" : "=r" (result) );
-  return(_get_SP_());
-}
+//   // __ASM volatile ("MRS %0, msp\n" : "=r" (result) ); // What do we do instead for the Cortex-R4???
+//   // __ASM volatile ("MOV %0, sp\n" : "=r" (result) );
+//   return(_get_SP_());
+// }
 
 
 int main(void)
@@ -50,9 +51,10 @@ int main(void)
 /* USER CODE BEGIN (3) */
 
 	/*Globally disable R4 IRQs AND FIQs:*/
-	_disable_interrupt_();
+	_disable_interrupts();
 
 	systemInit();
+	muxInit();
 
 	/*
 	* Initialize the serial port (SCI module) and enable SCI Receive interrupts:
@@ -60,21 +62,9 @@ int main(void)
 	*/
 	mibspiInit();
 	sciInit();
-
-	// Not using heap:
-	printf("Hello from APv2.4!!\r\n");
-
-	// Attempt to use heap:
-	char *msg = (char *)malloc(100*sizeof(char));
-	sprintf(msg, "Hello from AP %f!!\r\n", 2.40f);
-	sciSend(sciREG, strlen(msg), (uint8_t *)msg);
-
-	int i = 0;
-
-	printf("Ready to execute loop!!\r\n");
+	sciEnableNotification(sciREG, SCI_RX_INT);
+	// sciEnableNotification(scilinREG, SCI_RX_INT);
 	
-	printf("addr of msg1 buffer = %0x\r\n", msg);
-
 	QuadRotor_PWM_init();
 	QuadRotor_motor1_start();
 	QuadRotor_motor2_start();
@@ -82,20 +72,28 @@ int main(void)
 	QuadRotor_motor4_start();
 
 	QuadRotor_motor1_setDuty(0.25f);
-	QuadRotor_motor2_setDuty(0.50f);
+	QuadRotor_motor2_setDuty(0.50f); 
 	QuadRotor_motor3_setDuty(0.75f);
 	QuadRotor_motor4_setDuty(0.85f);
 
+	// printf("Ready to execute loop!!\r\n");
+
+	rtiInit();
+	rtiEnableNotification(rtiNOTIFICATION_COMPARE0);
+	rtiStartCounter(rtiCOUNTER_BLOCK0);
+
+	vimInit();
+
+	canInit();
+
+	_enable_interrupts();
+
+	uint8_t can_msg[8] = {0, 1, 2, 3, 4, 5, 6, '\n'};
 	while(1)
 	{
-		char *msg2 = (char *)malloc(10*sizeof(char));
-		// printf("addr of msg2 buffer = %d\r\n", msg2);
-		// free(msg2);
+		canTransmit(canREG3, canMESSAGE_BOX1, can_msg);
 		/*Toggle GPIO line to indicate we're alive, and for timing purposes:*/
-		gioToggleBit(mibspiPORT3, PIN_SIMO);
-		// sprintf(msg, "Hello, iter %d\r\n", i);
-		// sciSend(sciREG, strlen(msg), (uint8_t *)msg);
-		// ++i;
+		// gioToggleBit(mibspiPORT3, PIN_SIMO);
 		insert_delay(500);
 	}
 /* USER CODE END */

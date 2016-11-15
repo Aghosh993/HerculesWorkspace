@@ -137,7 +137,7 @@ void sciInit(void)
     sciREG->SETINT = (uint32)((uint32)0U << 26U)  /* Framing error */
                    | (uint32)((uint32)0U << 25U)  /* Overrun error */
                    | (uint32)((uint32)0U << 24U)  /* Parity error */
-                   | (uint32)((uint32)0U << 9U)  /* Receive */
+                   | (uint32)((uint32)1U << 9U)  /* Receive */
                    | (uint32)((uint32)0U << 1U)  /* Wakeup */
                    | (uint32)((uint32)0U << 0U);  /* Break detect */
 
@@ -219,7 +219,7 @@ void sciInit(void)
     scilinREG->SETINT = (uint32)((uint32)0U << 26U)  /* Framing error */
                       | (uint32)((uint32)0U << 25U)  /* Overrun error */
                       | (uint32)((uint32)0U << 24U)  /* Parity error */
-                      | (uint32)((uint32)0U << 9U)  /* Receive */
+                      | (uint32)((uint32)1U << 9U)  /* Receive */
                       | (uint32)((uint32)0U << 1U)  /* Wakeup */
                       | (uint32)((uint32)0U);  /* Break detect */
 
@@ -765,7 +765,112 @@ void scilinGetConfigValue(sci_config_reg_t *config_reg, config_value_type_t type
 	}
 }
 
+/* USER CODE BEGIN (27) */
+/* USER CODE END */
 
+/** @fn void sciHighLevelInterrupt(void)
+*   @brief Level 0 Interrupt for SCI
+*/
+
+/* SourceId : SCI_SourceId_018 */
+/* DesignId : SCI_DesignId_017 */
+/* Requirements : HL_SR245, HL_SR246 */
+void sciHighLevelInterrupt(void)
+{
+    uint32 vec = sciREG->INTVECT0;
+	uint8 byte;
+/* USER CODE BEGIN (28) */
+/* USER CODE END */
+
+    switch (vec)
+    {
+    case 1U:
+        sciNotification(sciREG, (uint32)SCI_WAKE_INT);
+        break;
+    case 3U:
+        sciNotification(sciREG, (uint32)SCI_PE_INT);
+        break;
+    case 6U:
+        sciNotification(sciREG, (uint32)SCI_FE_INT);
+        break;
+    case 7U:
+        sciNotification(sciREG, (uint32)SCI_BREAK_INT);
+        break;
+    case 9U:
+        sciNotification(sciREG, (uint32)SCI_OE_INT);
+        break;
+
+    case 11U:
+        /* receive */
+        sciNotification(sciREG, (uint32)SCI_RX_INT);
+        break;
+
+    case 12U:
+        /* transmit */
+        sciREG->CLEARINT = (uint32)SCI_TX_INT;
+        sciNotification(sciREG, (uint32)SCI_TX_INT);
+        break;
+
+    default:
+        /* phantom interrupt, clear flags and return */
+        sciREG->FLR = ~sciREG->SETINTLVL & 0x07000303U;
+        break;
+    }
+/* USER CODE BEGIN (29) */
+/* USER CODE END */
+}
+
+
+/** @fn void linHighLevelInterrupt(void)
+*   @brief Level 0 Interrupt for SCILIN
+*/
+
+/* SourceId : SCI_SourceId_021 */
+/* DesignId : SCI_DesignId_017 */
+/* Requirements : HL_SR245, HL_SR246 */
+void linHighLevelInterrupt(void)
+{
+    uint32 vec = scilinREG->INTVECT0;
+	uint8 byte;
+/* USER CODE BEGIN (35) */
+/* USER CODE END */
+
+    switch (vec)
+    {
+    case 1U:
+        sciNotification(scilinREG, (uint32)SCI_WAKE_INT);
+        break;
+    case 3U:
+        sciNotification(scilinREG, (uint32)SCI_PE_INT);
+        break;
+    case 6U:
+        sciNotification(scilinREG, (uint32)SCI_FE_INT);
+        break;
+    case 7U:
+        sciNotification(scilinREG, (uint32)SCI_BREAK_INT);
+        break;
+    case 9U:
+        sciNotification(scilinREG, (uint32)SCI_OE_INT);
+        break;
+
+    case 11U:
+        sciNotification(scilinREG, (uint32)SCI_RX_INT);
+        break;
+
+    case 12U:
+        /* transmit */
+        scilinREG->CLEARINT = (uint32)SCI_TX_INT;
+        sciNotification(scilinREG, (uint32)SCI_TX_INT);
+        break;
+
+    default:
+        /* phantom interrupt, clear flags and return */
+        scilinREG->FLR = ~scilinREG->SETINTLVL & 0x07000303U;
+        break;
+    }
+/* USER CODE BEGIN (36) */
+/* USER CODE END */
+}
 /* USER CODE BEGIN (37) */
 /* USER CODE END */
 

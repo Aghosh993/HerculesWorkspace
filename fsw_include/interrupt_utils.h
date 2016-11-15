@@ -3,7 +3,7 @@
 
 #include "hal_common_includes.h"
 
-#define _disable_IRQ()	_disable_interrupt_()
-#define _enable_IRQ()	_enable_interrupt_()
+#define _disable_interrupts() _disable_interrupt_()
+#define _enable_interrupts() _enable_interrupt_()
 
 #endif

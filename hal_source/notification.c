@@ -55,11 +55,12 @@
 #include "gio.h"
 #include "mibspi.h"
 #include "sci.h"
-#include "spi.h"
 #include "het.h"
 #include "rti.h"
 #include "i2c.h"
 #include "sys_dma.h"
+
+#include "interrupts.h"
 
 /* USER CODE BEGIN (0) */
 /* USER CODE END */
@@ -103,6 +104,7 @@ void rtiNotification(uint32 notification)
 {
 /*  enter user code between the USER CODE BEGIN and USER CODE END. */
 /* USER CODE BEGIN (9) */
+	rti_callback();
 /* USER CODE END */
 }
 
@@ -180,28 +182,37 @@ void sciNotification(sciBASE_t *sci, uint32 flags)
 {
 /*  enter user code between the USER CODE BEGIN and USER CODE END. */
 /* USER CODE BEGIN (29) */
+	uint8_t byte_received;
+
+	if(sci == sciREG)
+	{
+		if(flags & SCI_RX_INT)
+		{
+			byte_received = sciReceiveByte(sciREG);
+			sci1_rx_callback(byte_received);
+		}
+		if(flags & SCI_TX_INT)
+		{
+			// Not handled right now...
+		}
+	}
+
+	if(sci == scilinREG)
+	{
+		if(flags & SCI_RX_INT)
+		{
+			byte_received = sciReceiveByte(scilinREG);
+			sci2_rx_callback(byte_received);
+		}
+		if(flags & SCI_TX_INT)
+		{
+			// Not handled right now...
+		}
+	}
 /* USER CODE END */
 }
 
 /* USER CODE BEGIN (30) */
-/* USER CODE END */
-void spiNotification(spiBASE_t *spi, uint32 flags)
-{
-/*  enter user code between the USER CODE BEGIN and USER CODE END. */
-/* USER CODE BEGIN (31) */
-/* USER CODE END */
-}
-
-/* USER CODE BEGIN (32) */
-/* USER CODE END */
-void spiEndNotification(spiBASE_t *spi)
-{
-/*  enter user code between the USER CODE BEGIN and USER CODE END. */
-/* USER CODE BEGIN (33) */
-/* USER CODE END */
-}
-
-/* USER CODE BEGIN (34) */
 /* USER CODE END */
 
 void pwmNotification(hetBASE_t * hetREG,uint32 pwm, uint32 notification)

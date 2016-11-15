@@ -9,5 +9,5 @@
     .type _get_SP_, %function
 
 _get_SP_:
-        mrs   r0, CPSR
+        mov   r0, SP
         bx    lr

@@ -77,17 +77,17 @@ void setupPLL(void)
 /* USER CODE BEGIN (3) */
 /* USER CODE END */
 
-	/* Disable PLL1 and PLL2 */
-	systemREG1->CSDISSET = 0x00000002U | 0x00000040U; 
-	/*SAFETYMCUSW 28 D MR:NA <APPROVED> "Hardware status bit read check" */
-	while((systemREG1->CSDIS & 0x42U) != 0x42U)
-	{
-	/* Wait */
-	}
-	
-	/* Clear Global Status Register */
-	systemREG1->GBLSTAT = 0x301U;
-	
+  /* Disable PLL1 and PLL2 */
+  systemREG1->CSDISSET = 0x00000002U | 0x00000040U; 
+  /*SAFETYMCUSW 28 D MR:NA <APPROVED> "Hardware status bit read check" */
+  while((systemREG1->CSDIS & 0x42U) != 0x42U)
+  {
+  /* Wait */
+  }
+  
+  /* Clear Global Status Register */
+  systemREG1->GBLSTAT = 0x301U;
+  
     /** - Configure PLL control registers */
     /** @b Initialize @b Pll1: */
 
@@ -103,8 +103,8 @@ void setupPLL(void)
                         |  (uint32)0x20000000U 
                         |  (uint32)((uint32)0x1FU << 24U) 
                         |  (uint32)0x00000000U 
-                        |  (uint32)((uint32)(6U - 1U)<< 16U) 
-                        |  (uint32)(0xA400U);
+                        |  (uint32)((uint32)(4U - 1U)<< 16U) 
+                        |  (uint32)(0xD800U);
 
     /**   - Setup pll control register 2
     *     - Setup spreading rate
@@ -114,7 +114,7 @@ void setupPLL(void)
     */
     systemREG1->PLLCTL2 =  (uint32)((uint32)255U << 22U)
                         |  (uint32)((uint32)7U << 12U)
-                        |  (uint32)((uint32)(2U - 1U) << 9U)
+                        |  (uint32)((uint32)(4U - 1U) << 9U)
                         |  (uint32)61U;
 
     /** @b Initialize @b Pll2: */
@@ -125,13 +125,13 @@ void setupPLL(void)
     *     - Setup internal Pll output divider
     *     - Setup Pll multiplier          
     */
-    systemREG2->PLLCTL3 = (uint32)((uint32)(2U - 1U) << 29U)
+    systemREG2->PLLCTL3 = (uint32)((uint32)(4U - 1U) << 29U)
                         | (uint32)((uint32)0x1FU << 24U) 
-                        | (uint32)((uint32)(6U - 1U)<< 16U) 
-                        | (uint32)(0xA400U);
+                        | (uint32)((uint32)(4U - 1U)<< 16U) 
+                        | (uint32)(0xD800U);
 
-	/** - Enable PLL(s) to start up or Lock */
-    systemREG1->CSDIS = 0x00000000U	
+  /** - Enable PLL(s) to start up or Lock */
+    systemREG1->CSDIS = 0x00000000U 
                       | 0x00000000U 
                       | 0x00000008U 
                       | 0x00000080U 
