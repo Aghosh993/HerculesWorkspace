@@ -8,7 +8,7 @@
 #ifndef MISSION_TIMEKEEPER_H_
 #define MISSION_TIMEKEEPER_H_
 
-#include <stdlib.h>
+// #include <stdlib.h>
 #include <stdint.h>
 
 #include "interrupt_utils.h"

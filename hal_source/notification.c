@@ -188,12 +188,11 @@ void sciNotification(sciBASE_t *sci, uint32 flags)
 	{
 		if(flags & SCI_RX_INT)
 		{
-			byte_received = sciReceiveByte(sciREG);
-			sci1_rx_callback(byte_received);
+			sci1_rx_callback();
 		}
-		if(flags & SCI_TX_INT)
+		else if(flags & SCI_TX_INT)
 		{
-			// Not handled right now...
+			sci1_tx_callback();
 		}
 	}
 
@@ -201,12 +200,11 @@ void sciNotification(sciBASE_t *sci, uint32 flags)
 	{
 		if(flags & SCI_RX_INT)
 		{
-			byte_received = sciReceiveByte(scilinREG);
-			sci2_rx_callback(byte_received);
+			sci2_rx_callback();
 		}
 		if(flags & SCI_TX_INT)
 		{
-			// Not handled right now...
+			sci2_tx_callback();
 		}
 	}
 /* USER CODE END */

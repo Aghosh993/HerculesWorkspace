@@ -15,5 +15,6 @@
 #include "i2c.h"
 #include "mibspi.h"
 #include "can.h"
+#include "gio.h"
 
 #endif
