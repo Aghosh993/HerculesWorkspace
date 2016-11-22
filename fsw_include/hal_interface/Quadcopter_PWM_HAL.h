@@ -1,3 +1,9 @@
+/*
+	File: Quadcopter_PWM_HAL.h
+
+	(c) Abhimanyu Ghosh, 2016
+ */
+
 #ifndef QUADCOPTER_PWM_HAL_H_
 #define QUADCOPTER_PWM_HAL_H_	1
 

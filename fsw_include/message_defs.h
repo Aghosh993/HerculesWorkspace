@@ -1,3 +1,9 @@
+/*
+	File: message_defs.h
+
+	(c) Abhimanyu Ghosh, 2016
+ */
+
 #ifndef MESSAGE_DEFS_H_
 #define MESSAGE_DEFS_H_		1
 

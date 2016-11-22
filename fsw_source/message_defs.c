@@ -1,3 +1,9 @@
+/*
+	File: message_defs.c
+
+	(c) Abhimanyu Ghosh, 2016
+ */
+
 #include "message_defs.h"
 
 void create_telem_msg_string(telem_msg_string *dst, uint8_t *descriptor_string, uint8_t descriptor_string_len, uint8_t *string_to_transmit, uint8_t string_len)

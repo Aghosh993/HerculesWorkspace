@@ -1,3 +1,9 @@
+/*
+	File: misc_utils.h
+
+	(c) Abhimanyu Ghosh, 2016
+ */
+
 #ifndef MISC_UTILS_H_
 #define MISC_UTILS_H_	1
 

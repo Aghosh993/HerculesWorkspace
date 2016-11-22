@@ -1,10 +1,10 @@
 /*
- * File: comp_filter.h
+ * File: iir_filters.h
  *
  * Author: Abhimanyu Ghosh
  * 			Controls and Robotics Research Laboratory (CRRL)
  * 			NYU Polytechnic School of Engineering
- * 			(c) 2014-2015
+ * 			(c) 2014-2016
  */
 
 #ifndef IIR_FILTER_H_

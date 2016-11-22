@@ -1,5 +1,5 @@
 /*
- * File: comp_filter.c
+ * File: iir_filters.c
  *
  * Author: Abhimanyu Ghosh
  * 			Controls and Robotics Research Laboratory (CRRL)

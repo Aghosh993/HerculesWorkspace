@@ -1,3 +1,9 @@
+/*
+	File: rt_telemetry.c
+
+	(c) Abhimanyu Ghosh, 2016
+ */
+
 #include "rt_telemetry.h"
 
 static void rt_telemetry_push_to_tx_stack(rt_telemetry_comm_channel *ch, rt_telemetry_msg *m)
@@ -325,7 +331,7 @@ void rt_telemetry_init_channel(rt_telemetry_comm_channel *ch, serialport *comm_p
 /*
 	Not implemented yet:
  */
-	
+
 // void send_telem_msg_string(rt_telemetry_comm_channel *ch, uint8_t *descriptor_string, uint8_t descriptor_string_len, uint8_t *string_to_transmit, uint8_t string_len)
 // {
 // 	telem_msg_string s;
