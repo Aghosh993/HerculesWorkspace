@@ -1,1 +1,400 @@
 #include "rt_telemetry.h"
+
+static void rt_telemetry_push_to_tx_stack(rt_telemetry_comm_channel *ch, rt_telemetry_msg *m)
+{
+}
+
+static void rt_telemetry_send_blocking(rt_telemetry_comm_channel *ch, rt_telemetry_msg *m)
+{
+	union {
+		rt_telemetry_msg m;
+		uint8_t output[sizeof(rt_telemetry_msg)];
+	} convert_to_tx_byte_stream;
+
+	convert_to_tx_byte_stream.m = *m;
+
+	serialport_send_data_buffer_blocking(ch->comm_port_ptr, convert_to_tx_byte_stream.output, 2+m->message_buffer[0U]); // Send start byte + descriptor string
+	serialport_send_data_buffer_blocking(ch->comm_port_ptr, &(convert_to_tx_byte_stream.output[DESCRIPTOR_STRING_MAX_LEN+2]), // Send msg id, data payload length and data payload
+															(4U*(convert_to_tx_byte_stream.output[DESCRIPTOR_STRING_MAX_LEN+3]))+2U);
+	serialport_send_data_buffer_blocking(ch->comm_port_ptr, &convert_to_tx_byte_stream.output[MAX_MSG_PAYLOAD_SIZE+1U], 2U); // Send Checksum
+}
+
+static void telem_msg_string_push_to_tx_stack(rt_telemetry_comm_channel *ch, telem_msg_string *msg)
+{
+	rt_telemetry_msg rt_msg;
+
+	union {
+		telem_msg_string m;
+		uint8_t output[MAX_MSG_PAYLOAD_SIZE];
+	} convert_to_byte_stream;
+
+	convert_to_byte_stream.m = *msg;
+
+	rt_msg.start_byte = 's';
+
+	uint8_t i = 0U;
+	uint16_t checksum = 0U;
+
+	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE; ++i)
+	{
+		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i];
+		checksum += convert_to_byte_stream.output[i];
+	}
+	checksum += TELEM_PACKET_CHECKSUM_OFFSET;
+
+	rt_msg.checksum = checksum;
+
+	rt_telemetry_push_to_tx_stack(ch, &rt_msg);
+}
+
+static void telem_msg_n_floats_push_to_tx_stack(rt_telemetry_comm_channel *ch, telem_msg_n_floats *msg)
+{
+	rt_telemetry_msg rt_msg;
+
+	union {
+		telem_msg_n_floats m;
+		uint8_t output[MAX_MSG_PAYLOAD_SIZE];
+	} convert_to_byte_stream;
+
+	convert_to_byte_stream.m = *msg;
+
+	rt_msg.start_byte = 's';
+
+	uint8_t i = 0U;
+	uint16_t checksum = 0U;
+
+	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE; ++i)
+	{
+		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i];
+		checksum += convert_to_byte_stream.output[i];
+	}
+	checksum += TELEM_PACKET_CHECKSUM_OFFSET;
+
+	rt_msg.checksum = checksum;
+
+	rt_telemetry_push_to_tx_stack(ch, &rt_msg);
+}
+
+static void telem_msg_n_ints_push_to_tx_stack(rt_telemetry_comm_channel *ch, telem_msg_n_ints *msg)
+{
+	rt_telemetry_msg rt_msg;
+
+	union {
+		telem_msg_n_ints m;
+		uint8_t output[MAX_MSG_PAYLOAD_SIZE];
+	} convert_to_byte_stream;
+
+	convert_to_byte_stream.m = *msg;
+
+	rt_msg.start_byte = 's';
+
+	uint8_t i = 0U;
+	uint16_t checksum = 0U;
+
+	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE; ++i)
+	{
+		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i];
+		checksum += convert_to_byte_stream.output[i];
+	}
+	checksum += TELEM_PACKET_CHECKSUM_OFFSET;
+
+	rt_msg.checksum = checksum;
+
+	rt_telemetry_push_to_tx_stack(ch, &rt_msg);
+}
+
+static void telem_msg_m_n_float_matrix_push_to_tx_stack(rt_telemetry_comm_channel *ch, telem_msg_m_n_float_matrix *msg)
+{
+	rt_telemetry_msg rt_msg;
+
+	union {
+		telem_msg_m_n_float_matrix m;
+		uint8_t output[MAX_MSG_PAYLOAD_SIZE];
+	} convert_to_byte_stream;
+
+	convert_to_byte_stream.m = *msg;
+
+	rt_msg.start_byte = 's';
+
+	uint8_t i = 0U;
+	uint16_t checksum = 0U;
+
+	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE; ++i)
+	{
+		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i];
+		checksum += convert_to_byte_stream.output[i];
+	}
+	checksum += TELEM_PACKET_CHECKSUM_OFFSET;
+
+	rt_msg.checksum = checksum;
+
+	rt_telemetry_push_to_tx_stack(ch, &rt_msg);
+}
+
+static void telem_msg_m_n_int_matrix_push_to_tx_stack(rt_telemetry_comm_channel *ch, telem_msg_m_n_int_matrix *msg)
+{
+	rt_telemetry_msg rt_msg;
+
+	union {
+		telem_msg_m_n_int_matrix m;
+		uint8_t output[MAX_MSG_PAYLOAD_SIZE];
+	} convert_to_byte_stream;
+
+	convert_to_byte_stream.m = *msg;
+
+	rt_msg.start_byte = 's';
+
+	uint8_t i = 0U;
+	uint16_t checksum = 0U;
+
+	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE; ++i)
+	{
+		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i];
+		checksum += convert_to_byte_stream.output[i];
+	}
+	checksum += TELEM_PACKET_CHECKSUM_OFFSET;
+
+	rt_msg.checksum = checksum;
+
+	rt_telemetry_push_to_tx_stack(ch, &rt_msg);
+}
+
+static void telem_msg_string_send_blocking(rt_telemetry_comm_channel *ch, telem_msg_string *msg)
+{
+	rt_telemetry_msg rt_msg;
+
+	union {
+		telem_msg_string m;
+		uint8_t output[MAX_MSG_PAYLOAD_SIZE];
+	} convert_to_byte_stream;
+
+	convert_to_byte_stream.m = *msg;
+
+	rt_msg.start_byte = 's';
+
+	uint8_t i = 0U;
+	uint16_t checksum = 0U;
+
+	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE; ++i)
+	{
+		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i];
+		checksum += convert_to_byte_stream.output[i];
+	}
+	checksum += TELEM_PACKET_CHECKSUM_OFFSET;
+
+	rt_msg.checksum = checksum;
+
+	rt_telemetry_send_blocking(ch, &rt_msg);
+}
+
+static void telem_msg_n_floats_send_blocking(rt_telemetry_comm_channel *ch, telem_msg_n_floats *msg)
+{
+	rt_telemetry_msg rt_msg;
+
+	union {
+		telem_msg_n_floats m;
+		uint8_t output[MAX_MSG_PAYLOAD_SIZE];
+	} convert_to_byte_stream;
+	
+	convert_to_byte_stream.m = *msg;
+
+	rt_msg.start_byte = 's';
+
+	uint8_t i = 0U;
+	uint16_t checksum = 0U;
+
+	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE; ++i)
+	{
+		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i];
+		checksum += convert_to_byte_stream.output[i];
+	}
+	checksum += TELEM_PACKET_CHECKSUM_OFFSET;
+
+	rt_msg.checksum = checksum;
+
+	rt_telemetry_send_blocking(ch, &rt_msg);
+}
+
+static void telem_msg_n_ints_send_blocking(rt_telemetry_comm_channel *ch, telem_msg_n_ints *msg)
+{
+	rt_telemetry_msg rt_msg;
+
+	union {
+		telem_msg_n_ints m;
+		uint8_t output[MAX_MSG_PAYLOAD_SIZE];
+	} convert_to_byte_stream;
+
+	convert_to_byte_stream.m = *msg;
+
+	rt_msg.start_byte = 's';
+
+	uint8_t i = 0U;
+	uint16_t checksum = 0U;
+
+	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE; ++i)
+	{
+		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i];
+		checksum += convert_to_byte_stream.output[i];
+	}
+	checksum += TELEM_PACKET_CHECKSUM_OFFSET;
+
+	rt_msg.checksum = checksum;
+
+	rt_telemetry_send_blocking(ch, &rt_msg);
+}
+
+static void telem_msg_m_n_float_matrix_send_blocking(rt_telemetry_comm_channel *ch, telem_msg_m_n_float_matrix *msg)
+{
+	rt_telemetry_msg rt_msg;
+
+	union {
+		telem_msg_m_n_float_matrix m;
+		uint8_t output[MAX_MSG_PAYLOAD_SIZE];
+	} convert_to_byte_stream;
+
+	convert_to_byte_stream.m = *msg;
+
+	rt_msg.start_byte = 's';
+
+	uint8_t i = 0U;
+	uint16_t checksum = 0U;
+
+	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE; ++i)
+	{
+		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i];
+		checksum += convert_to_byte_stream.output[i];
+	}
+	checksum += TELEM_PACKET_CHECKSUM_OFFSET;
+
+	rt_msg.checksum = checksum;
+
+	rt_telemetry_send_blocking(ch, &rt_msg);
+}
+
+static void telem_msg_m_n_int_matrix_send_blocking(rt_telemetry_comm_channel *ch, telem_msg_m_n_int_matrix *msg)
+{
+	rt_telemetry_msg rt_msg;
+
+	union {
+		telem_msg_m_n_int_matrix m;
+		uint8_t output[MAX_MSG_PAYLOAD_SIZE];
+	} convert_to_byte_stream;
+
+	convert_to_byte_stream.m = *msg;
+
+	rt_msg.start_byte = 's';
+
+	uint8_t i = 0U;
+	uint16_t checksum = 0U;
+
+	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE; ++i)
+	{
+		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i];
+		checksum += convert_to_byte_stream.output[i];
+	}
+	checksum += TELEM_PACKET_CHECKSUM_OFFSET;
+
+	rt_msg.checksum = checksum;
+
+	rt_telemetry_send_blocking(ch, &rt_msg);
+}
+
+void rt_telemetry_init_channel(rt_telemetry_comm_channel *ch, serialport *comm_port)
+{
+	ch->comm_port_ptr = comm_port;
+
+	uint32_t i = 0U;
+	uint32_t j = 0U;
+	for(i=0U; i<MAX_TELEM_MSG_TX_QUEUE_DEPTH; ++i)
+	{
+		ch->tx_message_buffer[i].start_byte = 0U;
+		for(j=0U; j<MAX_MSG_PAYLOAD_SIZE; ++j)
+		{
+			ch->tx_message_buffer[i].message_buffer[j] = 0U;
+		}
+		ch->tx_message_buffer[i].checksum = 0U;
+	}
+
+	ch->tx_buffer_latest_write_position = 0U;
+	ch->tx_buffer_latest_read_position = 0U;
+
+	ch->rx_buffer_latest_write_position = 0U;
+	ch->rx_buffer_latest_read_position = 0U;
+}
+
+/*
+	Not implemented yet:
+ */
+	
+// void send_telem_msg_string(rt_telemetry_comm_channel *ch, uint8_t *descriptor_string, uint8_t descriptor_string_len, uint8_t *string_to_transmit, uint8_t string_len)
+// {
+// 	telem_msg_string s;
+// 	create_telem_msg_string(&s, descriptor_string, descriptor_string_len, string_to_transmit, string_len);
+// 	telem_msg_string_push_to_tx_stack(ch, &s);
+// }
+
+// void send_telem_msg_n_floats(rt_telemetry_comm_channel *ch, uint8_t *descriptor_string, uint8_t descriptor_string_len, float *data_payload, uint8_t n_floats_len)
+// {
+// 	telem_msg_n_floats s;
+// 	create_telem_msg_n_floats(&s, descriptor_string, descriptor_string_len, data_payload, n_floats_len);
+// 	telem_msg_n_floats_push_to_tx_stack(ch, &s);
+// }
+
+// void send_telem_msg_n_ints(rt_telemetry_comm_channel *ch, uint8_t *descriptor_string, uint8_t descriptor_string_len, int32_t *data_payload, uint8_t n_ints_len)
+// {
+// 	telem_msg_n_ints s;
+// 	create_telem_msg_n_ints(&s, descriptor_string, descriptor_string_len, data_payload, n_ints_len);
+// 	telem_msg_n_ints_push_to_tx_stack(ch, &s);
+// }
+
+// void send_telem_msg_m_n_float_matrix(rt_telemetry_comm_channel *ch, uint8_t *descriptor_string, uint8_t descriptor_string_len, float *data_payload, uint8_t m, uint8_t n)
+// {
+// 	telem_msg_m_n_float_matrix s;
+// 	create_telem_msg_m_n_float_matrix(&s, descriptor_string, descriptor_string_len, data_payload, m, n);
+// 	telem_msg_m_n_float_matrix_push_to_tx_stack(ch, &s);
+// }
+
+// void send_telem_msg_m_n_int_matrix(rt_telemetry_comm_channel *ch, uint8_t *descriptor_string, uint8_t descriptor_string_len, int32_t *data_payload, uint8_t m, uint8_t n)
+// {
+// 	telem_msg_m_n_int_matrix s;
+// 	create_telem_msg_m_n_int_matrix(&s, descriptor_string, descriptor_string_len, data_payload, m, n);
+// 	telem_msg_m_n_int_matrix_push_to_tx_stack(ch, &s);
+// }
+
+/*
+	Working
+ */
+void send_telem_msg_string_blocking(rt_telemetry_comm_channel *ch, uint8_t *descriptor_string, uint8_t descriptor_string_len, uint8_t *string_to_transmit, uint8_t string_len)
+{
+	telem_msg_string s;
+	create_telem_msg_string(&s, descriptor_string, descriptor_string_len, string_to_transmit, string_len);
+	telem_msg_string_send_blocking(ch, &s);
+}
+
+void send_telem_msg_n_floats_blocking(rt_telemetry_comm_channel *ch, uint8_t *descriptor_string, uint8_t descriptor_string_len, float *data_payload, uint8_t n_floats_len)
+{
+	telem_msg_n_floats s;
+	create_telem_msg_n_floats(&s, descriptor_string, descriptor_string_len, data_payload, n_floats_len);
+	telem_msg_n_floats_send_blocking(ch, &s);
+}
+
+void send_telem_msg_n_ints_blocking(rt_telemetry_comm_channel *ch, uint8_t *descriptor_string, uint8_t descriptor_string_len, int32_t *data_payload, uint8_t n_ints_len)
+{
+	telem_msg_n_ints s;
+	create_telem_msg_n_ints(&s, descriptor_string, descriptor_string_len, data_payload, n_ints_len);
+	telem_msg_n_ints_send_blocking(ch, &s);
+}
+
+void send_telem_msg_m_n_float_matrix_blocking(rt_telemetry_comm_channel *ch, uint8_t *descriptor_string, uint8_t descriptor_string_len, float *data_payload, uint8_t m, uint8_t n)
+{
+	telem_msg_m_n_float_matrix s;
+	create_telem_msg_m_n_float_matrix(&s, descriptor_string, descriptor_string_len, data_payload, m, n);
+	telem_msg_m_n_float_matrix_send_blocking(ch, &s);
+}
+
+void send_telem_msg_m_n_int_matrix_blocking(rt_telemetry_comm_channel *ch, uint8_t *descriptor_string, uint8_t descriptor_string_len, int32_t *data_payload, uint8_t m, uint8_t n)
+{
+	telem_msg_m_n_int_matrix s;
+	create_telem_msg_m_n_int_matrix(&s, descriptor_string, descriptor_string_len, data_payload, m, n);
+	telem_msg_m_n_int_matrix_send_blocking(ch, &s);
+}

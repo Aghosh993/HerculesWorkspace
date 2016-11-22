@@ -10,6 +10,7 @@
 void rti_callback(void);
 void sci1_tx_callback(void);
 void sci1_rx_callback(void);
+void sci2_tx_callback(void);
 void sci2_rx_callback(void);
 
 #endif

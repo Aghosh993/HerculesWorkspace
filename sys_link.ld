@@ -11,7 +11,7 @@ ENTRY(_c_int00)
 _estack = 0x8040000;    /* end of 256K RAM */
 
 /* Generate a link error if heap and stack don't fit into RAM */
-_Min_Heap_Size = 0x64;      /* required amount of heap  */
+_Min_Heap_Size = 0x40;      /* required amount of heap  */
 
 /* Specify the memory areas */
 MEMORY

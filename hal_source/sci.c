@@ -778,7 +778,6 @@ void scilinGetConfigValue(sci_config_reg_t *config_reg, config_value_type_t type
 void sciHighLevelInterrupt(void)
 {
     uint32 vec = sciREG->INTVECT0;
-	uint8 byte;
 /* USER CODE BEGIN (28) */
 /* USER CODE END */
 
@@ -830,7 +829,6 @@ void sciHighLevelInterrupt(void)
 void linHighLevelInterrupt(void)
 {
     uint32 vec = scilinREG->INTVECT0;
-	uint8 byte;
 /* USER CODE BEGIN (35) */
 /* USER CODE END */
 

@@ -36,10 +36,10 @@ typedef struct {
  */
 void serialport_init(serialport *port, serialport_desc pd);
 
-int serialport_send_data_buffer(serialport *port, uint8_t *data, uint32_t len);
+uint32_t serialport_send_data_buffer(serialport *port, uint8_t *data, uint32_t len);
 void serialport_send_data_buffer_blocking(serialport *port, uint8_t *data, uint32_t len);
 
-int serialport_receive_data_buffer(serialport *port, uint8_t *data, uint32_t len);
+uint32_t serialport_receive_data_buffer(serialport *port, uint8_t *data, uint32_t len);
 void serialport_receive_data_buffer_blocking(serialport *port, uint8_t *data, uint32_t len);
 
 void serialport_highlevel_tx_isr(serialport *port);

@@ -37,9 +37,11 @@ int main(void)
 
 	ftdi_dbg_port_ptr = &ftdi_dbg_port;
 	tm4c_comms_aux_port_ptr = &tm4c_comms_aux_port;
+	rt_telemetry_comm_channel telem0;
 
 	serialport_hal_init();
 	serialport_init(ftdi_dbg_port_ptr, PORT1);
+	rt_telemetry_init_channel(&telem0, ftdi_dbg_port_ptr);
 	// serialport_init(tm4c_comms_aux_port_ptr, PORT2);
 
 	/*
@@ -75,12 +77,32 @@ int main(void)
 
 	_enable_interrupts();
 
-	serialport_send_data_buffer_blocking(ftdi_dbg_port_ptr, (uint8_t *)"\r\nAP Initialized. Enabled all configured interrupts, proceeding to main loop.\r\n", 79U);
+	// serialport_send_data_buffer_blocking(ftdi_dbg_port_ptr, (uint8_t *)"\r\nAP Initialized. Enabled all configured interrupts, proceeding to main loop.\r\n", 79U);
 
-	uint8_t msgbuf[100U];
+	// uint8_t msgbuf[100U];
+
+	// uint8_t *testmsg = (uint8_t *)"Hello!!!\r\n";
+	// uint8_t *testmsg1 = (uint8_t *)"Alive and well\r\n";
+	// send_telem_msg_string_blocking(&telem0, "Test_msg0", 9, testmsg, 10U);
+
+	float arr[3];
+	arr[0] = 2.5f;
+	arr[1] = -3.14159f;
+	arr[2] = 4.5f;
+
+	int arr2[3];
+	arr2[0] = -42;
+	arr2[1] = 9001;
+	arr2[2] = -3;
+	// send_telem_msg_n_ints_blocking(&telem0, (uint8_t *)"stuff1", 6, arr2, 3U);
+	send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"coords", 6, arr, 3U);
 
 	while(1)
 	{
+		/*
+			Firmware functionality tests
+		 */
+		// send_telem_msg_string_blocking(&telem0, "Test_msg1", 9, testmsg1, 16U);		
 		// while(!canIsRxMessageArrived(canREG3, canMESSAGE_BOX10))
 		// {
 		// 	serialport_send_data_buffer_blocking(ftdi_dbg_port_ptr, (uint8_t *)"Business as usual...\r\n", 22);
@@ -90,8 +112,17 @@ int main(void)
 		// {
 		// 	serialport_send_data_buffer_blocking(ftdi_dbg_port_ptr, (uint8_t *)"Received CAN packet :)\r\n", 24);
 		// }
-		serialport_receive_data_buffer_blocking(ftdi_dbg_port_ptr, msgbuf, 1);
-		serialport_send_data_buffer_blocking(ftdi_dbg_port_ptr, msgbuf, 1);
+
+		// Simple polling echo:
+		// serialport_receive_data_buffer_blocking(ftdi_dbg_port_ptr, msgbuf, 1);
+		// serialport_send_data_buffer_blocking(ftdi_dbg_port_ptr, msgbuf, 1);
+
+		// Simple asynch echo:
+		// int bytes_read = serialport_receive_data_buffer(ftdi_dbg_port_ptr, msgbuf, 100); // Attempt to read 1 byte
+		// if(bytes_read > 0) // If bytes_read is nonzero, we have a byte!
+		// {
+		// 	serialport_send_data_buffer(ftdi_dbg_port_ptr, msgbuf, bytes_read);		
+		// }
 	}
 /* USER CODE END */
 }

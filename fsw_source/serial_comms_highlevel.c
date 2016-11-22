@@ -26,7 +26,7 @@ void serialport_init(serialport *port, serialport_desc pd)
 	port->port_state = PORT_IDLE;
 }
 
-int serialport_send_data_buffer(serialport *port, uint8_t *data, uint32_t len)
+uint32_t serialport_send_data_buffer(serialport *port, uint8_t *data, uint32_t len)
 {
 	uint32_t i = 0U;
 
@@ -81,7 +81,7 @@ void serialport_send_data_buffer_blocking(serialport *port, uint8_t *data, uint3
 	}
 }
 
-int serialport_receive_data_buffer(serialport *port, uint8_t *data, uint32_t len)
+uint32_t serialport_receive_data_buffer(serialport *port, uint8_t *data, uint32_t len)
 {
 	uint8_t i = 0U;
 	/*
