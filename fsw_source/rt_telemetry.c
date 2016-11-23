@@ -10,7 +10,7 @@ static void rt_telemetry_push_to_tx_stack(rt_telemetry_comm_channel *ch, rt_tele
 {
 }
 
-static void rt_telemetry_send_blocking(rt_telemetry_comm_channel *ch, rt_telemetry_msg *m)
+static void rt_telemetry_send_blocking(rt_telemetry_comm_channel *ch, rt_telemetry_msg *m, uint8_t data_payload_location, uint8_t data_payload_len, uint8_t bytes_per_payload_element)
 {
 	union {
 		rt_telemetry_msg m;
@@ -19,10 +19,17 @@ static void rt_telemetry_send_blocking(rt_telemetry_comm_channel *ch, rt_telemet
 
 	convert_to_tx_byte_stream.m = *m;
 
-	serialport_send_data_buffer_blocking(ch->comm_port_ptr, convert_to_tx_byte_stream.output, 2+m->message_buffer[0U]); // Send start byte + descriptor string
-	serialport_send_data_buffer_blocking(ch->comm_port_ptr, &(convert_to_tx_byte_stream.output[DESCRIPTOR_STRING_MAX_LEN+2]), // Send msg id, data payload length and data payload
-															(4U*(convert_to_tx_byte_stream.output[DESCRIPTOR_STRING_MAX_LEN+3]))+2U);
-	serialport_send_data_buffer_blocking(ch->comm_port_ptr, &convert_to_tx_byte_stream.output[MAX_MSG_PAYLOAD_SIZE+1U], 2U); // Send Checksum
+	// Send start byte + descriptor string:
+	serialport_send_data_buffer_blocking(ch->comm_port_ptr, convert_to_tx_byte_stream.output, 2+m->message_buffer[0U]); 
+
+	// Send msg id, and all bytes going up to but excluding data payload:
+	serialport_send_data_buffer_blocking(ch->comm_port_ptr, &(convert_to_tx_byte_stream.output[DESCRIPTOR_STRING_MAX_LEN+2]), data_payload_location - (DESCRIPTOR_STRING_MAX_LEN + 2));
+	
+	// Send data payload:
+	serialport_send_data_buffer_blocking(ch->comm_port_ptr, &(convert_to_tx_byte_stream.output[data_payload_location]), bytes_per_payload_element*data_payload_len);
+
+	// Send Checksum bytes:
+	serialport_send_data_buffer_blocking(ch->comm_port_ptr, &convert_to_tx_byte_stream.output[MAX_MSG_PAYLOAD_SIZE+1U], 2U); 
 }
 
 static void telem_msg_string_push_to_tx_stack(rt_telemetry_comm_channel *ch, telem_msg_string *msg)
@@ -190,7 +197,7 @@ static void telem_msg_string_send_blocking(rt_telemetry_comm_channel *ch, telem_
 
 	rt_msg.checksum = checksum;
 
-	rt_telemetry_send_blocking(ch, &rt_msg);
+	rt_telemetry_send_blocking(ch, &rt_msg, DESCRIPTOR_STRING_MAX_LEN+4, msg->string_len, 1U);
 }
 
 static void telem_msg_n_floats_send_blocking(rt_telemetry_comm_channel *ch, telem_msg_n_floats *msg)
@@ -208,17 +215,18 @@ static void telem_msg_n_floats_send_blocking(rt_telemetry_comm_channel *ch, tele
 
 	uint8_t i = 0U;
 	uint16_t checksum = 0U;
+	uint8_t padding_offset = 4-(3U+DESCRIPTOR_STRING_MAX_LEN)%4;
 
-	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE; ++i)
+	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE-padding_offset; ++i)
 	{
-		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i];
-		checksum += convert_to_byte_stream.output[i];
+		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i+padding_offset];
+		checksum += convert_to_byte_stream.output[i+padding_offset];
 	}
 	checksum += TELEM_PACKET_CHECKSUM_OFFSET;
 
 	rt_msg.checksum = checksum;
 
-	rt_telemetry_send_blocking(ch, &rt_msg);
+	rt_telemetry_send_blocking(ch, &rt_msg, DESCRIPTOR_STRING_MAX_LEN+4, msg->init_data.message_header.n_floats_len, 4U);
 }
 
 static void telem_msg_n_ints_send_blocking(rt_telemetry_comm_channel *ch, telem_msg_n_ints *msg)
@@ -236,17 +244,18 @@ static void telem_msg_n_ints_send_blocking(rt_telemetry_comm_channel *ch, telem_
 
 	uint8_t i = 0U;
 	uint16_t checksum = 0U;
+	uint8_t padding_offset = 4-(3U+DESCRIPTOR_STRING_MAX_LEN)%4;
 
-	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE; ++i)
+	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE-padding_offset; ++i)
 	{
-		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i];
-		checksum += convert_to_byte_stream.output[i];
+		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i+padding_offset];
+		checksum += convert_to_byte_stream.output[i+padding_offset];
 	}
 	checksum += TELEM_PACKET_CHECKSUM_OFFSET;
 
 	rt_msg.checksum = checksum;
 
-	rt_telemetry_send_blocking(ch, &rt_msg);
+	rt_telemetry_send_blocking(ch, &rt_msg, DESCRIPTOR_STRING_MAX_LEN+4, msg->init_data.message_header.n_ints_len, 4U);
 }
 
 static void telem_msg_m_n_float_matrix_send_blocking(rt_telemetry_comm_channel *ch, telem_msg_m_n_float_matrix *msg)
@@ -264,17 +273,18 @@ static void telem_msg_m_n_float_matrix_send_blocking(rt_telemetry_comm_channel *
 
 	uint8_t i = 0U;
 	uint16_t checksum = 0U;
+	uint8_t padding_offset = 4-(4U+DESCRIPTOR_STRING_MAX_LEN)%4;
 
-	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE; ++i)
+	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE - padding_offset; ++i)
 	{
-		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i];
-		checksum += convert_to_byte_stream.output[i];
+		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i+padding_offset];
+		checksum += convert_to_byte_stream.output[i+padding_offset];
 	}
 	checksum += TELEM_PACKET_CHECKSUM_OFFSET;
 
 	rt_msg.checksum = checksum;
 
-	rt_telemetry_send_blocking(ch, &rt_msg);
+	rt_telemetry_send_blocking(ch, &rt_msg, DESCRIPTOR_STRING_MAX_LEN+5, msg->init_data.message_header.m * msg->init_data.message_header.n, 4U);
 }
 
 static void telem_msg_m_n_int_matrix_send_blocking(rt_telemetry_comm_channel *ch, telem_msg_m_n_int_matrix *msg)
@@ -292,17 +302,18 @@ static void telem_msg_m_n_int_matrix_send_blocking(rt_telemetry_comm_channel *ch
 
 	uint8_t i = 0U;
 	uint16_t checksum = 0U;
+	uint8_t padding_offset = 4-(4U+DESCRIPTOR_STRING_MAX_LEN)%4;
 
-	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE; ++i)
+	for(i=0U; i<MAX_MSG_PAYLOAD_SIZE - padding_offset; ++i)
 	{
-		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i];
-		checksum += convert_to_byte_stream.output[i];
+		rt_msg.message_buffer[i] = convert_to_byte_stream.output[i+padding_offset];
+		checksum += convert_to_byte_stream.output[i+padding_offset];
 	}
 	checksum += TELEM_PACKET_CHECKSUM_OFFSET;
 
 	rt_msg.checksum = checksum;
 
-	rt_telemetry_send_blocking(ch, &rt_msg);
+	rt_telemetry_send_blocking(ch, &rt_msg, DESCRIPTOR_STRING_MAX_LEN+5, msg->init_data.message_header.m * msg->init_data.message_header.n, 4U);
 }
 
 void rt_telemetry_init_channel(rt_telemetry_comm_channel *ch, serialport *comm_port)

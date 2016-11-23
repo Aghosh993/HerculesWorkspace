@@ -11,15 +11,15 @@ ENTRY(_c_int00)
 _estack = 0x8040000;    /* end of 256K RAM */
 
 /* Generate a link error if heap and stack don't fit into RAM */
-_Min_Heap_Size = 0x40;      /* required amount of heap  */
+_Min_Heap_Size = 0x400;      /* required amount of heap  */
 
 /* Specify the memory areas */
 MEMORY
 {
   VECTORS(rx)     : ORIGIN = 0x00000000, LENGTH = 0x00000020
   FLASH  (rx)     : ORIGIN = 0x00000020, LENGTH = (0x0017FFE0 + 0x00180000)
-  CPU_STACK (rw)  : ORIGIN = 0x08000000, LENGTH = 0x00001500 /* Stack is configured in sys_core.asm */
-  RAM (xrw)       : ORIGIN = 0x08001500, LENGTH = 0x0003EB00
+  CPU_STACK (rw)  : ORIGIN = 0x08000000, LENGTH = 0x00020500 /* Stack is configured in sys_core.asm */
+  RAM (xrw)       : ORIGIN = 0x08020500, LENGTH = 0x0001fb00
   MEMORY_B1 (rx)  : ORIGIN = 0x60000000, LENGTH = 0K
 }
 
