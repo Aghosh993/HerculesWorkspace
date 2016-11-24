@@ -8,6 +8,7 @@
 #include "Quadcopter_PWM_HAL.h"
 #include "rt_telemetry.h"
 #include "misc_utils.h"
+#include "pwm_input.h"
 
 #include <stdio.h>
 
@@ -79,49 +80,72 @@ int main(void)
 
 	_enable_interrupts();
 
-	uint8_t *testmsg1 = (uint8_t *)"Alive and well\r\n";
+	// uint8_t *testmsg1 = (uint8_t *)"Alive and well\r\n";
 
-	int32_t arr1[3];
-	arr1[0] = -42;
-	arr1[1] = 9001;
-	arr1[2] = -3;
+	// int32_t arr1[3];
+	// arr1[0] = -42;
+	// arr1[1] = 9001;
+	// arr1[2] = -3;
 
-	float arr2[3];
-	arr2[0] = 2.5f;
-	arr2[1] = -3.14159f;
-	arr2[2] = 4.5f;
+	// float arr2[3];
+	// arr2[0] = 2.5f;
+	// arr2[1] = -3.14159f;
+	// arr2[2] = 4.5f;
 
-	float arr3[9];
-	arr3[0] = 10.0f;
-	arr3[1] = -1.1f;
-	arr3[2] = 2.0f;
-	arr3[3] = 3.0f;
-	arr3[4] = -5.0f;
-	arr3[5] = 10.0f;
-	arr3[6] = 2.5f;
-	arr3[7] = -1.25f;
-	arr3[8] = 1.4f;
+	// float arr3[9];
+	// arr3[0] = 10.0f;
+	// arr3[1] = -1.1f;
+	// arr3[2] = 2.0f;
+	// arr3[3] = 3.0f;
+	// arr3[4] = -5.0f;
+	// arr3[5] = 10.0f;
+	// arr3[6] = 2.5f;
+	// arr3[7] = -1.25f;
+	// arr3[8] = 1.4f;
 
-	int32_t arr4[10];
-	arr4[0] = -5;
-	arr4[1] = 10;
-	arr4[2] = 15;
-	arr4[3] = 50;
-	arr4[4] = -100;
-	arr4[5] = 500;
-	arr4[6] = 15;
-	arr4[7] = 20;
-	arr4[8] = -2;
-	arr4[9] = 125;
+	// int32_t arr4[10];
+	// arr4[0] = -5;
+	// arr4[1] = 10;
+	// arr4[2] = 15;
+	// arr4[3] = 50;
+	// arr4[4] = -100;
+	// arr4[5] = 500;
+	// arr4[6] = 15;
+	// arr4[7] = 20;
+	// arr4[8] = -2;
+	// arr4[9] = 125;
 
-	send_telem_msg_string_blocking(&telem0, "msg0", 4, testmsg1, 16U);
-	send_telem_msg_n_ints_blocking(&telem0, (uint8_t *)"stuff1", 6, arr1, 3U);
-	send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"coords", 6, arr2, 3U);
-	send_telem_msg_m_n_float_matrix_blocking(&telem0, (uint8_t *)"mat_flt", 7, arr3, 3U, 3U);
-	send_telem_msg_m_n_int_matrix_blocking(&telem0, (uint8_t *)"mat_int", 7, arr4, 3U, 3U);
+	// send_telem_msg_string_blocking(&telem0, "msg0", 4, testmsg1, 16U);
+	// send_telem_msg_n_ints_blocking(&telem0, (uint8_t *)"stuff1", 6, arr1, 3U);
+	// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"coords", 6, arr2, 3U);
+	// send_telem_msg_m_n_float_matrix_blocking(&telem0, (uint8_t *)"mat_flt", 7, arr3, 3U, 3U);
+	// send_telem_msg_m_n_int_matrix_blocking(&telem0, (uint8_t *)"mat_int", 7, arr4, 3U, 3U);
+
+	pwm_info_t rc_cap0;
+	pwm_info_t rc_cap1;
+	pwm_info_t rc_cap2;
+	pwm_info_t rc_cap3;
+	pwm_info_t rc_cap4;
+
+	int32_t duty[5];
 
 	while(1)
 	{
+		// capGetSignal(hetRAM1, cap0, &rc_cap);
+		pwmGetSignalHigherPrecision(hetRAM1, cap0, &rc_cap0);
+		pwmGetSignalHigherPrecision(hetRAM1, cap1, &rc_cap1);
+		pwmGetSignalHigherPrecision(hetRAM2, cap0, &rc_cap2);
+		pwmGetSignalHigherPrecision(hetRAM2, cap1, &rc_cap3);
+		pwmGetSignalHigherPrecision(hetRAM1, cap2, &rc_cap4);
+
+		duty[0] = (int32_t)rc_cap0.duty_us;
+		duty[1] = (int32_t)rc_cap1.duty_us;
+		duty[2] = (int32_t)rc_cap2.duty_us;
+		duty[3] = (int32_t)rc_cap3.duty_us;
+		duty[4] = (int32_t)rc_cap4.duty_us;
+
+		send_telem_msg_n_ints_blocking(&telem0, (uint8_t *)"rc_pwm", 6, &duty, 5);
+		insert_delay(100);
 		/*
 			Firmware functionality tests
 		 */

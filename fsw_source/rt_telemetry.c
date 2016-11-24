@@ -32,7 +32,7 @@ static void rt_telemetry_send_blocking(rt_telemetry_comm_channel *ch, rt_telemet
 	serialport_send_data_buffer_blocking(ch->comm_port_ptr, &convert_to_tx_byte_stream.output[MAX_MSG_PAYLOAD_SIZE+1U], 2U); 
 }
 
-static void telem_msg_string_push_to_tx_stack(rt_telemetry_comm_channel *ch, telem_msg_string *msg)
+static void telem_msg_string_push_to_tx_queue(rt_telemetry_comm_channel *ch, telem_msg_string *msg)
 {
 	rt_telemetry_msg rt_msg;
 
@@ -343,12 +343,12 @@ void rt_telemetry_init_channel(rt_telemetry_comm_channel *ch, serialport *comm_p
 	Not implemented yet:
  */
 
-// void send_telem_msg_string(rt_telemetry_comm_channel *ch, uint8_t *descriptor_string, uint8_t descriptor_string_len, uint8_t *string_to_transmit, uint8_t string_len)
-// {
-// 	telem_msg_string s;
-// 	create_telem_msg_string(&s, descriptor_string, descriptor_string_len, string_to_transmit, string_len);
-// 	telem_msg_string_push_to_tx_stack(ch, &s);
-// }
+void send_telem_msg_string(rt_telemetry_comm_channel *ch, uint8_t *descriptor_string, uint8_t descriptor_string_len, uint8_t *string_to_transmit, uint8_t string_len)
+{
+	telem_msg_string s;
+	create_telem_msg_string(&s, descriptor_string, descriptor_string_len, string_to_transmit, string_len);
+	telem_msg_string_push_to_tx_queue(ch, &s);
+}
 
 // void send_telem_msg_n_floats(rt_telemetry_comm_channel *ch, uint8_t *descriptor_string, uint8_t descriptor_string_len, float *data_payload, uint8_t n_floats_len)
 // {

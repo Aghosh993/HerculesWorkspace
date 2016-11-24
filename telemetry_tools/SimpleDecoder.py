@@ -134,11 +134,13 @@ class SimpleProtocolDecoder:
 def main():
 
 	s = SimpleProtocolDecoder(sys.argv[1], 115200)
-	s.get_string_message()
-	s.get_n_ints_message()
-	s.get_n_floats_message()
-	s.get_m_n_float_matrix_message()
-	s.get_m_n_int_matrix_message()
+	# s.get_string_message()
+	# s.get_n_ints_message()
+	# s.get_n_floats_message()
+	# s.get_m_n_float_matrix_message()
+	# s.get_m_n_int_matrix_message()
+	while True:
+		s.get_n_ints_message()
 
 if __name__ == '__main__':
 	main()
