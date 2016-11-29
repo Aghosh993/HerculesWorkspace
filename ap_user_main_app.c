@@ -9,8 +9,13 @@
 #include "rt_telemetry.h"
 #include "misc_utils.h"
 #include "pwm_input.h"
+#include "imu.h"
+#include "mission_timekeeper.h"
+#include "sys_leds.h"
 
 #include <stdio.h>
+
+// #define ENABLE_MOTORS	100
 
 /* USER CODE END */
 
@@ -18,7 +23,7 @@ serialport ftdi_dbg_port, tm4c_comms_aux_port;
 serialport *ftdi_dbg_port_ptr;
 serialport *tm4c_comms_aux_port_ptr;
 
-// float arr3[9000];
+rt_telemetry_comm_channel telem0;
 
 int main(void)
 {
@@ -30,28 +35,33 @@ int main(void)
 	systemInit();
 	muxInit();
 
+	sys_led_init(); // Initialize the MibSPI in GPIO mode to be able to use system LEDs on interface board.
+
+	/*
+		Set up 1 kHz RTI interrupt:
+	 */
 	rtiInit();
 	rtiEnableNotification(rtiNOTIFICATION_COMPARE0);
 	rtiStartCounter(rtiCOUNTER_BLOCK0);
 
+	/*
+		Set up Halcogen-derived vector table and priorities:
+	 */
 	vimInit();
 
 	// Initialize all configured serial ports, including HAL subsystems + data structs for asynch tx/rx:
 
 	ftdi_dbg_port_ptr = &ftdi_dbg_port;
 	tm4c_comms_aux_port_ptr = &tm4c_comms_aux_port;
-	rt_telemetry_comm_channel telem0;
 
 	serialport_hal_init();
 	serialport_init(ftdi_dbg_port_ptr, PORT1);
 	rt_telemetry_init_channel(&telem0, ftdi_dbg_port_ptr);
-	// serialport_init(tm4c_comms_aux_port_ptr, PORT2);
 
 	/*
 	* Initialize the serial port (SCI module) and enable SCI Receive interrupts:
 	* (Explanation: mibSPI peripheral must be initialized as well since SCI requires mibSPI pins)
-	*/
-	mibspiInit();
+	*/	
 	
 	QuadRotor_PWM_init();
 	QuadRotor_motor1_start();
@@ -59,10 +69,23 @@ int main(void)
 	QuadRotor_motor3_start();
 	QuadRotor_motor4_start();
 
-	QuadRotor_motor1_setDuty(0.25f);
-	QuadRotor_motor2_setDuty(0.50f); 
-	QuadRotor_motor3_setDuty(0.75f);
-	QuadRotor_motor4_setDuty(0.85f);
+	/*
+		All motors stopped by default:
+	 */
+	QuadRotor_motor1_setDuty(0.0f);
+	QuadRotor_motor2_setDuty(0.0f); 
+	QuadRotor_motor3_setDuty(0.0f);
+	QuadRotor_motor4_setDuty(0.0f);
+
+	/*
+		Initialize the PWM input functionality. Technically this just makes a duplicate call to hetInit and zeroes the
+		edge counter that's used for LOS (Loss of Signal) detection functionality.
+	 */
+	pwm_input_init();
+
+	/*
+		CAN Bus initialization for communications to the TM4C:
+	 */
 
 	canInit();
 	uint8_t can_msg[9] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
@@ -78,76 +101,111 @@ int main(void)
 	can_id_default = canGetID(canREG3, canMESSAGE_BOX10);
 	canUpdateID(canREG3, canMESSAGE_BOX10, 0xC00000AB);
 
+	imu_hal_init();
+	init_mission_timekeeper();
+
 	_enable_interrupts();
 
-	// uint8_t *testmsg1 = (uint8_t *)"Alive and well\r\n";
+	imu_raw_data_struct mpu_data;
+	int32_t imudata_telemetry_output[7];
 
-	// int32_t arr1[3];
-	// arr1[0] = -42;
-	// arr1[1] = 9001;
-	// arr1[2] = -3;
+	uint8_t telemetry_250hz_flag = create_flag(3U);
+	uint8_t rc_update_50hz_flag = create_flag(19U);
+	uint8_t imu_sample_1000hz_flag = create_flag(0U);
+	uint8_t rc_watchdog_10hz_flag = create_flag(99U);
+	uint8_t heartbeat_1hz_flag = create_flag(999U);
+	
+	sys_ledOn(SYS_LED1);
+	sys_ledOff(SYS_LED2);
 
-	// float arr2[3];
-	// arr2[0] = 2.5f;
-	// arr2[1] = -3.14159f;
-	// arr2[2] = 4.5f;
+	timekeeper_delay(5000U);
 
-	// float arr3[9];
-	// arr3[0] = 10.0f;
-	// arr3[1] = -1.1f;
-	// arr3[2] = 2.0f;
-	// arr3[3] = 3.0f;
-	// arr3[4] = -5.0f;
-	// arr3[5] = 10.0f;
-	// arr3[6] = 2.5f;
-	// arr3[7] = -1.25f;
-	// arr3[8] = 1.4f;
-
-	// int32_t arr4[10];
-	// arr4[0] = -5;
-	// arr4[1] = 10;
-	// arr4[2] = 15;
-	// arr4[3] = 50;
-	// arr4[4] = -100;
-	// arr4[5] = 500;
-	// arr4[6] = 15;
-	// arr4[7] = 20;
-	// arr4[8] = -2;
-	// arr4[9] = 125;
-
-	// send_telem_msg_string_blocking(&telem0, "msg0", 4, testmsg1, 16U);
-	// send_telem_msg_n_ints_blocking(&telem0, (uint8_t *)"stuff1", 6, arr1, 3U);
-	// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"coords", 6, arr2, 3U);
-	// send_telem_msg_m_n_float_matrix_blocking(&telem0, (uint8_t *)"mat_flt", 7, arr3, 3U, 3U);
-	// send_telem_msg_m_n_int_matrix_blocking(&telem0, (uint8_t *)"mat_int", 7, arr4, 3U, 3U);
-
-	pwm_info_t rc_cap0;
-	pwm_info_t rc_cap1;
-	pwm_info_t rc_cap2;
-	pwm_info_t rc_cap3;
-	pwm_info_t rc_cap4;
-
-	int32_t duty[5];
+	rc_joystick_data_struct rc_data;
+	init_rc_inputs(&rc_data);
 
 	while(1)
 	{
-		// capGetSignal(hetRAM1, cap0, &rc_cap);
-		pwmGetSignalHigherPrecision(hetRAM1, cap0, &rc_cap0);
-		pwmGetSignalHigherPrecision(hetRAM1, cap1, &rc_cap1);
-		pwmGetSignalHigherPrecision(hetRAM2, cap0, &rc_cap2);
-		pwmGetSignalHigherPrecision(hetRAM2, cap1, &rc_cap3);
-		pwmGetSignalHigherPrecision(hetRAM1, cap2, &rc_cap4);
+		if(get_flag_state(heartbeat_1hz_flag) == STATE_PENDING)
+		{
+			reset_flag(heartbeat_1hz_flag);
+			sys_ledToggle(SYS_LED2); // Toggle green LED on interface board as heartbeat
+		}
 
-		duty[0] = (int32_t)rc_cap0.duty_us;
-		duty[1] = (int32_t)rc_cap1.duty_us;
-		duty[2] = (int32_t)rc_cap2.duty_us;
-		duty[3] = (int32_t)rc_cap3.duty_us;
-		duty[4] = (int32_t)rc_cap4.duty_us;
+		if(get_flag_state(imu_sample_1000hz_flag) == STATE_PENDING)
+		{
+			reset_flag(imu_sample_1000hz_flag);
 
-		send_telem_msg_n_ints_blocking(&telem0, (uint8_t *)"rc_pwm", 6, &duty, 5);
-		insert_delay(100);
+			if(get_flag_state(rc_watchdog_10hz_flag) == STATE_PENDING)
+			{
+				reset_flag(rc_watchdog_10hz_flag);
+				rc_input_validity_watchdog_callback();
+			}
+			
+			if(get_raw_imu_data(&mpu_data)==0)
+			{
+				imudata_telemetry_output[0] = (int32_t)mpu_data.accel_data[0];
+				imudata_telemetry_output[1] = (int32_t)mpu_data.accel_data[1];
+				imudata_telemetry_output[2] = (int32_t)mpu_data.accel_data[2];
+
+				imudata_telemetry_output[3] = (int32_t)mpu_data.temp_sensor_data;
+
+				imudata_telemetry_output[4] = (int32_t)mpu_data.gyro_data[0];
+				imudata_telemetry_output[5] = (int32_t)mpu_data.gyro_data[1];
+				imudata_telemetry_output[6] = (int32_t)mpu_data.gyro_data[2];
+
+				sys_ledToggle(SYS_LED1);
+			}
+			
+			if(get_flag_state(telemetry_250hz_flag) == STATE_PENDING)
+			{
+				reset_flag(telemetry_250hz_flag);
+				send_telem_msg_n_ints_blocking(&telem0, (uint8_t *)"mpudata", 7, imudata_telemetry_output, 7);
+
+				if(get_flag_state(rc_update_50hz_flag) == STATE_PENDING)
+				{
+					reset_flag(rc_update_50hz_flag);
+					get_rc_input_values(&rc_data);
+					if(rc_data.mode_switch_channel_validity == CHANNEL_VALID)
+					{
+						send_telem_msg_string_blocking(&telem0, (uint8_t *)"rcvalid", 7, "TRUE\r\n", 6);
+						send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"roll", 4, &(rc_data.roll_channel_value), 1);
+						send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"pitch", 5, &(rc_data.pitch_channel_value), 1);
+						send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"yaw", 3, &(rc_data.yaw_channel_value), 1);
+						send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"height", 6, &(rc_data.vertical_channel_value), 1);
+
+						if(get_ch5_mode(rc_data) == MODE_NORMAL)
+						{
+							send_telem_msg_string_blocking(&telem0, (uint8_t *)"CH5", 3, (uint8_t *)"Normal", 6);
+						}
+						if(get_ch5_mode(rc_data) == MODE_FAILSAFE)
+						{
+							send_telem_msg_string_blocking(&telem0, (uint8_t *)"CH5", 3, (uint8_t *)"FAILSAFE", 8);
+						}
+					}
+					else
+					{
+						/*
+							Emergency stop all motors upon loss of signal. In the future this may become something a bit more graceful...
+						 */
+						send_telem_msg_string_blocking(&telem0, (uint8_t *)"rcvalid", 7, "FALSE\r\n", 7);
+						QuadRotor_motor1_setDuty(0.05f);
+						QuadRotor_motor2_setDuty(0.05f);
+						QuadRotor_motor3_setDuty(0.05f);
+						QuadRotor_motor4_setDuty(0.05f);
+						// Wait for serial transmit of telemetry to complete, and give ESCs a chance to latch the last valid command prior to PWM shutdown.
+						insert_delay(100);
+						_disable_interrupts();
+						QuadRotor_motor1_stop();
+						QuadRotor_motor2_stop();
+						QuadRotor_motor3_stop();
+						QuadRotor_motor4_stop();
+						while(1);
+					}
+				}
+			}
+		}
 		/*
-			Firmware functionality tests
+			Serial port library and CAN functionality tests:
 		 */
 		// send_telem_msg_string_blocking(&telem0, "Test_msg1", 9, testmsg1, 16U);		
 		// while(!canIsRxMessageArrived(canREG3, canMESSAGE_BOX10))

@@ -14,10 +14,6 @@
 #define MIN_DUTY 0.0f
 #define MAX_DUTY 1.0f
 
-// #define MOTOR1_HET_CHANNEL	hetRAM1, pwm0
-// #define MOTOR2_HET_CHANNEL	hetRAM2, pwm2
-// #define MOTOR3_HET_CHANNEL	hetRAM1, pwm2
-// #define MOTOR4_HET_CHANNEL	hetRAM1, pwm1
 #define MOTOR1_HET_CHANNEL	hetRAM1, pwm0
 #define MOTOR2_HET_CHANNEL	hetRAM1, pwm1
 #define MOTOR3_HET_CHANNEL	hetRAM1, pwm2
@@ -39,6 +35,7 @@ void QuadRotor_motor3_stop(void);
 void QuadRotor_motor4_stop(void);
 
 // Functions to set PWM channels corresponding to individual motor/ESC's
+// Duty is a value from 0.0 to 1.0 with 1.0 representing full throttle/duty cycle command to the ESC/motor:
 void QuadRotor_motor1_setDuty(float duty);
 void QuadRotor_motor2_setDuty(float duty);
 void QuadRotor_motor3_setDuty(float duty);

@@ -13,11 +13,7 @@
 
 #include "interrupt_utils.h"
 
-#define DISABLE_INTERRUPTS _disable_IRQ()
-#define ENABLE_INTERRUPTS _enable_IRQ()
-
-#define MAX_NUM_FLAGS				254
-#define ERR_COULD_NOT_CREATE_FLAG 	255
+#define MAX_NUM_FLAGS				30U
 
 typedef enum {
 	STATE_NOT_SETUP,
@@ -32,22 +28,31 @@ typedef struct {
 	uint16_t ms;
 } time_val;
 
-typedef struct flag_struct_fwd_dec {
-	uint8_t flag_id;
+typedef struct {
 	flag_state state;
 	uint16_t millis_to_go;
 	uint16_t flag_interval_millis;
-	struct flag_struct_fwd_dec *next;
 } flag_data_struct;
 
 void init_mission_timekeeper(void);
-void flag_scheduler_callback(void);
+
+/*
+	Task scheduling functions:
+ */
 uint8_t create_flag(uint16_t interval_ms);
 flag_state get_flag_state(uint8_t flag_id);
 flag_state reset_flag(uint8_t flag_id);
 
-void update_mission_time_counter(void);
+/*
+	Delay/timekeeping functions:
+ */
 time_val get_mission_time(void);
 void timekeeper_delay(uint16_t millis);
+
+/*
+	Interrupt callback functions to be installed in a 1 kHz RTI/other Timer ISR
+ */
+void flag_scheduler_callback(void);
+void update_mission_time_counter(void);
 
 #endif /* MISSION_TIMEKEEPER_H_ */

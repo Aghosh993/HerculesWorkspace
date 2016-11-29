@@ -19,17 +19,29 @@ static void rt_telemetry_send_blocking(rt_telemetry_comm_channel *ch, rt_telemet
 
 	convert_to_tx_byte_stream.m = *m;
 
+	// // Send start byte + descriptor string:
+	// serialport_send_data_buffer_blocking(ch->comm_port_ptr, convert_to_tx_byte_stream.output, 2+m->message_buffer[0U]); 
+
+	// // Send msg id, and all bytes going up to but excluding data payload:
+	// serialport_send_data_buffer_blocking(ch->comm_port_ptr, &(convert_to_tx_byte_stream.output[DESCRIPTOR_STRING_MAX_LEN+2]), data_payload_location - (DESCRIPTOR_STRING_MAX_LEN + 2));
+	
+	// // Send data payload:
+	// serialport_send_data_buffer_blocking(ch->comm_port_ptr, &(convert_to_tx_byte_stream.output[data_payload_location]), bytes_per_payload_element*data_payload_len);
+
+	// // Send Checksum bytes:
+	// serialport_send_data_buffer_blocking(ch->comm_port_ptr, &convert_to_tx_byte_stream.output[MAX_MSG_PAYLOAD_SIZE+1U], 2U); 
+
 	// Send start byte + descriptor string:
-	serialport_send_data_buffer_blocking(ch->comm_port_ptr, convert_to_tx_byte_stream.output, 2+m->message_buffer[0U]); 
+	serialport_send_data_buffer(ch->comm_port_ptr, convert_to_tx_byte_stream.output, 2+m->message_buffer[0U]); 
 
 	// Send msg id, and all bytes going up to but excluding data payload:
-	serialport_send_data_buffer_blocking(ch->comm_port_ptr, &(convert_to_tx_byte_stream.output[DESCRIPTOR_STRING_MAX_LEN+2]), data_payload_location - (DESCRIPTOR_STRING_MAX_LEN + 2));
+	serialport_send_data_buffer(ch->comm_port_ptr, &(convert_to_tx_byte_stream.output[DESCRIPTOR_STRING_MAX_LEN+2]), data_payload_location - (DESCRIPTOR_STRING_MAX_LEN + 2));
 	
 	// Send data payload:
-	serialport_send_data_buffer_blocking(ch->comm_port_ptr, &(convert_to_tx_byte_stream.output[data_payload_location]), bytes_per_payload_element*data_payload_len);
+	serialport_send_data_buffer(ch->comm_port_ptr, &(convert_to_tx_byte_stream.output[data_payload_location]), bytes_per_payload_element*data_payload_len);
 
 	// Send Checksum bytes:
-	serialport_send_data_buffer_blocking(ch->comm_port_ptr, &convert_to_tx_byte_stream.output[MAX_MSG_PAYLOAD_SIZE+1U], 2U); 
+	serialport_send_data_buffer(ch->comm_port_ptr, &convert_to_tx_byte_stream.output[MAX_MSG_PAYLOAD_SIZE+1U], 2U); 
 }
 
 static void telem_msg_string_push_to_tx_queue(rt_telemetry_comm_channel *ch, telem_msg_string *msg)

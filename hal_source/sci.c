@@ -89,13 +89,13 @@ void sciInit(void)
     sciREG->GCR1 =  (uint32)((uint32)1U << 25U)  /* enable transmit */
                   | (uint32)((uint32)1U << 24U)  /* enable receive */
                   | (uint32)((uint32)1U << 5U)   /* internal clock (device has no clock pin) */
-                  | (uint32)((uint32)(2U-1U) << 4U)  /* number of stop bits */
+                  | (uint32)((uint32)(1U-1U) << 4U)  /* number of stop bits */
                   | (uint32)((uint32)0U << 3U)  /* even parity, otherwise odd */
                   | (uint32)((uint32)0U << 2U)  /* enable parity */
                   | (uint32)((uint32)1U << 1U);  /* asynchronous timing mode */
 
     /** - set baudrate */
-    sciREG->BRS = 26U;  /* baudrate */
+    sciREG->BRS = 6U;  /* baudrate */
 
     /** - transmission length */
     sciREG->FORMAT = 8U - 1U;  /* length */
@@ -144,7 +144,7 @@ void sciInit(void)
     /** - initialize global transfer variables */
     g_sciTransfer_t[0U].mode   = (uint32)1U << 8U;
     g_sciTransfer_t[0U].tx_length = 0U;
-  g_sciTransfer_t[0U].rx_length = 0U;
+	g_sciTransfer_t[0U].rx_length = 0U;
 
     /** - Finaly start SCI */
     sciREG->GCR1 |= 0x80U;
@@ -165,13 +165,13 @@ void sciInit(void)
     scilinREG->GCR1 = (uint32)((uint32)1U << 25U)  /* enable transmit */
                     | (uint32)((uint32)1U << 24U)  /* enable receive */
                     | (uint32)((uint32)1U << 5U)   /* internal clock (device has no clock pin) */
-                    | (uint32)((uint32)(2U-1U) << 4U)  /* number of stop bits */
+                    | (uint32)((uint32)(1U-1U) << 4U)  /* number of stop bits */
                     | (uint32)((uint32)0U << 3U)  /* even parity, otherwise odd */
                     | (uint32)((uint32)0U << 2U)  /* enable parity */
                     | (uint32)((uint32)1U << 1U);  /* asynchronous timing mode */
                     
     /** - set baudrate */
-    scilinREG->BRS = 26U;  /* baudrate */
+    scilinREG->BRS = 6U;  /* baudrate */
 
     /** - transmission length */
     scilinREG->FORMAT = 8U - 1U;  /* length */
@@ -226,7 +226,7 @@ void sciInit(void)
     /** - initialize global transfer variables */
     g_sciTransfer_t[1U].mode   = (uint32)1U << 8U;
     g_sciTransfer_t[1U].tx_length = 0U;
-  g_sciTransfer_t[1U].rx_length = 0U;
+	g_sciTransfer_t[1U].rx_length = 0U;
 
     /** - Finaly start SCILIN */
     scilinREG->GCR1 |= 0x80U;
@@ -272,7 +272,7 @@ void sciSetFunctional(sciBASE_t *sci, uint32 port)
 /* Requirements : HL_SR232 */
 void sciSetBaudrate(sciBASE_t *sci, uint32 baud)
 {
-    float64 vclk = 50.185 * 1000000.0;
+    float64 vclk = 49.505 * 1000000.0;
     uint32 f = ((sci->GCR1 & 2U) == 2U) ? 16U : 1U;
 	uint32 temp;
 	float64 temp2;
@@ -870,4 +870,3 @@ void linHighLevelInterrupt(void)
 }
 /* USER CODE BEGIN (37) */
 /* USER CODE END */
-

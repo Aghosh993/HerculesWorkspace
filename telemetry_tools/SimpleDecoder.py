@@ -133,7 +133,7 @@ class SimpleProtocolDecoder:
 
 def main():
 
-	s = SimpleProtocolDecoder(sys.argv[1], 115200)
+	s = SimpleProtocolDecoder(sys.argv[1], 460800)
 	# s.get_string_message()
 	# s.get_n_ints_message()
 	# s.get_n_floats_message()

@@ -111,22 +111,28 @@ void QuadRotor_motor4_stop(void)
 }
 
 // Functions to set PWM channels corresponding to individual motor/ESC's
+// Duty is a value from 0.0 to 1.0 with 1.0 representing full throttle/duty cycle command to the ESC/motor:
+
 void QuadRotor_motor1_setDuty(float duty)
 {
-	pwmSetDuty_HighPrecision(MOTOR1_HET_CHANNEL, duty);
+    float duty_scaled = (duty + 1.0f) * 0.050f;
+	pwmSetDuty_HighPrecision(MOTOR1_HET_CHANNEL, duty_scaled);
 }
 
 void QuadRotor_motor2_setDuty(float duty)
 {
-	pwmSetDuty_HighPrecision(MOTOR2_HET_CHANNEL, duty);
+    float duty_scaled = (duty + 1.0f) * 0.050f;
+	pwmSetDuty_HighPrecision(MOTOR2_HET_CHANNEL, duty_scaled);
 }
 
 void QuadRotor_motor3_setDuty(float duty)
 {
-	pwmSetDuty_HighPrecision(MOTOR3_HET_CHANNEL, duty);
+    float duty_scaled = (duty + 1.0f) * 0.050f;
+	pwmSetDuty_HighPrecision(MOTOR3_HET_CHANNEL, duty_scaled);
 }
 
 void QuadRotor_motor4_setDuty(float duty)
 {
-	pwmSetDuty_HighPrecision(MOTOR4_HET_CHANNEL, duty);
+    float duty_scaled = (duty + 1.0f) * 0.050f;
+	pwmSetDuty_HighPrecision(MOTOR4_HET_CHANNEL, duty_scaled);
 }
