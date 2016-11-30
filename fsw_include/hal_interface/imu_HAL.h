@@ -16,14 +16,6 @@
 
 #define TIMEOUT_COUNTER_MAX		200000
 
-#define AXIS_X	0
-#define AXIS_Y	1
-#define AXIS_Z	2
-
-#define AXIS_ROLL	AXIS_Y
-#define AXIS_PITCH	AXIS_X
-#define AXIS_YAW	AXIS_Z
-
 /*
 	MPU-9250 device I2C address:
  */
@@ -39,6 +31,7 @@
 #define MPU9250_GYRO_CONFIG			0x1B
 #define MPU9250_ACCEL_CONFIG		0x1C
 #define MPU9250_ACCEL_CONFIG2		0x1D
+	#define ACCEL_LPF_21_2_HZ			1
 
 /*
 	MPU-9250 device data register addresses:
@@ -82,6 +75,7 @@ typedef enum {
 typedef enum {
 	SCALE_250_DPS,
 	SCALE_500_DPS,
+	SCALE_1000_DPS,
 	SCALE_2000_DPS
 } GYRO_SCALE;
 
@@ -104,6 +98,8 @@ typedef struct {
 
 	MAG_SCALE mag_meas_scale;
 	float magnetometer_data[3];
+
+	float temp_sensor_deg_c;
 } imu_scaled_data_struct;
 
 typedef struct {
@@ -114,8 +110,6 @@ typedef struct {
 } imu_raw_data_struct;
 
 void imu_hal_init(void);
-
-void imu_i2c_bus_clear(void);
 
 void initialize_imu(ACC_SCALE a, GYRO_SCALE g, MAG_SCALE m, imu_scaled_data_struct* buf);
 

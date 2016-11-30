@@ -1,0 +1,7 @@
+#ifndef TELEM_CONFIG_H_
+#define TELEM_CONFIG_H_	1
+
+#define SEND_RC_INPUT_TELEMETRY		1
+#define SEND_MPU_IMU_TELEMETRY		1
+
+#endif

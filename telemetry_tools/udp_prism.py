@@ -1,18 +1,19 @@
-# prism.py
-# This script directly connects to a serial port and receives telemetry and looks for desired messages with a specific message ID and descriptor
+# udp_prism.py
+# This script connects to a UDP port and receives telemetry and looks for desired messages with a specific message ID and descriptor
 # Messages satisfying the above filter are then displayed on the CLI
 # (c) 2016, Abhimanyu Ghosh
 import os
 import sys
 import serial
 import argparse
+import socket
 
 from struct import *
 from time import sleep
 
 class telemetry_prism:
-	def __init__(self, port, baud):
-		self.serport = serial.Serial(port, baud)
+	def __init__(self, udp_port):
+		self.udp_port = udp_port
 
 	def get_string_message(self, desc):
 		st = self.serport.read(1)

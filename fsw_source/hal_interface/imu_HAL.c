@@ -36,6 +36,21 @@ static int32_t mpu9250_read_register(uint8_t reg_address)
 	return ret_val;
 }
 
+static void mpu9250_write_register(uint8_t reg_address, uint8_t value)
+{
+		i2cREG1->SAR = MPU9250_I2C_ADDR;
+		i2cREG1->CNT = 2;
+		i2cREG1->MDR |= (1<<5 | 1<<9 | 1<<10 | 1<<13);
+
+		while(!(i2cREG1->STR & (1<<4)));
+		i2cREG1->DXR = reg_address;
+
+		i2cREG1->MDR |= (1<<11);
+
+		while(!(i2cREG1->STR & (1<<4)));
+		i2cREG1->DXR = value;
+}
+
 static int32_t mpu9250_read_multiple_registers(uint8_t reg_base_address, uint8_t *buffer, uint8_t len)
 {
 	int32_t recv_byte = 0;
@@ -86,6 +101,79 @@ void imu_hal_init(void)
 	i2cREG1->MDR |= 1<<5;         // Clear Reset
 }
 
+void initialize_imu(ACC_SCALE a, GYRO_SCALE g, MAG_SCALE m, imu_scaled_data_struct* buf)
+{
+	buf->acc_meas_scale = a;
+	buf->gyro_meas_scale = g;
+	buf->mag_meas_scale = m;
+
+	#ifdef ACCEL_NO_LPF
+		uint8_t accel_config2_mask = 0U;
+	#endif
+	#ifdef ACCEL_LPF_218_1_HZ
+		uint8_t accel_config2_mask = 0 | (1<<3);
+	#endif
+	#ifdef ACCEL_LPF_99_HZ
+		uint8_t accel_config2_mask = 2 | (1<<3);
+	#endif
+	#ifdef ACCEL_LPF_44_8_HZ
+		uint8_t accel_config2_mask = 3 | (1<<3);
+	#endif
+	#ifdef ACCEL_LPF_21_2_HZ
+		uint8_t accel_config2_mask = 4 | (1<<3);
+	#endif
+	#ifdef ACCEL_LPF_10_2_HZ
+		uint8_t accel_config2_mask = 5 | (1<<3);
+	#endif
+	#ifdef ACCEL_LPF_5_05_HZ
+		uint8_t accel_config2_mask = 6 | (1<<3);
+	#endif
+	#ifdef ACCEL_DEC2_420_HZ
+		uint8_t accel_config_mask2 = 7 | (1<<3);
+	#endif
+
+	uint8_t accel_config_mask = 0U;
+	uint8_t gyro_config_mask = 0U;
+
+	switch(a)
+	{
+		case SCALE_2G:
+			accel_config_mask |= (0<<4) | (0<<3);
+			break;
+		case SCALE_4G:
+			accel_config_mask |= (0<<4) | (1<<3);
+			break;
+		case SCALE_8G:
+			accel_config_mask |= (1<<4) | (0<<3);
+			break;
+		case SCALE_16G:
+			accel_config_mask |= (1<<4) | (1<<3);
+			break;
+	}
+
+	switch(g)
+	{
+		case SCALE_250_DPS:
+			gyro_config_mask |= (0<<4) | (0<<3);
+			break;
+		case SCALE_500_DPS:
+			gyro_config_mask |= (0<<4) | (1<<3);
+			break;
+		case SCALE_1000_DPS:
+			gyro_config_mask |= (1<<4) | (0<<3);
+			break;
+		case SCALE_2000_DPS:
+			gyro_config_mask |= (1<<4) | (1<<3);
+			break;
+	}
+	// @Todo:
+	// Magnetometer setup not yet implemented!! 
+
+	mpu9250_write_register(MPU9250_ACCEL_CONFIG, accel_config_mask);
+	mpu9250_write_register(MPU9250_ACCEL_CONFIG2, accel_config2_mask);
+	mpu9250_write_register(MPU9250_GYRO_CONFIG, gyro_config_mask);
+}
+
 int get_raw_imu_data(imu_raw_data_struct* buffer)
 {
 	union {
@@ -120,14 +208,14 @@ int get_raw_imu_data(imu_raw_data_struct* buffer)
 		convert_sensor_data.sensor_data_input.sensor_raw_bytes[i*2U+1U] = temp_buf;
 	}
 
-	buffer->accel_data[AXIS_X] = convert_sensor_data.sensor_data_output.x_accel_data;
-	buffer->accel_data[AXIS_Y] = convert_sensor_data.sensor_data_output.y_accel_data;
-	buffer->accel_data[AXIS_Z] = convert_sensor_data.sensor_data_output.z_accel_data;
+	buffer->accel_data[0] = convert_sensor_data.sensor_data_output.x_accel_data;
+	buffer->accel_data[1] = convert_sensor_data.sensor_data_output.y_accel_data;
+	buffer->accel_data[2] = convert_sensor_data.sensor_data_output.z_accel_data;
 
 	buffer->temp_sensor_data = convert_sensor_data.sensor_data_output.temp_sensor_data;
 
-	buffer->gyro_data[AXIS_X] = convert_sensor_data.sensor_data_output.x_gyro_data;
-	buffer->gyro_data[AXIS_Y] = convert_sensor_data.sensor_data_output.y_gyro_data;
-	buffer->gyro_data[AXIS_Z] = convert_sensor_data.sensor_data_output.z_gyro_data;
+	buffer->gyro_data[0] = convert_sensor_data.sensor_data_output.x_gyro_data;
+	buffer->gyro_data[1] = convert_sensor_data.sensor_data_output.y_gyro_data;
+	buffer->gyro_data[2] = convert_sensor_data.sensor_data_output.z_gyro_data;
 	return 0;
 }

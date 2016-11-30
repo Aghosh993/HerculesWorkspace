@@ -8,7 +8,7 @@ JLINK_ROOT=../JLink_Linux_V480_x86_64/
 
 ARCHFLAGS=-mcpu=cortex-r4f -march=armv7-r -mfloat-abi=soft -mfpu=vfpv3-d16 -I$(TOOLCHAIN_ROOT)/arm-none-eabi/include  -g -gdwarf-3 -c -mlittle-endian -r
 CFLAGS=-nostdlib -I./hal_include/ -I./fsw_include -I./fsw_include/hal_interface -g -O0 -Wall
-LDFLAGS= --specs=nosys.specs -Wl,--gc-sections,-Map,$(TARGET).map,-Tsys_link.ld
+LDFLAGS=--specs=nosys.specs -Wl,--gc-sections,-Map,$(TARGET).map,-Tsys_link.ld
 
 CC=$(PREFIX)gcc
 LD=$(PREFIX)gcc
@@ -49,7 +49,7 @@ clean:
 	$(CC) -c $(ARCHFLAGS) $(CFLAGS) -o $@ $<
 
 $(TARGET).elf: $(ASM_OBJS) $(NEWLIB_ASM_OBJ) $(OBJ) $(USER_OBJ) $(FSW_OBJ)
-	$(LD) $(LDFLAGS) -o $@ $(OBJ) $(ASM_OBJS) $(NEWLIB_ASM_OBJ) $(USER_OBJ) $(FSW_OBJ)
+	$(LD) $(LDFLAGS) -o $@ $(OBJ) $(ASM_OBJS) $(NEWLIB_ASM_OBJ) $(USER_OBJ) $(FSW_OBJ) -lm
 
 %.srec: %.elf
 	$(OBJCOPY) -O srec $< $@

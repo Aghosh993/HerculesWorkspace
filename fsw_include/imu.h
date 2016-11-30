@@ -1,57 +1,39 @@
 #ifndef IMU_H
 #define IMU_H	1
 
+#include <math.h>
+
 #include <imu_HAL.h>
 
-// #define ACC_X_SIGN	-1.0f
-// #define ACC_Y_SIGN	1.0f
-// #define ACC_Z_SIGN	1.0f
+#define AXIS_X	1
+#define AXIS_Y	0
+#define AXIS_Z	2
 
-// #define MAG_X_SIGN	1.0f
-// #define MAG_Y_SIGN	1.0f
-// #define MAG_Z_SIGN	1.0f
+#define AXIS_ROLL	AXIS_Y
+#define AXIS_PITCH	AXIS_X
+#define AXIS_YAW	AXIS_Z
 
-// #define GYRO_X_SIGN	1.0f
-// #define GYRO_Y_SIGN	1.0f
-// #define GYRO_Z_SIGN	-1.0f
+#define ACC_X_SIGN	1.0f
+#define ACC_Y_SIGN	1.0f
+#define ACC_Z_SIGN	-1.0f
 
-// /*
-// 	m*s^-2 per digit:
-//  */
+#define GYRO_X_SIGN	-1.0f
+#define GYRO_Y_SIGN	-1.0f
+#define GYRO_Z_SIGN	1.0f
 
-// #define LSM303_ACC_SCALE_2G				0.00981f
-// #define LSM303_ACC_SCALE_4G				0.01962f
-// #define LSM303_ACC_SCALE_8G				0.03924f
-// #define LSM303_ACC_SCALE_16G			0.11772f
+#define ACC_SCALE_2G				9.810f*0.000061035f
+#define ACC_SCALE_4G				9.810f*0.00012207f
+#define ACC_SCALE_8G				9.810f*0.000244141f
+#define ACC_SCALE_16G				9.810f*0.000488281f
 
-// /*
-// 	Gauss per digit:
-//  */
+#define GYRO_SCALE_250_DPS			0.007629395f
+#define GYRO_SCALE_500_DPS			0.015258789f
+#define GYRO_SCALE_1000_DPS			0.030517578f
+#define GYRO_SCALE_2000_DPS			0.061035156f
 
-// #define LSM303_MAG_SCALE_1POINT3_GAUSS_XY	0.000909091f
-// #define LSM303_MAG_SCALE_1POINT9_GAUSS_XY	0.001169591f
-// #define LSM303_MAG_SCALE_2POINT5_GAUSS_XY	0.001492537f
-// #define LSM303_MAG_SCALE_4POINT0_GAUSS_XY	0.002222222f
-// #define LSM303_MAG_SCALE_4POINT7_GAUSS_XY	0.002500000f
-// #define LSM303_MAG_SCALE_5POINT6_GAUSS_XY	0.003030303f
-// #define LSM303_MAG_SCALE_8POINT1_GAUSS_XY	0.004347826f
+#define TEMP_SCALE					1.0f 	// Need to verify this!!
+#define TEMP_OFFSET					5900U  	// Need to verify this!!
 
-// #define LSM303_MAG_SCALE_1POINT3_GAUSS_Z	0.001020408f
-// #define LSM303_MAG_SCALE_1POINT9_GAUSS_Z	0.001315789f
-// #define LSM303_MAG_SCALE_2POINT5_GAUSS_Z	0.001666667f
-// #define LSM303_MAG_SCALE_4POINT0_GAUSS_Z	0.002500000f
-// #define LSM303_MAG_SCALE_4POINT7_GAUSS_Z	0.002816901f
-// #define LSM303_MAG_SCALE_5POINT6_GAUSS_Z	0.003389831f
-// #define LSM303_MAG_SCALE_8POINT1_GAUSS_Z	0.004878049f
-
-// /*
-// 	Degree*s^-1 per digit:
-//  */
-
-// #define L3GD20_GYRO_SCALE_250_DPS		0.007629395f
-// #define L3GD20_GYRO_SCALE_500_DPS		0.015258789f
-// #define L3GD20_GYRO_SCALE_2000_DPS		0.061035156f
-
-// void get_scaled_imu_data(imu_scaled_data_struct* buffer);
+int get_scaled_imu_data(imu_scaled_data_struct* buffer);
 
 #endif

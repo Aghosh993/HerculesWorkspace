@@ -1,5 +1,5 @@
 #ifndef PWM_INPUT_H
-#define PWM_INPUT_H	1
+#define PWM_INPUT_H					1
 
 #include <stdio.h>
 #include <stdint.h>
@@ -31,7 +31,7 @@
 
 #define RC_NOMINAL_VALUE_COMPARISON_TOLERANCE	100
 
-#define N_SAMPLES_RC_SIGNAL			200U
+#define N_SAMPLES_RC_SIGNAL						200U
 
 #define ROLL_CHANNEL 			4
 #define PITCH_CHANNEL 			2

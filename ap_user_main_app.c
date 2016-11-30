@@ -12,10 +12,12 @@
 #include "imu.h"
 #include "mission_timekeeper.h"
 #include "sys_leds.h"
+#include "telem_config.h"
+#include "vehicle_gnc.h"
 
 #include <stdio.h>
 
-// #define ENABLE_MOTORS	100
+// #define ENABLE_MOTORS	1
 
 /* USER CODE END */
 
@@ -101,15 +103,14 @@ int main(void)
 	can_id_default = canGetID(canREG3, canMESSAGE_BOX10);
 	canUpdateID(canREG3, canMESSAGE_BOX10, 0xC00000AB);
 
-	imu_hal_init();
 	init_mission_timekeeper();
 
 	_enable_interrupts();
 
-	imu_raw_data_struct mpu_data;
-	int32_t imudata_telemetry_output[7];
+	float imudata_telemetry_output[7];
 
-	uint8_t telemetry_250hz_flag = create_flag(3U);
+	uint8_t telemetry_gnc_250hz_flag = create_flag(3U);
+	uint8_t gnc_125Hz_flag = create_flag(7U);
 	uint8_t rc_update_50hz_flag = create_flag(19U);
 	uint8_t imu_sample_1000hz_flag = create_flag(0U);
 	uint8_t rc_watchdog_10hz_flag = create_flag(99U);
@@ -118,7 +119,35 @@ int main(void)
 	sys_ledOn(SYS_LED1);
 	sys_ledOff(SYS_LED2);
 
-	timekeeper_delay(5000U);
+	gnc_init();
+	gnc_raw_data rd;
+	gnc_state_data sd;
+
+	sys_ledOff(SYS_LED1);
+	timekeeper_delay(1000U);
+
+	float att_data[3];
+	att_data[2] = 0.0f;
+
+	float sensor_data[6];
+
+	float roll_cmd, pitch_cmd, yaw_cmd;
+	float roll_rate_cmd, pitch_rate_cmd, yaw_rate_cmd;
+	float throttle_value_common;
+	double motor_output_commands[4];
+
+	roll_cmd = 0.0f;
+	pitch_cmd = 0.0f;
+	yaw_cmd = 0.0f;
+
+	throttle_value_common = 0.0f;
+
+	motor_output_commands[0] = 0.0f;
+	motor_output_commands[1] = 0.0f;
+	motor_output_commands[2] = 0.0f;
+	motor_output_commands[3] = 0.0f;
+
+	float motor_vals[4];
 
 	rc_joystick_data_struct rc_data;
 	init_rc_inputs(&rc_data);
@@ -141,25 +170,56 @@ int main(void)
 				rc_input_validity_watchdog_callback();
 			}
 			
-			if(get_raw_imu_data(&mpu_data)==0)
-			{
-				imudata_telemetry_output[0] = (int32_t)mpu_data.accel_data[0];
-				imudata_telemetry_output[1] = (int32_t)mpu_data.accel_data[1];
-				imudata_telemetry_output[2] = (int32_t)mpu_data.accel_data[2];
+			gnc_get_vehicle_state();
+			gnc_get_raw_sensor_data(&rd);
+			gnc_get_state_vector_data(&sd);
+			att_data[0] = sd.roll;
+			att_data[1] = sd.pitch;
 
-				imudata_telemetry_output[3] = (int32_t)mpu_data.temp_sensor_data;
+			sensor_data[0] = rd.x_accel;
+			sensor_data[1] = rd.y_accel;
+			sensor_data[2] = rd.z_accel;
 
-				imudata_telemetry_output[4] = (int32_t)mpu_data.gyro_data[0];
-				imudata_telemetry_output[5] = (int32_t)mpu_data.gyro_data[1];
-				imudata_telemetry_output[6] = (int32_t)mpu_data.gyro_data[2];
+			sensor_data[3] = rd.roll_gyro;
+			sensor_data[4] = rd.pitch_gyro;
+			sensor_data[5] = rd.yaw_gyro;
 
-				sys_ledToggle(SYS_LED1);
-			}
+			sys_ledToggle(SYS_LED1);
 			
-			if(get_flag_state(telemetry_250hz_flag) == STATE_PENDING)
+			if(get_flag_state(telemetry_gnc_250hz_flag) == STATE_PENDING)
 			{
-				reset_flag(telemetry_250hz_flag);
-				send_telem_msg_n_ints_blocking(&telem0, (uint8_t *)"mpudata", 7, imudata_telemetry_output, 7);
+				// Reset flag for next cycle:				
+				reset_flag(telemetry_gnc_250hz_flag);
+
+				// Send telemetry items as configured:
+				#ifdef SEND_MPU_IMU_TELEMETRY
+					send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"state", 5, att_data, 2);
+					send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"imu", 3, sensor_data, 6);
+				#endif
+
+				// Run GNC angular outer loop control to generate rate commands for inner loop:
+				if(get_flag_state(gnc_125Hz_flag) == STATE_PENDING)
+				{
+					reset_flag(gnc_125Hz_flag);
+					gnc_vehicle_stabilization_outerloop_update(roll_cmd, pitch_cmd, yaw_cmd,
+																&roll_rate_cmd, &pitch_rate_cmd, &yaw_rate_cmd);
+				}
+
+				gnc_vehicle_stabilization_innerloop_update(roll_rate_cmd, pitch_rate_cmd, yaw_rate_cmd,
+															throttle_value_common,
+															motor_output_commands);
+
+				motor_vals[0] = (float)motor_output_commands[0];
+				motor_vals[1] = (float)motor_output_commands[1];
+				motor_vals[2] = (float)motor_output_commands[2];
+				motor_vals[3] = (float)motor_output_commands[3];
+
+				send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"cmds", 4, motor_vals, 4);
+
+				QuadRotor_motor1_setDuty((float)motor_output_commands[0]);
+				QuadRotor_motor2_setDuty((float)motor_output_commands[1]);
+				QuadRotor_motor3_setDuty((float)motor_output_commands[2]);
+				QuadRotor_motor4_setDuty((float)motor_output_commands[3]);
 
 				if(get_flag_state(rc_update_50hz_flag) == STATE_PENDING)
 				{
@@ -167,31 +227,37 @@ int main(void)
 					get_rc_input_values(&rc_data);
 					if(rc_data.mode_switch_channel_validity == CHANNEL_VALID)
 					{
-						send_telem_msg_string_blocking(&telem0, (uint8_t *)"rcvalid", 7, "TRUE\r\n", 6);
-						send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"roll", 4, &(rc_data.roll_channel_value), 1);
-						send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"pitch", 5, &(rc_data.pitch_channel_value), 1);
-						send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"yaw", 3, &(rc_data.yaw_channel_value), 1);
-						send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"height", 6, &(rc_data.vertical_channel_value), 1);
+						#ifdef SEND_RC_INPUT_TELEMETRY
+							// send_telem_msg_string_blocking(&telem0, (uint8_t *)"rcvalid", 7, "TRUE\r\n", 6);
+							// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"roll", 4, &(rc_data.roll_channel_value), 1);
+							// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"pitch", 5, &(rc_data.pitch_channel_value), 1);
+							// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"yaw", 3, &(rc_data.yaw_channel_value), 1);
+							// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"height", 6, &(rc_data.vertical_channel_value), 1);
 
-						if(get_ch5_mode(rc_data) == MODE_NORMAL)
-						{
-							send_telem_msg_string_blocking(&telem0, (uint8_t *)"CH5", 3, (uint8_t *)"Normal", 6);
-						}
-						if(get_ch5_mode(rc_data) == MODE_FAILSAFE)
-						{
-							send_telem_msg_string_blocking(&telem0, (uint8_t *)"CH5", 3, (uint8_t *)"FAILSAFE", 8);
-						}
+							if(get_ch5_mode(rc_data) == MODE_NORMAL)
+							{
+								send_telem_msg_string_blocking(&telem0, (uint8_t *)"CH5", 3, (uint8_t *)"Normal", 6);
+							}
+							if(get_ch5_mode(rc_data) == MODE_FAILSAFE)
+							{
+								send_telem_msg_string_blocking(&telem0, (uint8_t *)"CH5", 3, (uint8_t *)"FAILSAFE", 8);
+							}
+						#endif
+						roll_cmd = rc_data.roll_channel_value;
+						pitch_cmd = rc_data.pitch_channel_value;
+						yaw_cmd = rc_data.yaw_channel_value * -1.0f;
+						throttle_value_common = 0.50f*(rc_data.vertical_channel_value + 1.0f);
 					}
 					else
 					{
 						/*
-							Emergency stop all motors upon loss of signal. In the future this may become something a bit more graceful...
+							Emergency-stop all motors upon loss of signal. In the future this may become something a bit more graceful...
 						 */
 						send_telem_msg_string_blocking(&telem0, (uint8_t *)"rcvalid", 7, "FALSE\r\n", 7);
-						QuadRotor_motor1_setDuty(0.05f);
-						QuadRotor_motor2_setDuty(0.05f);
-						QuadRotor_motor3_setDuty(0.05f);
-						QuadRotor_motor4_setDuty(0.05f);
+						QuadRotor_motor1_setDuty(0.0f);
+						QuadRotor_motor2_setDuty(0.0f);
+						QuadRotor_motor3_setDuty(0.0f);
+						QuadRotor_motor4_setDuty(0.0f);
 						// Wait for serial transmit of telemetry to complete, and give ESCs a chance to latch the last valid command prior to PWM shutdown.
 						insert_delay(100);
 						_disable_interrupts();
@@ -199,7 +265,9 @@ int main(void)
 						QuadRotor_motor2_stop();
 						QuadRotor_motor3_stop();
 						QuadRotor_motor4_stop();
-						while(1);
+						sys_ledOn(SYS_LED1); // Red ERROR LED = ON
+						sys_ledOff(SYS_LED2); // Green OK LED = OFF
+						while(1); // Block here indefinitely pending system power-off/reset by user
 					}
 				}
 			}
