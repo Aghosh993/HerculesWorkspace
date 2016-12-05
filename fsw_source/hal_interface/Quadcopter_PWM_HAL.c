@@ -115,24 +115,48 @@ void QuadRotor_motor4_stop(void)
 
 void QuadRotor_motor1_setDuty(float duty)
 {
-    float duty_scaled = (duty + 1.0f) * 0.050f;
+    // float duty_scaled = (duty + 1.0f) * 0.050f;
+    float duty_scaled = (MAX_DUTY-MIN_DUTY)*duty + MIN_DUTY;
 	pwmSetDuty_HighPrecision(MOTOR1_HET_CHANNEL, duty_scaled);
 }
 
 void QuadRotor_motor2_setDuty(float duty)
 {
-    float duty_scaled = (duty + 1.0f) * 0.050f;
+    // float duty_scaled = (duty + 1.0f) * 0.050f;
+    float duty_scaled = (MAX_DUTY-MIN_DUTY)*duty + MIN_DUTY;
 	pwmSetDuty_HighPrecision(MOTOR2_HET_CHANNEL, duty_scaled);
 }
 
 void QuadRotor_motor3_setDuty(float duty)
 {
-    float duty_scaled = (duty + 1.0f) * 0.050f;
+    // float duty_scaled = (duty + 1.0f) * 0.050f;
+    float duty_scaled = (MAX_DUTY-MIN_DUTY)*duty + MIN_DUTY;
 	pwmSetDuty_HighPrecision(MOTOR3_HET_CHANNEL, duty_scaled);
 }
 
 void QuadRotor_motor4_setDuty(float duty)
 {
-    float duty_scaled = (duty + 1.0f) * 0.050f;
+    // float duty_scaled = (duty + 1.0f) * 0.050f;
+    float duty_scaled = (MAX_DUTY-MIN_DUTY)*duty + MIN_DUTY;
 	pwmSetDuty_HighPrecision(MOTOR4_HET_CHANNEL, duty_scaled);
+}
+
+void QuadRotor_motor1_setDuty_raw(float duty)
+{
+    pwmSetDuty_HighPrecision(MOTOR1_HET_CHANNEL, duty);
+}
+
+void QuadRotor_motor2_setDuty_raw(float duty)
+{
+    pwmSetDuty_HighPrecision(MOTOR2_HET_CHANNEL, duty);
+}
+
+void QuadRotor_motor3_setDuty_raw(float duty)
+{
+    pwmSetDuty_HighPrecision(MOTOR3_HET_CHANNEL, duty);
+}
+
+void QuadRotor_motor4_setDuty_raw(float duty)
+{
+    pwmSetDuty_HighPrecision(MOTOR4_HET_CHANNEL, duty);
 }

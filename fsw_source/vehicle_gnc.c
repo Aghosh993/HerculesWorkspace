@@ -16,13 +16,13 @@ static volatile filtered_quadrotor_state st_vector;
 
 void gnc_init(void)
 {
-	imu_hal_init();
-	initialize_imu(SCALE_2G, SCALE_250_DPS, SCALE_1POINT3_GAUSS, &imu_data);
-	init_comp_filter(&st_vector);
-	do_bias_calculation(&imu_data);
-	controller_init_vars();
-	set_controller_mode(MODE_ANGULAR_POSITION_CONTROL);
-	enable_controller();
+	imu_hal_init(); // Initialize IMU I2C bus
+	initialize_imu(SCALE_2G, SCALE_250_DPS, SCALE_1POINT3_GAUSS, &imu_data); // Set up IMU registers
+	init_comp_filter(&st_vector);	// Initialize complementary filter data structs/vars
+	do_bias_calculation(&imu_data); // Bias calibration for IMU (gyro+accel)
+	controller_init_vars();			// Set controller gains
+	set_controller_mode(MODE_ANGULAR_POSITION_CONTROL); // Set controller to stabilize (i.e. angular control) mode
+	enable_controller(); // Enable all PID loops
 }
 
 void gnc_get_vehicle_state(void)

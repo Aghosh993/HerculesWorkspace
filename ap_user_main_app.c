@@ -17,7 +17,8 @@
 
 #include <stdio.h>
 
-// #define ENABLE_MOTORS	1
+#define ENABLE_MOTORS	1
+// #define ESC_CAL_MODE	1
 
 /* USER CODE END */
 
@@ -59,6 +60,14 @@ int main(void)
 	serialport_hal_init();
 	serialport_init(ftdi_dbg_port_ptr, PORT1);
 	rt_telemetry_init_channel(&telem0, ftdi_dbg_port_ptr);
+
+	#ifdef ESC_CAL_MODE
+		init_mission_timekeeper();
+		_enable_interrupts();
+		sys_ledOn(SYS_LED1);
+		sys_ledOff(SYS_LED2);
+		esc_cal();
+	#endif
 
 	/*
 	* Initialize the serial port (SCI module) and enable SCI Receive interrupts:
@@ -167,7 +176,7 @@ int main(void)
 			if(get_flag_state(rc_watchdog_10hz_flag) == STATE_PENDING)
 			{
 				reset_flag(rc_watchdog_10hz_flag);
-				rc_input_validity_watchdog_callback();
+				rc_input_validity_watchdog_callback(); // Check if sufficient number of RC rising edges have occurred in last 100 ms
 			}
 			
 			gnc_get_vehicle_state();
@@ -205,6 +214,9 @@ int main(void)
 																&roll_rate_cmd, &pitch_rate_cmd, &yaw_rate_cmd);
 				}
 
+				/*
+					Run GNC inner loop to generate 4 motor PWM commands:
+				 */
 				gnc_vehicle_stabilization_innerloop_update(roll_rate_cmd, pitch_rate_cmd, yaw_rate_cmd,
 															throttle_value_common,
 															motor_output_commands);
@@ -216,10 +228,12 @@ int main(void)
 
 				send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"cmds", 4, motor_vals, 4);
 
-				QuadRotor_motor1_setDuty((float)motor_output_commands[0]);
-				QuadRotor_motor2_setDuty((float)motor_output_commands[1]);
-				QuadRotor_motor3_setDuty((float)motor_output_commands[2]);
-				QuadRotor_motor4_setDuty((float)motor_output_commands[3]);
+				#ifdef ENABLE_MOTORS
+					QuadRotor_motor1_setDuty((float)motor_output_commands[0]);
+					QuadRotor_motor2_setDuty((float)motor_output_commands[1]);
+					QuadRotor_motor3_setDuty((float)motor_output_commands[2]);
+					QuadRotor_motor4_setDuty((float)motor_output_commands[3]);
+				#endif
 
 				if(get_flag_state(rc_update_50hz_flag) == STATE_PENDING)
 				{
@@ -253,7 +267,10 @@ int main(void)
 						/*
 							Emergency-stop all motors upon loss of signal. In the future this may become something a bit more graceful...
 						 */
-						send_telem_msg_string_blocking(&telem0, (uint8_t *)"rcvalid", 7, "FALSE\r\n", 7);
+						#ifdef SEND_RC_INPUT_TELEMETRY
+							send_telem_msg_string_blocking(&telem0, (uint8_t *)"rcvalid", 7, "FALSE\r\n", 7);
+						#endif
+						
 						QuadRotor_motor1_setDuty(0.0f);
 						QuadRotor_motor2_setDuty(0.0f);
 						QuadRotor_motor3_setDuty(0.0f);

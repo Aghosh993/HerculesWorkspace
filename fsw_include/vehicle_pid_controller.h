@@ -112,12 +112,12 @@
 #define yaw_rate_kD		0.0f
 
 // Last testing result: Seems to produce highly laggy step response... ????
-#define roll_kP 		1.80f //1.2000f
-#define pitch_kP 		1.80f //1.2000f
+#define roll_kP 		1.40f //1.2000f
+#define pitch_kP 		1.40f //1.2000f
 // #define yaw_kP
 
-#define roll_kI 		0.25f//0.12f //0.2050f
-#define pitch_kI 		0.25f//0.12f //0.2050f
+#define roll_kI 		0.2f//0.12f //0.2050f
+#define pitch_kI 		0.2f//0.12f //0.2050f
 // #define yaw_kI
 
 #define roll_kD 		0.0f //0.010f

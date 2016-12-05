@@ -11,8 +11,8 @@
 
 #include <hal_common_includes.h>
 
-#define MIN_DUTY 0.0f
-#define MAX_DUTY 1.0f
+#define MIN_DUTY 0.35f
+#define MAX_DUTY 0.85f
 
 #define MOTOR4_HET_CHANNEL	hetRAM1, pwm0
 #define MOTOR1_HET_CHANNEL	hetRAM1, pwm1
@@ -40,5 +40,10 @@ void QuadRotor_motor1_setDuty(float duty);
 void QuadRotor_motor2_setDuty(float duty);
 void QuadRotor_motor3_setDuty(float duty);
 void QuadRotor_motor4_setDuty(float duty);
+
+void QuadRotor_motor1_setDuty_raw(float duty);
+void QuadRotor_motor2_setDuty_raw(float duty);
+void QuadRotor_motor3_setDuty_raw(float duty);
+void QuadRotor_motor4_setDuty_raw(float duty);
 
 #endif
