@@ -15,6 +15,22 @@
 #include "telem_config.h"
 #include "vehicle_gnc.h"
 
+/*
+	Quadcopter primary flight software file.
+	This file performs overall system initialization, setup and realtime control of a quadcopter.
+	It also handles various operational modes, failsafes and command data I/O.
+
+	All code contained within this file is the original work of the copyright-holder named below, and
+	is licensed under the GPLv3 open-source software license. As such, this work is a DERIVED work of an existing GPLv3
+	project by the same copyright-holder, and is thus released under an identical license.
+
+	The end user of this file agreees to observe all applicable patent, intellectual property and export control laws
+	in his/her jurisdiction, and releases the person named below from any liabilities, with the understanding that this
+	source code is provided "as-is".
+
+	(c) 2016, Abhimanyu Ghosh
+ */
+
 #define ENABLE_MOTORS	1
 // #define ESC_CAL_MODE	1
 
