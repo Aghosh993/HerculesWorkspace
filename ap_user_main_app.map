@@ -1,0 +1,1767 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/crt0.o (exit)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o) (_global_impure_ptr)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-init.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/crt0.o (__libc_init_array)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-memset.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/crt0.o (memset)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o) (__call_exitprocs)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o) (atexit)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-fini.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o) (__libc_fini_array)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o) (__register_exitproc)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_cos.o)
+                              fsw_source/comp_filter.o (cos)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_atan2.o)
+                              fsw_source/comp_filter.o (atan2f)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_sqrt.o)
+                              fsw_source/comp_filter.o (sqrtf)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-e_rem_pio2.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_cos.o) (__ieee754_rem_pio2)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_atan2.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_atan2.o) (__ieee754_atan2f)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_sqrt.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_sqrt.o) (__ieee754_sqrtf)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_cos.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_cos.o) (__kernel_cos)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_rem_pio2.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-e_rem_pio2.o) (__kernel_rem_pio2)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_sin.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_cos.o) (__kernel_sin)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_fabs.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-e_rem_pio2.o) (fabs)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_floor.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_rem_pio2.o) (floor)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_lib_ver.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_sqrt.o) (__fdlib_version)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_matherr.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_sqrt.o) (matherr)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_scalbn.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_rem_pio2.o) (scalbn)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_atan.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_atan2.o) (atanf)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_fabs.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_atan2.o) (fabsf)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_copysign.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_scalbn.o) (copysign)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_udivsi3.o)
+                              hal_source/het.o (__aeabi_uidiv)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_dvmd_tls.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_addsubdf3.o)
+                              hal_source/sci.o (__aeabi_dsub)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_muldivdf3.o)
+                              hal_source/het.o (__aeabi_dmul)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_cmpdf2.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-e_rem_pio2.o) (__aeabi_dcmpeq)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixdfsi.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-e_rem_pio2.o) (__aeabi_d2iz)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixunsdfsi.o)
+                              hal_source/het.o (__aeabi_d2uiz)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_truncdfsf2.o)
+                              ap_user_main_app.o (__aeabi_d2f)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_addsubsf3.o)
+                              fsw_source/basic_pid_controller.o (__aeabi_fsub)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_muldivsf3.o)
+                              ap_user_main_app.o (__aeabi_fmul)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_cmpsf2.o)
+                              fsw_source/comp_filter.o (__aeabi_fcmpeq)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_unordsf2.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_sqrt.o) (__aeabi_fcmpun)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixunssfsi.o)
+                              fsw_source/pwm_input.o (__aeabi_f2uiz)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_sqrt.o) (__errno)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy-stub.o)
+                              hal_source/het.o (memcpy)
+/home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libnosys.a(_exit.o)
+                              /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o) (_exit)
+
+Allocating common symbols
+Common symbol       size              file
+
+telem0              0x564             ap_user_main_app.o
+yaw_rate_cmd_multiplier
+                    0x8               fsw_source/vehicle_pid_controller.o
+acc_z_hpf           0xc               fsw_source/comp_filter.o
+gyr_pitch_lpf       0x8               fsw_source/comp_filter.o
+yaw_cmd_multiplier  0x8               fsw_source/vehicle_pid_controller.o
+acc_y_lpf           0x8               fsw_source/comp_filter.o
+magnetometer_z_lpf  0x8               fsw_source/comp_filter.o
+roll_rate_cmd_multiplier
+                    0x8               fsw_source/vehicle_pid_controller.o
+acc_x_lpf           0x8               fsw_source/comp_filter.o
+pitch_rate_cmd_multiplier
+                    0x8               fsw_source/vehicle_pid_controller.o
+magnetometer_x_lpf  0x8               fsw_source/comp_filter.o
+roll_cmd_multiplier
+                    0x8               fsw_source/vehicle_pid_controller.o
+pitch_cmd_multiplier
+                    0x8               fsw_source/vehicle_pid_controller.o
+ftdi_dbg_port_ptr   0x4               ap_user_main_app.o
+tm4c_comms_aux_port_ptr
+                    0x4               ap_user_main_app.o
+gyr_pitch_hpf       0xc               fsw_source/comp_filter.o
+ftdi_dbg_port       0x1014            ap_user_main_app.o
+magnetometer_y_lpf  0x8               fsw_source/comp_filter.o
+gyr_roll_lpf        0x8               fsw_source/comp_filter.o
+vertical_velocity_cmd_multiplier
+                    0x8               fsw_source/vehicle_pid_controller.o
+gyr_roll_hpf        0xc               fsw_source/comp_filter.o
+tm4c_comms_aux_port
+                    0x1014            ap_user_main_app.o
+acc_z_lpf           0x8               fsw_source/comp_filter.o
+quadrotor_imu_bias_values
+                    0x18              fsw_source/comp_filter.o
+height_cmd_multiplier
+                    0x8               fsw_source/vehicle_pid_controller.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crti.o
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crti.o
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crti.o
+ .data          0x00000000        0x4 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtbegin.o
+ .text          0x00000000      0x114 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/crt0.o
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/crt0.o
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/crt0.o
+ .ARM.extab     0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/crt0.o
+ .ARM.exidx     0x00000000        0x8 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/crt0.o
+ .ARM.attributes
+                0x00000000       0x14 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/crt0.o
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o)
+ .debug_frame   0x00000000       0x28 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-init.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-init.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-init.o)
+ .text.__libc_init_array
+                0x00000000       0x80 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-init.o)
+ .debug_frame   0x00000000       0x34 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-init.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .text.memset   0x00000000       0xf4 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .debug_frame   0x00000000       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-memset.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+ .debug_frame   0x00000000       0x68 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o)
+ .debug_frame   0x00000000       0x2c /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-fini.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-fini.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-fini.o)
+ .debug_frame   0x00000000       0x34 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-fini.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-fini.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o)
+ .debug_frame   0x00000000       0x3c /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o)
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o)
+ .text          0x00000000     0x1110 hal_source/adc.o
+ .data          0x00000000        0x0 hal_source/adc.o
+ .bss           0x00000000        0x0 hal_source/adc.o
+ .rodata        0x00000000       0x30 hal_source/adc.o
+ .debug_info    0x00000000      0xb80 hal_source/adc.o
+ .debug_abbrev  0x00000000      0x165 hal_source/adc.o
+ .debug_aranges
+                0x00000000       0x20 hal_source/adc.o
+ .debug_line    0x00000000      0x31f hal_source/adc.o
+ .debug_str     0x00000000      0x929 hal_source/adc.o
+ .comment       0x00000000       0x6f hal_source/adc.o
+ .debug_frame   0x00000000      0x1fc hal_source/adc.o
+ .ARM.attributes
+                0x00000000       0x36 hal_source/adc.o
+ .data          0x00000000        0x0 hal_source/can.o
+ .bss           0x00000000        0x0 hal_source/can.o
+ .data          0x00000000        0x0 hal_source/esm.o
+ .bss           0x00000000        0x0 hal_source/esm.o
+ .data          0x00000000        0x0 hal_source/gio.o
+ .bss           0x00000000        0x0 hal_source/gio.o
+ .bss           0x00000000        0x0 hal_source/het.o
+ .data          0x00000000        0x0 hal_source/i2c.o
+ .data          0x00000000        0x0 hal_source/mibspi.o
+ .bss           0x00000000        0x0 hal_source/mibspi.o
+ .data          0x00000000        0x0 hal_source/notification.o
+ .bss           0x00000000        0x0 hal_source/notification.o
+ .data          0x00000000        0x0 hal_source/pinmux.o
+ .bss           0x00000000        0x0 hal_source/pinmux.o
+ .data          0x00000000        0x0 hal_source/rti.o
+ .bss           0x00000000        0x0 hal_source/rti.o
+ .data          0x00000000        0x0 hal_source/sci.o
+ .text          0x00000000      0x98c hal_source/sys_dma.o
+ .data          0x00000000        0x0 hal_source/sys_dma.o
+ .bss           0x00000000        0x0 hal_source/sys_dma.o
+ .debug_info    0x00000000      0xc4a hal_source/sys_dma.o
+ .debug_abbrev  0x00000000      0x202 hal_source/sys_dma.o
+ .debug_aranges
+                0x00000000       0x20 hal_source/sys_dma.o
+ .debug_line    0x00000000      0x1e9 hal_source/sys_dma.o
+ .debug_str     0x00000000      0x8bb hal_source/sys_dma.o
+ .comment       0x00000000       0x6f hal_source/sys_dma.o
+ .debug_frame   0x00000000      0x210 hal_source/sys_dma.o
+ .ARM.attributes
+                0x00000000       0x36 hal_source/sys_dma.o
+ .text          0x00000000      0x9d4 hal_source/sys_pcr.o
+ .data          0x00000000        0x0 hal_source/sys_pcr.o
+ .bss           0x00000000        0x0 hal_source/sys_pcr.o
+ .debug_info    0x00000000      0x812 hal_source/sys_pcr.o
+ .debug_abbrev  0x00000000      0x101 hal_source/sys_pcr.o
+ .debug_aranges
+                0x00000000       0x20 hal_source/sys_pcr.o
+ .debug_line    0x00000000      0x22f hal_source/sys_pcr.o
+ .debug_str     0x00000000      0x8d1 hal_source/sys_pcr.o
+ .comment       0x00000000       0x6f hal_source/sys_pcr.o
+ .debug_frame   0x00000000      0x2b0 hal_source/sys_pcr.o
+ .ARM.attributes
+                0x00000000       0x36 hal_source/sys_pcr.o
+ .data          0x00000000        0x0 hal_source/sys_phantom.o
+ .bss           0x00000000        0x0 hal_source/sys_phantom.o
+ .text          0x00000000      0x798 hal_source/sys_pmm.o
+ .data          0x00000000        0x0 hal_source/sys_pmm.o
+ .bss           0x00000000        0x0 hal_source/sys_pmm.o
+ .debug_info    0x00000000      0x4d3 hal_source/sys_pmm.o
+ .debug_abbrev  0x00000000      0x140 hal_source/sys_pmm.o
+ .debug_aranges
+                0x00000000       0x20 hal_source/sys_pmm.o
+ .debug_line    0x00000000      0x212 hal_source/sys_pmm.o
+ .debug_str     0x00000000      0x528 hal_source/sys_pmm.o
+ .comment       0x00000000       0x6f hal_source/sys_pmm.o
+ .debug_frame   0x00000000      0x150 hal_source/sys_pmm.o
+ .ARM.attributes
+                0x00000000       0x36 hal_source/sys_pmm.o
+ .data          0x00000000        0x0 hal_source/sys_selftest.o
+ .bss           0x00000000        0x0 hal_source/sys_selftest.o
+ .data          0x00000000        0x0 hal_source/sys_startup.o
+ .bss           0x00000000        0x0 hal_source/sys_startup.o
+ .data          0x00000000        0x0 hal_source/system.o
+ .bss           0x00000000        0x0 hal_source/system.o
+ .data          0x00000000        0x0 hal_source/sys_vim.o
+ .bss           0x00000000        0x0 hal_source/sys_vim.o
+ .data          0x00000000        0x0 hal_source/dabort.o
+ .bss           0x00000000        0x0 hal_source/dabort.o
+ .data          0x00000000        0x0 hal_source/sys_core.o
+ .bss           0x00000000        0x0 hal_source/sys_core.o
+ .text          0x00000000        0x0 hal_source/sys_intvecs.o
+ .data          0x00000000        0x0 hal_source/sys_intvecs.o
+ .bss           0x00000000        0x0 hal_source/sys_intvecs.o
+ .text          0x00000000      0x2d8 hal_source/sys_mpu.o
+ .data          0x00000000        0x0 hal_source/sys_mpu.o
+ .bss           0x00000000        0x0 hal_source/sys_mpu.o
+ .debug_line    0x00000000      0x10a hal_source/sys_mpu.o
+ .debug_info    0x00000000       0x5c hal_source/sys_mpu.o
+ .debug_abbrev  0x00000000       0x14 hal_source/sys_mpu.o
+ .debug_aranges
+                0x00000000       0x20 hal_source/sys_mpu.o
+ .ARM.attributes
+                0x00000000       0x25 hal_source/sys_mpu.o
+ .data          0x00000000        0x0 hal_source/sys_pmu.o
+ .bss           0x00000000        0x0 hal_source/sys_pmu.o
+ .data          0x00000000        0x0 ap_user_main_app.o
+ .bss           0x00000000        0x0 ap_user_main_app.o
+ .data          0x00000000        0x0 fsw_source/basic_pid_controller.o
+ .bss           0x00000000        0x0 fsw_source/basic_pid_controller.o
+ .data          0x00000000        0x0 fsw_source/comp_filter.o
+ .bss           0x00000000        0x0 fsw_source/comp_filter.o
+ .data          0x00000000        0x0 fsw_source/iir_filters.o
+ .bss           0x00000000        0x0 fsw_source/iir_filters.o
+ .data          0x00000000        0x0 fsw_source/imu.o
+ .bss           0x00000000        0x0 fsw_source/imu.o
+ .data          0x00000000        0x0 fsw_source/interrupts.o
+ .bss           0x00000000        0x0 fsw_source/interrupts.o
+ .data          0x00000000        0x0 fsw_source/message_defs.o
+ .bss           0x00000000        0x0 fsw_source/message_defs.o
+ .data          0x00000000        0x0 fsw_source/misc_utils.o
+ .bss           0x00000000        0x0 fsw_source/misc_utils.o
+ .data          0x00000000        0x0 fsw_source/mission_timekeeper.o
+ .data          0x00000000        0x0 fsw_source/pwm_input.o
+ .bss           0x00000000        0x0 fsw_source/pwm_input.o
+ .data          0x00000000        0x0 fsw_source/rt_telemetry.o
+ .bss           0x00000000        0x0 fsw_source/rt_telemetry.o
+ .data          0x00000000        0x0 fsw_source/serial_comms_highlevel.o
+ .bss           0x00000000        0x0 fsw_source/serial_comms_highlevel.o
+ .data          0x00000000        0x0 fsw_source/vehicle_gnc.o
+ .data          0x00000000        0x0 fsw_source/vehicle_pid_controller.o
+ .data          0x00000000        0x0 fsw_source/hal_interface/imu_HAL.o
+ .bss           0x00000000        0x0 fsw_source/hal_interface/imu_HAL.o
+ .data          0x00000000        0x0 fsw_source/hal_interface/pwm_input_hal.o
+ .data          0x00000000        0x0 fsw_source/hal_interface/Quadcopter_PWM_HAL.o
+ .bss           0x00000000        0x0 fsw_source/hal_interface/Quadcopter_PWM_HAL.o
+ .data          0x00000000        0x0 fsw_source/hal_interface/serial_comms_highlevel_hal.o
+ .bss           0x00000000        0x0 fsw_source/hal_interface/serial_comms_highlevel_hal.o
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_cos.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_cos.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_cos.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_atan2.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_atan2.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_atan2.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_sqrt.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_sqrt.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_sqrt.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-e_rem_pio2.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-e_rem_pio2.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-e_rem_pio2.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_atan2.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_atan2.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_atan2.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_sqrt.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_sqrt.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_sqrt.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_cos.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_cos.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_cos.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_rem_pio2.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_rem_pio2.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_rem_pio2.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_sin.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_sin.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_sin.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_fabs.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_fabs.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_fabs.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_floor.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_floor.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_floor.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_lib_ver.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_lib_ver.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_lib_ver.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_matherr.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_matherr.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_matherr.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_scalbn.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_scalbn.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_scalbn.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_atan.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_atan.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_atan.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_fabs.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_fabs.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_fabs.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_copysign.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_copysign.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_copysign.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_udivsi3.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_dvmd_tls.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_addsubdf3.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_addsubdf3.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_muldivdf3.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_muldivdf3.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_cmpdf2.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_cmpdf2.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixdfsi.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixdfsi.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixunsdfsi.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixunsdfsi.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_truncdfsf2.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_truncdfsf2.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_addsubsf3.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_addsubsf3.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_muldivsf3.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_muldivsf3.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_cmpsf2.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_cmpsf2.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_unordsf2.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_unordsf2.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixunssfsi.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixunssfsi.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy-stub.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy-stub.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy-stub.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libnosys.a(_exit.o)
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libnosys.a(_exit.o)
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libnosys.a(_exit.o)
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtend.o
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtend.o
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtend.o
+ .eh_frame      0x00000000        0x4 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtend.o
+ .jcr           0x00000000        0x4 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtend.o
+ .ARM.attributes
+                0x00000000       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtend.o
+ .text          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtn.o
+ .data          0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtn.o
+ .bss           0x00000000        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+VECTORS          0x00000000         0x00000020         xr
+FLASH            0x00000020         0x002fffe0         xr
+CPU_STACK        0x08000000         0x00020500         rw
+RAM              0x08020500         0x0001fb00         xrw
+MEMORY_B1        0x60000000         0x00000000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crti.o
+LOAD /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtbegin.o
+LOAD /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/crt0.o
+                0x08040000                _estack = 0x8040000
+                0x00000400                _Min_Heap_Size = 0x400
+
+.intvecs        0x00000000       0x20
+                0x00000000                . = ALIGN (0x4)
+ *(.intvecs)
+ .intvecs       0x00000000       0x20 hal_source/sys_intvecs.o
+                0x00000000                resetEntry
+                0x00000020                . = ALIGN (0x4)
+
+.text           0x00000020    0x194d0
+                0x00000020                . = ALIGN (0x4)
+ *(.text)
+ .text          0x00000020       0x98 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtbegin.o
+ .text          0x000000b8     0x198c hal_source/can.o
+                0x000000b8                canInit
+                0x00000b4c                canTransmit
+                0x00000c64                canGetData
+                0x00000dec                canGetID
+                0x00000e80                canUpdateID
+                0x00000f2c                canSendRemoteFrame
+                0x00000ff0                canFillMessageObjectData
+                0x00001108                canIsTxMessagePending
+                0x00001174                canIsRxMessageArrived
+                0x000011e8                canIsMessageBoxValid
+                0x0000125c                canGetLastError
+                0x00001290                canGetErrorLevel
+                0x000012c4                canEnableErrorNotification
+                0x000012f8                canEnableStatusChangeNotification
+                0x0000132c                canDisableStatusChangeNotification
+                0x00001360                canDisableErrorNotification
+                0x00001394                canEnableloopback
+                0x000013e8                canDisableloopback
+                0x00001430                canIoSetDirection
+                0x00001498                canIoSetPort
+                0x00001500                canIoTxGetBit
+                0x0000152c                canIoRxGetBit
+                0x00001558                can1GetConfigValue
+                0x000016fc                can2GetConfigValue
+                0x000018a0                can3GetConfigValue
+ .text          0x00001a44      0x8f4 hal_source/esm.o
+                0x00001a44                esmInit
+                0x00001bb4                esmError
+                0x00001be4                esmEnableError
+                0x00001c30                esmDisableError
+                0x00001c7c                esmTriggerErrorPinReset
+                0x00001ca4                esmActivateNormalOperation
+                0x00001ccc                esmEnableInterrupt
+                0x00001d18                esmDisableInterrupt
+                0x00001d64                esmSetInterruptLevel
+                0x00001e14                esmClearStatus
+                0x00001e80                esmClearStatusBuffer
+                0x00001eb0                esmSetCounterPreloadValue
+                0x00001ee4                esmGetStatus
+                0x00001f90                esmGetStatusBuffer
+                0x00001fdc                esmEnterSelfTest
+                0x0000208c                esmSelfTestStatus
+                0x000020f8                esmGetConfigValue
+                0x00002230                esmHighInterrupt
+ .text          0x00002338      0x574 hal_source/gio.o
+                0x00002338                gioInit
+                0x00002460                gioSetDirection
+                0x00002490                gioSetBit
+                0x000024f0                gioSetPort
+                0x00002520                gioGetBit
+                0x00002558                gioGetPort
+                0x00002580                gioToggleBit
+                0x000025ec                gioEnableNotification
+                0x00002670                gioDisableNotification
+                0x000026f4                gioGetConfigValue
+ .text          0x000028ac      0xed0 hal_source/het.o
+                0x000028ac                hetInit
+                0x00002ae0                pwmStart
+                0x00002b40                pwmStop
+                0x00002ba0                pwmSetDuty
+                0x00002d20                pwmSetSignal
+                0x00002f40                pwmGetSignal
+                0x0000308c                pwmEnableNotification
+                0x000030e4                pwmDisableNotification
+                0x00003124                edgeResetCounter
+                0x00003164                edgeGetCounter
+                0x000031a4                edgeEnableNotification
+                0x000031f0                edgeDisableNotification
+                0x00003228                capGetSignal
+                0x0000336c                hetResetTimestamp
+                0x00003398                hetGetTimestamp
+                0x000033c0                het1GetConfigValue
+                0x000035a0                het2GetConfigValue
+ .text          0x0000377c      0xb48 hal_source/i2c.o
+                0x0000377c                i2cInit
+                0x000038d0                i2cSetOwnAdd
+                0x00003900                i2cSetSlaveAdd
+                0x00003930                i2cSetBaudrate
+                0x00003a68                i2cSetStart
+                0x00003a9c                i2cSetStop
+                0x00003ad0                i2cSetCount
+                0x00003b00                i2cIsTxReady
+                0x00003b2c                i2cSendByte
+                0x00003b78                i2cSend
+                0x00003c74                i2cIsRxReady
+                0x00003ca0                i2cIsStopDetected
+                0x00003ccc                i2cRxError
+                0x00003d0c                i2cClearSCD
+                0x00003d38                i2cReceiveByte
+                0x00003d7c                i2cReceive
+                0x00003e38                i2cEnableLoopback
+                0x00003e6c                i2cDisableLoopback
+                0x00003ea0                i2cEnableNotification
+                0x00003ef8                i2cDisableNotification
+                0x00003f6c                i2cSetMode
+                0x00003fb4                i2cGetConfigValue
+                0x000041cc                i2cSetDirection
+                0x0000421c                i2cIsMasterReady
+                0x00004270                i2cIsBusBusy
+ .text          0x000042c4     0x1968 hal_source/mibspi.o
+                0x000042c4                mibspiInit
+                0x00004c5c                mibspiSetFunctional
+                0x00004c8c                mibspiSetData
+                0x00004dbc                mibspiGetData
+                0x00004f40                mibspiTransfer
+                0x00004f88                mibspiIsTransferComplete
+                0x00005014                mibspiEnableLoopback
+                0x0000505c                mibspiDisableLoopback
+                0x00005088                mibspiPmodeSet
+                0x000050fc                mibspiEnableGroupNotification
+                0x000051ac                mibspiDisableGroupNotification
+                0x000051f8                mibspi1GetConfigValue
+                0x00005560                mibspi3GetConfigValue
+                0x000058c4                mibspi5GetConfigValue
+ .text          0x00005c2c      0x30c hal_source/notification.o
+                0x00005c2c                esmGroup1Notification
+                0x00005c4c                esmGroup2Notification
+                0x00005c6c                memoryPort0TestFailNotification
+                0x00005c98                memoryPort1TestFailNotification
+                0x00005cc4                rtiNotification
+                0x00005ce4                adcNotification
+                0x00005d08                canErrorNotification
+                0x00005d2c                canStatusChangeNotification
+                0x00005d50                canMessageNotification
+                0x00005d74                gioNotification
+                0x00005d98                i2cNotification
+                0x00005dbc                mibspiNotification
+                0x00005de0                mibspiGroupNotification
+                0x00005e04                sciNotification
+                0x00005ea0                pwmNotification
+                0x00005ec8                edgeNotification
+                0x00005eec                hetNotification
+                0x00005f10                dmaGroupANotification
+ .text          0x00005f38      0x788 hal_source/pinmux.o
+                0x00005f38                muxInit
+                0x00006420                pinmuxGetConfigValue
+ .text          0x000066c0      0x8d4 hal_source/rti.o
+                0x000066c0                rtiInit
+                0x00006830                rtiStartCounter
+                0x0000687c                rtiStopCounter
+                0x000068cc                rtiResetCounter
+                0x0000695c                rtiSetPeriod
+                0x000069a0                rtiGetPeriod
+                0x000069e4                rtiGetCurrentTick
+                0x00006a94                dwdInit
+                0x00006ad8                dwwdInit
+                0x00006b48                dwwdGetCurrentDownCounter
+                0x00006b6c                dwdCounterEnable
+                0x00006b98                dwdSetPreload
+                0x00006bcc                dwdReset
+                0x00006c04                dwdGenerateSysReset
+                0x00006c3c                IsdwdKeySequenceCorrect
+                0x00006c88                dwdGetStatus
+                0x00006cd4                dwdClearFlag
+                0x00006cfc                dwdGetViolationStatus
+                0x00006db4                rtiEnableNotification
+                0x00006df4                rtiDisableNotification
+                0x00006e24                rtiGetConfigValue
+                0x00006f64                rtiCompare0Interrupt
+ .text          0x00006f94      0xf14 hal_source/sci.o
+                0x00006f94                sciInit
+                0x0000722c                sciSetFunctional
+                0x0000725c                sciSetBaudrate
+                0x0000731c                sciIsTxReady
+                0x00007348                sciSendByte
+                0x00007394                sciSend
+                0x00007558                sciIsRxReady
+                0x00007584                sciIsIdleDetected
+                0x000075b0                sciRxError
+                0x000075f0                sciReceiveByte
+                0x00007634                sciReceive
+                0x00007748                sciEnableLoopback
+                0x00007790                sciDisableLoopback
+                0x000077bc                sciEnableNotification
+                0x00007864                sciDisableNotification
+                0x00007910                sciGetConfigValue
+                0x00007aac                scilinGetConfigValue
+                0x00007c48                sciHighLevelInterrupt
+                0x00007d70                linHighLevelInterrupt
+ .text          0x00007ea8       0x18 hal_source/sys_phantom.o
+                0x00007ea8                phantomInterrupt
+ .text          0x00007ec0     0x37e0 hal_source/sys_selftest.o
+                0x00007ec0                selftestFailNotification
+                0x00007ee0                ccmSelfCheck
+                0x00008064                memoryInit
+                0x000080c0                stcSelfCheck
+                0x0000815c                cpuSelfTest
+                0x00008210                pbistSelfCheck
+                0x00008468                pbistRun
+                0x00008558                pbistStop
+                0x000085a8                pbistIsTestCompleted
+                0x000085dc                pbistIsTestPassed
+                0x00008624                pbistPortTestStatus
+                0x0000867c                efcCheck
+                0x0000871c                efcStuckZeroTest
+                0x00008800                efcSelfTest
+                0x0000884c                checkefcSelfTest
+                0x00008920                fmcBus2Check
+                0x00008978                fmcECCcheck
+                0x00008a60                checkB0RAMECC
+                0x00008cc8                checkB1RAMECC
+                0x00008f44                checkFlashECC
+                0x00009090                custom_dabort
+                0x000090a8                stcSelfCheckFail
+                0x000090b4                cpuSelfTestFail
+                0x000090c0                vimParityCheck
+                0x000091bc                dmaParityCheck
+                0x000092b8                het1ParityCheck
+                0x000093a4                htu1ParityCheck
+                0x000094a0                het2ParityCheck
+                0x000095cc                htu2ParityCheck
+                0x000096c8                adc1ParityCheck
+                0x000097b4                adc2ParityCheck
+                0x000098a0                can1ParityCheck
+                0x000099bc                can2ParityCheck
+                0x00009ad8                can3ParityCheck
+                0x00009bf4                mibspi1ParityCheck
+                0x00009d64                mibspi3ParityCheck
+                0x00009ed4                mibspi5ParityCheck
+                0x0000a044                checkRAMECC
+                0x0000a314                checkClockMonitor
+                0x0000a404                checkFlashEEPROMECC
+                0x0000a638                checkPLL1Slip
+                0x0000a768                checkPLL2Slip
+                0x0000a860                checkRAMAddrParity
+                0x0000a9ac                checkRAMUERRTest
+                0x0000ab70                fmcBus1ParityCheck
+                0x0000ad18                pbistFail
+                0x0000ada0                pbistGetConfigValue
+                0x0000af18                stcGetConfigValue
+                0x0000afd4                efcGetConfigValue
+                0x0000b090                ccmr4GetConfigValue
+                0x0000b0e8                errata_PBIST_4
+                0x0000b510                enableParity
+                0x0000b5d8                disableParity
+ .text          0x0000b6a0      0x360 hal_source/sys_startup.o
+                0x0000b6a0                _c_int00
+ .text          0x0000ba00      0xc60 hal_source/system.o
+                0x0000ba00                setupPLL
+                0x0000ba88                trimLPO
+                0x0000bafc                setupFlash
+                0x0000bb68                periphInit
+                0x0000bbe8                mapClocks
+                0x0000bd34                systemInit
+                0x0000be28                systemPowerDown
+                0x0000be6c                systemGetConfigValue
+                0x0000c2e0                tcmflashGetConfigValue
+                0x0000c4e0                sramGetConfigValue
+ .text          0x0000c660      0xc30 hal_source/sys_vim.o
+                0x0000c660                vimInit
+                0x0000c774                vimChannelMap
+                0x0000c860                vimEnableInterrupt
+                0x0000ca40                vimDisableInterrupt
+                0x0000cadc                vimGetConfigValue
+                0x0000d014                vimParityErrorHandler
+ .text          0x0000d290       0xe8 hal_source/dabort.o
+                0x0000d290                _dabort
+ .text          0x0000d378      0x354 hal_source/sys_core.o
+                0x0000d378                _coreInitRegisters_
+                0x0000d484                _coreInitStackPointer_
+                0x0000d4d0                _getCPSRValue_
+                0x0000d4d8                _gotoCPUIdle_
+                0x0000d4f0                _coreEnableVfp_
+                0x0000d508                _coreEnableEventBusExport_
+                0x0000d518                _coreDisableEventBusExport_
+                0x0000d528                _coreEnableRamEcc_
+                0x0000d538                _coreDisableRamEcc_
+                0x0000d548                _coreEnableFlashEcc_
+                0x0000d55c                _coreDisableFlashEcc_
+                0x0000d56c                _coreEnableIrqVicOffset_
+                0x0000d57c                _coreGetDataFault_
+                0x0000d584                _coreClearDataFault_
+                0x0000d590                _coreGetInstructionFault_
+                0x0000d598                _coreClearInstructionFault_
+                0x0000d5a4                _coreGetDataFaultAddress_
+                0x0000d5ac                _coreClearDataFaultAddress_
+                0x0000d5b8                _coreGetInstructionFaultAddress_
+                0x0000d5c0                _coreClearInstructionFaultAddress_
+                0x0000d5cc                _coreGetAuxiliaryDataFault_
+                0x0000d5d4                _coreClearAuxiliaryDataFault_
+                0x0000d5e0                _coreGetAuxiliaryInstructionFault_
+                0x0000d5e8                _coreClearAuxiliaryInstructionFault_
+                0x0000d5f4                _disable_interrupt_
+                0x0000d5fc                _disable_IRQ_interrupt_
+                0x0000d604                _disable_FIQ_interrupt_
+                0x0000d60c                _enable_interrupt_
+                0x0000d614                _esmCcmErrorsClear_
+                0x0000d69c                _errata_CORTEXR4_57_
+                0x0000d6b4                _errata_CORTEXR4_66_
+ .text          0x0000d6cc       0xe0 hal_source/sys_pmu.o
+                0x0000d6cc                _pmuInit_
+                0x0000d718                _pmuEnableCountersGlobal_
+                0x0000d728                _pmuDisableCountersGlobal_
+                0x0000d738                _pmuResetCycleCounter_
+                0x0000d748                _pmuResetEventCounters_
+                0x0000d758                _pmuResetCounters_
+                0x0000d768                _pmuStartCounters_
+                0x0000d770                _pmuStopCounters_
+                0x0000d778                _pmuSetCountEvent_
+                0x0000d784                _pmuGetCycleCount_
+                0x0000d78c                _pmuGetEventCount_
+                0x0000d798                _pmuGetOverflow_
+ .text          0x0000d7ac      0x724 ap_user_main_app.o
+                0x0000d7ac                main
+ .text          0x0000ded0      0xc04 fsw_source/basic_pid_controller.o
+                0x0000ded0                init_pid_controller
+                0x0000df98                init_pi_d_lpf_controller
+                0x0000e074                enable_pid_controller
+                0x0000e0d0                enable_pi_d_lpf_controller
+                0x0000e12c                disable_pid_controller
+                0x0000e188                disable_pi_d_lpf_controller
+                0x0000e1e4                calculate_pid_adjustment
+                0x0000e46c                calculate_pi_d_lpf_adjustment
+                0x0000e714                copy_pid_struct_data
+                0x0000e798                copy_pi_d_lpf_struct_data
+                0x0000e834                calc_pid_struct_checksum
+                0x0000e8f8                calc_pi_d_lpf_struct_checksum
+                0x0000e9bc                verify_pid_struct_checksum
+                0x0000ea30                verify_pi_d_lpf_struct_checksum
+                0x0000eaa4                init_pid_feedforward_data_struct
+ .text          0x0000ead4      0xb08 fsw_source/comp_filter.o
+                0x0000ec90                init_comp_filter
+                0x0000ee14                get_corrected_scaled_gyro_data
+                0x0000eec4                get_corrected_scaled_accelerometer_data
+                0x0000ef74                get_filtered_vehicle_state
+                0x0000f370                do_bias_calculation
+ .text          0x0000f5dc      0x250 fsw_source/iir_filters.o
+                0x0000f5dc                init_lpf_variables
+                0x0000f664                lowpass_filter
+                0x0000f6f8                init_hpf_variables
+                0x0000f788                highpass_filter
+ .text          0x0000f82c      0x6c0 fsw_source/imu.o
+                0x0000f82c                get_scaled_imu_data
+ .text          0x0000feec       0xa8 fsw_source/interrupts.o
+                0x0000feec                rti_callback
+                0x0000ff04                sci1_tx_callback
+                0x0000ff28                sci1_rx_callback
+                0x0000ff4c                sci2_tx_callback
+                0x0000ff70                sci2_rx_callback
+ .text          0x0000ff94      0x50c fsw_source/message_defs.o
+                0x0000ff94                create_telem_msg_string
+                0x00010090                create_telem_msg_n_floats
+                0x00010188                create_telem_msg_n_ints
+                0x00010280                create_telem_msg_m_n_float_matrix
+                0x00010390                create_telem_msg_m_n_int_matrix
+ .text          0x000104a0      0x204 fsw_source/misc_utils.o
+                0x000104a0                insert_delay
+                0x0001052c                blocking_sci_SendData
+                0x000105a0                esc_cal
+ .text          0x000106a4      0x668 fsw_source/mission_timekeeper.o
+                0x000106a4                init_mission_timekeeper
+                0x000107bc                flag_scheduler_callback
+                0x00010980                update_mission_time_counter
+                0x00010a64                get_mission_time
+                0x00010a98                timekeeper_delay
+                0x00010afc                create_flag
+                0x00010c28                get_flag_state
+                0x00010c98                reset_flag
+ .text          0x00010d0c     0x1160 fsw_source/pwm_input.o
+                0x00010dc0                init_rc_inputs
+                0x00010e84                do_rc_channel_callibration
+                0x00011918                get_rc_input_values
+                0x00011df0                get_ch5_mode
+ .text          0x00011e6c      0xeb0 fsw_source/rt_telemetry.o
+                0x000129c4                rt_telemetry_init_channel
+                0x00012afc                send_telem_msg_string
+                0x00012b54                send_telem_msg_string_blocking
+                0x00012bac                send_telem_msg_n_floats_blocking
+                0x00012c04                send_telem_msg_n_ints_blocking
+                0x00012c5c                send_telem_msg_m_n_float_matrix_blocking
+                0x00012cbc                send_telem_msg_m_n_int_matrix_blocking
+ .text          0x00012d1c      0x600 fsw_source/serial_comms_highlevel.o
+                0x00012d1c                serialport_init
+                0x00012e10                serialport_send_data_buffer
+                0x00012fa8                serialport_send_data_buffer_blocking
+                0x0001301c                serialport_receive_data_buffer
+                0x0001312c                serialport_receive_data_buffer_blocking
+                0x000131a0                serialport_highlevel_tx_isr
+                0x00013264                serialport_highlevel_rx_isr
+ .text          0x0001331c      0xa38 fsw_source/vehicle_gnc.o
+                0x0001331c                gnc_init
+                0x00013370                gnc_get_vehicle_state
+                0x000133ac                gnc_get_raw_sensor_data
+                0x00013444                gnc_get_state_vector_data
+                0x000134a0                gnc_vehicle_stabilization_outerloop_update
+                0x00013504                gnc_vehicle_stabilization_innerloop_update
+                0x00013554                gnc_height_kalman_struct_init
+                0x00013618                gnc_height_kalman_update
+                0x00013ba4                bno055_get_relative_heading
+                0x00013c44                height_controller_thrust_offset
+ .text          0x00013d54      0xc4c fsw_source/vehicle_pid_controller.o
+                0x00013d54                enable_controller
+                0x00013d8c                disable_controller
+                0x00013dc4                get_controller_status
+                0x00013dec                set_controller_mode
+                0x00013e20                controller_init_vars
+                0x00014144                check_output_saturation
+                0x00014228                generate_thrust_commands
+                0x000142c0                generate_attitude_commands
+                0x000143c8                generate_rate_commands
+                0x000145b0                rate_controller_update
+ .text          0x000149a0      0x704 fsw_source/hal_interface/imu_HAL.o
+                0x00014d40                imu_hal_init
+                0x00014e30                initialize_imu
+                0x00014f70                get_raw_imu_data
+ .text          0x000150a4      0x310 fsw_source/hal_interface/pwm_input_hal.o
+                0x000151dc                pwm_input_init
+                0x00015204                get_rc_state
+                0x00015360                setup_user_feedback_gpios
+                0x00015374                rc_input_validity_watchdog_callback
+ .text          0x000153b4      0x4cc fsw_source/hal_interface/Quadcopter_PWM_HAL.o
+                0x0001554c                QuadRotor_PWM_init
+                0x00015560                QuadRotor_motor1_start
+                0x00015580                QuadRotor_motor2_start
+                0x000155a0                QuadRotor_motor3_start
+                0x000155c0                QuadRotor_motor4_start
+                0x000155e0                QuadRotor_motor1_stop
+                0x00015600                QuadRotor_motor2_stop
+                0x00015620                QuadRotor_motor3_stop
+                0x00015640                QuadRotor_motor4_stop
+                0x00015660                QuadRotor_motor1_setDuty
+                0x000156b8                QuadRotor_motor2_setDuty
+                0x00015710                QuadRotor_motor3_setDuty
+                0x00015768                QuadRotor_motor4_setDuty
+                0x000157c0                QuadRotor_motor1_setDuty_raw
+                0x000157f0                QuadRotor_motor2_setDuty_raw
+                0x00015820                QuadRotor_motor3_setDuty_raw
+                0x00015850                QuadRotor_motor4_setDuty_raw
+ .text          0x00015880      0x1d8 fsw_source/hal_interface/serial_comms_highlevel_hal.o
+                0x00015880                serialport_hal_init
+                0x000158a4                serialport_hal_enable_tx_isr
+                0x00015908                serialport_hal_disable_tx_isr
+                0x0001596c                serialport_send_byte
+                0x000159ec                serialport_receive_byte
+ .text          0x00015a58      0x114 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_udivsi3.o)
+                0x00015a58                __udivsi3
+                0x00015a58                __aeabi_uidiv
+                0x00015b4c                __aeabi_uidivmod
+ .text          0x00015b6c        0x4 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_dvmd_tls.o)
+                0x00015b6c                __aeabi_ldiv0
+                0x00015b6c                __aeabi_idiv0
+ .text          0x00015b70      0x41c /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_addsubdf3.o)
+                0x00015b70                __aeabi_drsub
+                0x00015b78                __aeabi_dsub
+                0x00015b78                __subdf3
+                0x00015b7c                __adddf3
+                0x00015b7c                __aeabi_dadd
+                0x00015e8c                __aeabi_ui2d
+                0x00015e8c                __floatunsidf
+                0x00015eb0                __floatsidf
+                0x00015eb0                __aeabi_i2d
+                0x00015ed8                __extendsfdf2
+                0x00015ed8                __aeabi_f2d
+                0x00015f18                __aeabi_ul2d
+                0x00015f18                __floatundidf
+                0x00015f2c                __floatdidf
+                0x00015f2c                __aeabi_l2d
+ .text          0x00015f8c      0x49c /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_muldivdf3.o)
+                0x00015f8c                __aeabi_dmul
+                0x00015f8c                __muldf3
+                0x0001621c                __aeabi_ddiv
+                0x0001621c                __divdf3
+ .text          0x00016428      0x144 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_cmpdf2.o)
+                0x00016428                __gtdf2
+                0x00016428                __gedf2
+                0x00016430                __ltdf2
+                0x00016430                __ledf2
+                0x00016438                __cmpdf2
+                0x00016438                __eqdf2
+                0x00016438                __nedf2
+                0x000164c0                __aeabi_cdrcmple
+                0x000164dc                __aeabi_cdcmple
+                0x000164dc                __aeabi_cdcmpeq
+                0x000164f4                __aeabi_dcmpeq
+                0x0001650c                __aeabi_dcmplt
+                0x00016524                __aeabi_dcmple
+                0x0001653c                __aeabi_dcmpge
+                0x00016554                __aeabi_dcmpgt
+ .text          0x0001656c       0x5c /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixdfsi.o)
+                0x0001656c                __fixdfsi
+                0x0001656c                __aeabi_d2iz
+ .text          0x000165c8       0x54 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixunsdfsi.o)
+                0x000165c8                __fixunsdfsi
+                0x000165c8                __aeabi_d2uiz
+ .text          0x0001661c       0xa0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_truncdfsf2.o)
+                0x0001661c                __aeabi_d2f
+                0x0001661c                __truncdfsf2
+ .text          0x000166bc      0x2ac /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_addsubsf3.o)
+                0x000166bc                __aeabi_frsub
+                0x000166c4                __subsf3
+                0x000166c4                __aeabi_fsub
+                0x000166c8                __aeabi_fadd
+                0x000166c8                __addsf3
+                0x00016884                __aeabi_ui2f
+                0x00016884                __floatunsisf
+                0x0001688c                __aeabi_i2f
+                0x0001688c                __floatsisf
+                0x000168ac                __floatundisf
+                0x000168ac                __aeabi_ul2f
+                0x000168bc                __floatdisf
+                0x000168bc                __aeabi_l2f
+ .text          0x00016968      0x2f8 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_muldivsf3.o)
+                0x00016968                __mulsf3
+                0x00016968                __aeabi_fmul
+                0x00016b00                __divsf3
+                0x00016b00                __aeabi_fdiv
+ .text          0x00016c60      0x114 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_cmpsf2.o)
+                0x00016c60                __gtsf2
+                0x00016c60                __gesf2
+                0x00016c68                __lesf2
+                0x00016c68                __ltsf2
+                0x00016c70                __nesf2
+                0x00016c70                __eqsf2
+                0x00016c70                __cmpsf2
+                0x00016cd4                __aeabi_cfrcmple
+                0x00016ce4                __aeabi_cfcmple
+                0x00016ce4                __aeabi_cfcmpeq
+                0x00016cfc                __aeabi_fcmpeq
+                0x00016d14                __aeabi_fcmplt
+                0x00016d2c                __aeabi_fcmple
+                0x00016d44                __aeabi_fcmpge
+                0x00016d5c                __aeabi_fcmpgt
+ .text          0x00016d74       0x38 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_unordsf2.o)
+                0x00016d74                __aeabi_fcmpun
+                0x00016d74                __unordsf2
+ .text          0x00016dac       0x54 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixunssfsi.o)
+                0x00016dac                __aeabi_f2uiz
+                0x00016dac                __fixunssfsi
+ *(.text*)
+ .text.exit     0x00016e00       0x34 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-exit.o)
+                0x00016e00                exit
+ .text.startup.register_fini
+                0x00016e34       0x28 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+ .text.__call_exitprocs
+                0x00016e5c      0x170 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+                0x00016e5c                __call_exitprocs
+ .text.atexit   0x00016fcc       0x20 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-atexit.o)
+                0x00016fcc                atexit
+ .text.__libc_fini_array
+                0x00016fec       0x44 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-fini.o)
+                0x00016fec                __libc_fini_array
+ .text.__register_exitproc
+                0x00017030       0xe0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__atexit.o)
+                0x00017030                __register_exitproc
+ .text.cos      0x00017110       0xfc /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_cos.o)
+                0x00017110                cos
+ .text.atan2f   0x0001720c       0x10 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_atan2.o)
+                0x0001720c                atan2f
+ .text.sqrtf    0x0001721c      0x128 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_sqrt.o)
+                0x0001721c                sqrtf
+ *fill*         0x00017344        0x4 
+ .text.__ieee754_rem_pio2
+                0x00017348      0x648 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-e_rem_pio2.o)
+                0x00017348                __ieee754_rem_pio2
+ .text.__ieee754_atan2f
+                0x00017990      0x1b4 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_atan2.o)
+                0x00017990                __ieee754_atan2f
+ .text.__ieee754_sqrtf
+                0x00017b44      0x108 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_sqrt.o)
+                0x00017b44                __ieee754_sqrtf
+ *fill*         0x00017c4c        0x4 
+ .text.__kernel_cos
+                0x00017c50      0x350 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_cos.o)
+                0x00017c50                __kernel_cos
+ .text.__kernel_rem_pio2
+                0x00017fa0      0xbd8 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_rem_pio2.o)
+                0x00017fa0                __kernel_rem_pio2
+ .text.__kernel_sin
+                0x00018b78      0x20c /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_sin.o)
+                0x00018b78                __kernel_sin
+ .text.fabs     0x00018d84        0x8 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_fabs.o)
+                0x00018d84                fabs
+ *fill*         0x00018d8c        0x4 
+ .text.floor    0x00018d90      0x198 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_floor.o)
+                0x00018d90                floor
+ .text.matherr  0x00018f28        0x8 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_matherr.o)
+                0x00018f28                matherr
+ .text.scalbn   0x00018f30      0x180 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_scalbn.o)
+                0x00018f30                scalbn
+ .text.atanf    0x000190b0      0x2f4 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_atan.o)
+                0x000190b0                atanf
+ .text.fabsf    0x000193a4        0x8 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_fabs.o)
+                0x000193a4                fabsf
+ .text.copysign
+                0x000193ac       0x10 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_copysign.o)
+                0x000193ac                copysign
+ .text.__errno  0x000193bc       0x10 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o)
+                0x000193bc                __errno
+ .text.memcpy   0x000193cc       0xf0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy-stub.o)
+                0x000193cc                memcpy
+ .text._exit    0x000194bc        0x4 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libnosys.a(_exit.o)
+                0x000194bc                _exit
+ *(.glue_7)
+ .glue_7        0x000194c0        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x000194c0        0x0 linker stubs
+ *(.eh_frame)
+ .eh_frame      0x000194c0        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtbegin.o
+ *(.init)
+ .init          0x000194c0        0xc /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crti.o
+                0x000194c0                _init
+ .init          0x000194cc        0xc /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtn.o
+ *(.fini)
+ .fini          0x000194d8        0xc /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crti.o
+                0x000194d8                _fini
+ .fini          0x000194e4        0xc /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtn.o
+                0x000194f0                . = ALIGN (0x4)
+                0x000194f0                _etext = .
+
+.vfp11_veneer   0x000194f0        0x0
+ .vfp11_veneer  0x000194f0        0x0 linker stubs
+
+.v4_bx          0x000194f0        0x0
+ .v4_bx         0x000194f0        0x0 linker stubs
+
+.iplt           0x000194f0        0x0
+ .iplt          0x000194f0        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtbegin.o
+
+.rodata         0x000194f0      0x630
+                0x000194f0                . = ALIGN (0x4)
+ *(.rodata)
+ .rodata        0x000194f0       0x40 hal_source/het.o
+ .rodata        0x00019530      0x180 hal_source/sys_vim.o
+ .rodata        0x000196b0       0x45 ap_user_main_app.o
+ *fill*         0x000196f5        0x3 
+ .rodata        0x000196f8      0x1df fsw_source/pwm_input.o
+ *fill*         0x000198d7        0x1 
+ .rodata        0x000198d8       0x40 fsw_source/hal_interface/Quadcopter_PWM_HAL.o
+ *(.rodata*)
+ .rodata._global_impure_ptr
+                0x00019918        0x4 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+                0x00019918                _global_impure_ptr
+ .rodata.str1.4
+                0x0001991c        0x8 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_sqrt.o)
+                                  0x6 (size before relaxing)
+ .rodata.npio2_hw
+                0x00019924       0x80 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-e_rem_pio2.o)
+ .rodata.two_over_pi
+                0x000199a4      0x108 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-e_rem_pio2.o)
+ .rodata.init_jk
+                0x00019aac       0x10 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_rem_pio2.o)
+ *fill*         0x00019abc        0x4 
+ .rodata.PIo2   0x00019ac0       0x40 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_rem_pio2.o)
+ .rodata.atanlo
+                0x00019b00       0x10 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_atan.o)
+ .rodata.atanhi
+                0x00019b10       0x10 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_atan.o)
+                0x00019b20                . = ALIGN (0x4)
+
+.rel.dyn        0x00019b20        0x0
+ .rel.iplt      0x00019b20        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtbegin.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x00019b20        0x0
+                0x00019b20                __exidx_start = .
+ *(.ARM.exidx*)
+                0x00019b20                __exidx_end = .
+
+.preinit_array  0x00019b20        0x0
+                0x00019b20                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array*)
+                0x00019b20                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x00019b20        0x8
+                0x00019b20                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ .init_array.00000
+                0x00019b20        0x4 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-__call_atexit.o)
+ *(.init_array*)
+ .init_array    0x00019b24        0x4 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtbegin.o
+                0x00019b28                PROVIDE (__init_array_end, .)
+
+.fini_array     0x00019b28        0x4
+                0x00019b28                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array*)
+ .fini_array    0x00019b28        0x4 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtbegin.o
+                0x00019b2c                PROVIDE (__fini_array_end, .)
+                0x00019b2c                _sidata = LOADADDR (.data)
+
+.data           0x08020500      0xb70 load address 0x00019b2c
+                0x08020500                . = ALIGN (0x4)
+                0x08020500                _sdata = .
+ *(.data)
+ .data          0x08020500      0x740 hal_source/het.o
+ *(.data*)
+ .data.impure_data
+                0x08020c40      0x428 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x08021068        0x4 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-impure.o)
+                0x08021068                _impure_ptr
+ .data.__fdlib_version
+                0x0802106c        0x1 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_lib_ver.o)
+                0x0802106c                __fdlib_version
+                0x08021070                . = ALIGN (0x4)
+ *fill*         0x0802106d        0x3 
+                0x08021070                _edata = .
+
+.jcr            0x08021070        0x0 load address 0x0001a69c
+ .jcr           0x08021070        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtbegin.o
+
+.igot.plt       0x08021070        0x0 load address 0x0001a69c
+ .igot.plt      0x08021070        0x0 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtbegin.o
+                0x08021070                . = ALIGN (0x4)
+
+.bss            0x08021070     0x2928 load address 0x0001a69c
+                0x08021070                _sbss = .
+                0x08021070                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x08021070       0x1c /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtbegin.o
+ .bss           0x0802108c        0xc hal_source/i2c.o
+ .bss           0x08021098       0x28 hal_source/sci.o
+ .bss           0x080210c0       0xc0 fsw_source/mission_timekeeper.o
+ .bss           0x08021180       0x64 fsw_source/vehicle_gnc.o
+ .bss           0x080211e4      0x15e fsw_source/vehicle_pid_controller.o
+ *fill*         0x08021342        0x2 
+ .bss           0x08021344        0x4 fsw_source/hal_interface/pwm_input_hal.o
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x08021348     0x2594 ap_user_main_app.o
+                0x08021348                telem0
+                0x080218ac                ftdi_dbg_port_ptr
+                0x080218b0                tm4c_comms_aux_port_ptr
+                0x080218b4                ftdi_dbg_port
+                0x080228c8                tm4c_comms_aux_port
+ COMMON         0x080238dc       0x7c fsw_source/comp_filter.o
+                0x080238dc                acc_z_hpf
+                0x080238e8                gyr_pitch_lpf
+                0x080238f0                acc_y_lpf
+                0x080238f8                magnetometer_z_lpf
+                0x08023900                acc_x_lpf
+                0x08023908                magnetometer_x_lpf
+                0x08023910                gyr_pitch_hpf
+                0x0802391c                magnetometer_y_lpf
+                0x08023924                gyr_roll_lpf
+                0x0802392c                gyr_roll_hpf
+                0x08023938                acc_z_lpf
+                0x08023940                quadrotor_imu_bias_values
+ COMMON         0x08023958       0x40 fsw_source/vehicle_pid_controller.o
+                0x08023958                yaw_rate_cmd_multiplier
+                0x08023960                yaw_cmd_multiplier
+                0x08023968                roll_rate_cmd_multiplier
+                0x08023970                pitch_rate_cmd_multiplier
+                0x08023978                roll_cmd_multiplier
+                0x08023980                pitch_cmd_multiplier
+                0x08023988                vertical_velocity_cmd_multiplier
+                0x08023990                height_cmd_multiplier
+                0x08023998                . = ALIGN (0x4)
+                0x08023998                _ebss = .
+                0x08023998                __bss_end__ = _ebss
+                [!provide]                PROVIDE (end, _ebss)
+                [!provide]                PROVIDE (_end, _ebss)
+
+.memory_b1_text
+ *(.mb1text)
+ *(.mb1text*)
+ *(.mb1rodata)
+ *(.mb1rodata*)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+                0x00000000       0x34
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x16 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crti.o
+ .ARM.attributes
+                0x00000016       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtbegin.o
+ .ARM.attributes
+                0x00000046       0x36 hal_source/can.o
+ .ARM.attributes
+                0x0000007c       0x36 hal_source/esm.o
+ .ARM.attributes
+                0x000000b2       0x36 hal_source/gio.o
+ .ARM.attributes
+                0x000000e8       0x36 hal_source/het.o
+ .ARM.attributes
+                0x0000011e       0x36 hal_source/i2c.o
+ .ARM.attributes
+                0x00000154       0x36 hal_source/mibspi.o
+ .ARM.attributes
+                0x0000018a       0x36 hal_source/notification.o
+ .ARM.attributes
+                0x000001c0       0x36 hal_source/pinmux.o
+ .ARM.attributes
+                0x000001f6       0x36 hal_source/rti.o
+ .ARM.attributes
+                0x0000022c       0x36 hal_source/sci.o
+ .ARM.attributes
+                0x00000262       0x36 hal_source/sys_phantom.o
+ .ARM.attributes
+                0x00000298       0x36 hal_source/sys_selftest.o
+ .ARM.attributes
+                0x000002ce       0x36 hal_source/sys_startup.o
+ .ARM.attributes
+                0x00000304       0x36 hal_source/system.o
+ .ARM.attributes
+                0x0000033a       0x36 hal_source/sys_vim.o
+ .ARM.attributes
+                0x00000370       0x25 hal_source/dabort.o
+ .ARM.attributes
+                0x00000395       0x25 hal_source/sys_core.o
+ .ARM.attributes
+                0x000003ba       0x25 hal_source/sys_intvecs.o
+ .ARM.attributes
+                0x000003df       0x25 hal_source/sys_pmu.o
+ .ARM.attributes
+                0x00000404       0x36 ap_user_main_app.o
+ .ARM.attributes
+                0x0000043a       0x36 fsw_source/basic_pid_controller.o
+ .ARM.attributes
+                0x00000470       0x36 fsw_source/comp_filter.o
+ .ARM.attributes
+                0x000004a6       0x36 fsw_source/iir_filters.o
+ .ARM.attributes
+                0x000004dc       0x36 fsw_source/imu.o
+ .ARM.attributes
+                0x00000512       0x36 fsw_source/interrupts.o
+ .ARM.attributes
+                0x00000548       0x36 fsw_source/message_defs.o
+ .ARM.attributes
+                0x0000057e       0x36 fsw_source/misc_utils.o
+ .ARM.attributes
+                0x000005b4       0x36 fsw_source/mission_timekeeper.o
+ .ARM.attributes
+                0x000005ea       0x36 fsw_source/pwm_input.o
+ .ARM.attributes
+                0x00000620       0x36 fsw_source/rt_telemetry.o
+ .ARM.attributes
+                0x00000656       0x36 fsw_source/serial_comms_highlevel.o
+ .ARM.attributes
+                0x0000068c       0x36 fsw_source/vehicle_gnc.o
+ .ARM.attributes
+                0x000006c2       0x36 fsw_source/vehicle_pid_controller.o
+ .ARM.attributes
+                0x000006f8       0x36 fsw_source/hal_interface/imu_HAL.o
+ .ARM.attributes
+                0x0000072e       0x36 fsw_source/hal_interface/pwm_input_hal.o
+ .ARM.attributes
+                0x00000764       0x36 fsw_source/hal_interface/Quadcopter_PWM_HAL.o
+ .ARM.attributes
+                0x0000079a       0x36 fsw_source/hal_interface/serial_comms_highlevel_hal.o
+ .ARM.attributes
+                0x000007d0       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_cos.o)
+ .ARM.attributes
+                0x00000800       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_atan2.o)
+ .ARM.attributes
+                0x00000830       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_sqrt.o)
+ .ARM.attributes
+                0x00000860       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-e_rem_pio2.o)
+ .ARM.attributes
+                0x00000890       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_atan2.o)
+ .ARM.attributes
+                0x000008c0       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_sqrt.o)
+ .ARM.attributes
+                0x000008f0       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_cos.o)
+ .ARM.attributes
+                0x00000920       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_rem_pio2.o)
+ .ARM.attributes
+                0x00000950       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_sin.o)
+ .ARM.attributes
+                0x00000980       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_fabs.o)
+ .ARM.attributes
+                0x000009b0       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_floor.o)
+ .ARM.attributes
+                0x000009e0       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_lib_ver.o)
+ .ARM.attributes
+                0x00000a10       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_matherr.o)
+ .ARM.attributes
+                0x00000a40       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_scalbn.o)
+ .ARM.attributes
+                0x00000a70       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_atan.o)
+ .ARM.attributes
+                0x00000aa0       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_fabs.o)
+ .ARM.attributes
+                0x00000ad0       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_copysign.o)
+ .ARM.attributes
+                0x00000b00       0x18 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000b18       0x18 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000b30       0x18 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_addsubdf3.o)
+ .ARM.attributes
+                0x00000b48       0x18 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_muldivdf3.o)
+ .ARM.attributes
+                0x00000b60       0x18 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_cmpdf2.o)
+ .ARM.attributes
+                0x00000b78       0x18 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixdfsi.o)
+ .ARM.attributes
+                0x00000b90       0x18 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixunsdfsi.o)
+ .ARM.attributes
+                0x00000ba8       0x18 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_truncdfsf2.o)
+ .ARM.attributes
+                0x00000bc0       0x18 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_addsubsf3.o)
+ .ARM.attributes
+                0x00000bd8       0x18 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_muldivsf3.o)
+ .ARM.attributes
+                0x00000bf0       0x18 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_cmpsf2.o)
+ .ARM.attributes
+                0x00000c08       0x18 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_unordsf2.o)
+ .ARM.attributes
+                0x00000c20       0x18 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_arm_fixunssfsi.o)
+ .ARM.attributes
+                0x00000c38       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o)
+ .ARM.attributes
+                0x00000c68       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x00000c98       0x30 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libnosys.a(_exit.o)
+ .ARM.attributes
+                0x00000cc8       0x18 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtn.o
+LOAD hal_source/adc.o
+LOAD hal_source/can.o
+LOAD hal_source/esm.o
+LOAD hal_source/gio.o
+LOAD hal_source/het.o
+LOAD hal_source/i2c.o
+LOAD hal_source/mibspi.o
+LOAD hal_source/notification.o
+LOAD hal_source/pinmux.o
+LOAD hal_source/rti.o
+LOAD hal_source/sci.o
+LOAD hal_source/sys_dma.o
+LOAD hal_source/sys_pcr.o
+LOAD hal_source/sys_phantom.o
+LOAD hal_source/sys_pmm.o
+LOAD hal_source/sys_selftest.o
+LOAD hal_source/sys_startup.o
+LOAD hal_source/system.o
+LOAD hal_source/sys_vim.o
+LOAD hal_source/dabort.o
+LOAD hal_source/sys_core.o
+LOAD hal_source/sys_intvecs.o
+LOAD hal_source/sys_mpu.o
+LOAD hal_source/sys_pmu.o
+LOAD ap_user_main_app.o
+LOAD fsw_source/basic_pid_controller.o
+LOAD fsw_source/comp_filter.o
+LOAD fsw_source/iir_filters.o
+LOAD fsw_source/imu.o
+LOAD fsw_source/interrupts.o
+LOAD fsw_source/message_defs.o
+LOAD fsw_source/misc_utils.o
+LOAD fsw_source/mission_timekeeper.o
+LOAD fsw_source/pwm_input.o
+LOAD fsw_source/rt_telemetry.o
+LOAD fsw_source/serial_comms_highlevel.o
+LOAD fsw_source/vehicle_gnc.o
+LOAD fsw_source/vehicle_pid_controller.o
+LOAD fsw_source/hal_interface/imu_HAL.o
+LOAD fsw_source/hal_interface/pwm_input_hal.o
+LOAD fsw_source/hal_interface/Quadcopter_PWM_HAL.o
+LOAD fsw_source/hal_interface/serial_comms_highlevel_hal.o
+LOAD /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a
+START GROUP
+LOAD /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a
+LOAD /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a
+END GROUP
+START GROUP
+LOAD /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a
+LOAD /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a
+LOAD /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libnosys.a
+END GROUP
+LOAD /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtend.o
+LOAD /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/crtn.o
+OUTPUT(ap_user_main_app.elf elf32-littlearm)
+
+.debug_info     0x00000000    0x1106c
+ .debug_info    0x00000000      0xbd3 hal_source/can.o
+ .debug_info    0x00000bd3      0x624 hal_source/esm.o
+ .debug_info    0x000011f7      0x4cf hal_source/gio.o
+ .debug_info    0x000016c6      0x966 hal_source/het.o
+ .debug_info    0x0000202c      0xa91 hal_source/i2c.o
+ .debug_info    0x00002abd      0xa87 hal_source/mibspi.o
+ .debug_info    0x00003544     0x1417 hal_source/notification.o
+ .debug_info    0x0000495b      0x48c hal_source/pinmux.o
+ .debug_info    0x00004de7      0x7f7 hal_source/rti.o
+ .debug_info    0x000055de      0x848 hal_source/sci.o
+ .debug_info    0x00005e26       0x9c hal_source/sys_phantom.o
+ .debug_info    0x00005ec2     0x28f1 hal_source/sys_selftest.o
+ .debug_info    0x000087b3      0x621 hal_source/sys_startup.o
+ .debug_info    0x00008dd4      0xf3f hal_source/system.o
+ .debug_info    0x00009d13      0x689 hal_source/sys_vim.o
+ .debug_info    0x0000a39c       0x5b hal_source/dabort.o
+ .debug_info    0x0000a3f7       0x5d hal_source/sys_core.o
+ .debug_info    0x0000a454       0x60 hal_source/sys_intvecs.o
+ .debug_info    0x0000a4b4       0x5c hal_source/sys_pmu.o
+ .debug_info    0x0000a510      0xb7a ap_user_main_app.o
+ .debug_info    0x0000b08a      0x7e0 fsw_source/basic_pid_controller.o
+ .debug_info    0x0000b86a      0x714 fsw_source/comp_filter.o
+ .debug_info    0x0000bf7e      0x20f fsw_source/iir_filters.o
+ .debug_info    0x0000c18d      0x267 fsw_source/imu.o
+ .debug_info    0x0000c3f4      0x21b fsw_source/interrupts.o
+ .debug_info    0x0000c60f      0x6b3 fsw_source/message_defs.o
+ .debug_info    0x0000ccc2      0x30e fsw_source/misc_utils.o
+ .debug_info    0x0000cfd0      0x30d fsw_source/mission_timekeeper.o
+ .debug_info    0x0000d2dd      0x7c7 fsw_source/pwm_input.o
+ .debug_info    0x0000daa4     0x100f fsw_source/rt_telemetry.o
+ .debug_info    0x0000eab3      0x39f fsw_source/serial_comms_highlevel.o
+ .debug_info    0x0000ee52      0x79d fsw_source/vehicle_gnc.o
+ .debug_info    0x0000f5ef      0x8de fsw_source/vehicle_pid_controller.o
+ .debug_info    0x0000fecd      0x705 fsw_source/hal_interface/imu_HAL.o
+ .debug_info    0x000105d2      0x31a fsw_source/hal_interface/pwm_input_hal.o
+ .debug_info    0x000108ec      0x425 fsw_source/hal_interface/Quadcopter_PWM_HAL.o
+ .debug_info    0x00010d11      0x35b fsw_source/hal_interface/serial_comms_highlevel_hal.o
+
+.debug_abbrev   0x00000000     0x2c63
+ .debug_abbrev  0x00000000      0x18e hal_source/can.o
+ .debug_abbrev  0x0000018e      0x187 hal_source/esm.o
+ .debug_abbrev  0x00000315       0xfa hal_source/gio.o
+ .debug_abbrev  0x0000040f      0x185 hal_source/het.o
+ .debug_abbrev  0x00000594      0x182 hal_source/i2c.o
+ .debug_abbrev  0x00000716      0x17e hal_source/mibspi.o
+ .debug_abbrev  0x00000894      0x15f hal_source/notification.o
+ .debug_abbrev  0x000009f3       0xeb hal_source/pinmux.o
+ .debug_abbrev  0x00000ade      0x1c9 hal_source/rti.o
+ .debug_abbrev  0x00000ca7      0x1a6 hal_source/sci.o
+ .debug_abbrev  0x00000e4d       0x42 hal_source/sys_phantom.o
+ .debug_abbrev  0x00000e8f      0x252 hal_source/sys_selftest.o
+ .debug_abbrev  0x000010e1      0x116 hal_source/sys_startup.o
+ .debug_abbrev  0x000011f7      0x18d hal_source/system.o
+ .debug_abbrev  0x00001384      0x15f hal_source/sys_vim.o
+ .debug_abbrev  0x000014e3       0x14 hal_source/dabort.o
+ .debug_abbrev  0x000014f7       0x14 hal_source/sys_core.o
+ .debug_abbrev  0x0000150b       0x14 hal_source/sys_intvecs.o
+ .debug_abbrev  0x0000151f       0x14 hal_source/sys_pmu.o
+ .debug_abbrev  0x00001533      0x13b ap_user_main_app.o
+ .debug_abbrev  0x0000166e      0x1b4 fsw_source/basic_pid_controller.o
+ .debug_abbrev  0x00001822      0x199 fsw_source/comp_filter.o
+ .debug_abbrev  0x000019bb       0xca fsw_source/iir_filters.o
+ .debug_abbrev  0x00001a85       0xc0 fsw_source/imu.o
+ .debug_abbrev  0x00001b45       0xbe fsw_source/interrupts.o
+ .debug_abbrev  0x00001c03       0xde fsw_source/message_defs.o
+ .debug_abbrev  0x00001ce1      0x124 fsw_source/misc_utils.o
+ .debug_abbrev  0x00001e05      0x15e fsw_source/mission_timekeeper.o
+ .debug_abbrev  0x00001f63      0x1c5 fsw_source/pwm_input.o
+ .debug_abbrev  0x00002128      0x214 fsw_source/rt_telemetry.o
+ .debug_abbrev  0x0000233c      0x139 fsw_source/serial_comms_highlevel.o
+ .debug_abbrev  0x00002475      0x147 fsw_source/vehicle_gnc.o
+ .debug_abbrev  0x000025bc      0x178 fsw_source/vehicle_pid_controller.o
+ .debug_abbrev  0x00002734      0x1b3 fsw_source/hal_interface/imu_HAL.o
+ .debug_abbrev  0x000028e7      0x149 fsw_source/hal_interface/pwm_input_hal.o
+ .debug_abbrev  0x00002a30      0x104 fsw_source/hal_interface/Quadcopter_PWM_HAL.o
+ .debug_abbrev  0x00002b34      0x12f fsw_source/hal_interface/serial_comms_highlevel_hal.o
+
+.debug_aranges  0x00000000      0x4a0
+ .debug_aranges
+                0x00000000       0x20 hal_source/can.o
+ .debug_aranges
+                0x00000020       0x20 hal_source/esm.o
+ .debug_aranges
+                0x00000040       0x20 hal_source/gio.o
+ .debug_aranges
+                0x00000060       0x20 hal_source/het.o
+ .debug_aranges
+                0x00000080       0x20 hal_source/i2c.o
+ .debug_aranges
+                0x000000a0       0x20 hal_source/mibspi.o
+ .debug_aranges
+                0x000000c0       0x20 hal_source/notification.o
+ .debug_aranges
+                0x000000e0       0x20 hal_source/pinmux.o
+ .debug_aranges
+                0x00000100       0x20 hal_source/rti.o
+ .debug_aranges
+                0x00000120       0x20 hal_source/sci.o
+ .debug_aranges
+                0x00000140       0x20 hal_source/sys_phantom.o
+ .debug_aranges
+                0x00000160       0x20 hal_source/sys_selftest.o
+ .debug_aranges
+                0x00000180       0x20 hal_source/sys_startup.o
+ .debug_aranges
+                0x000001a0       0x20 hal_source/system.o
+ .debug_aranges
+                0x000001c0       0x20 hal_source/sys_vim.o
+ .debug_aranges
+                0x000001e0       0x20 hal_source/dabort.o
+ .debug_aranges
+                0x00000200       0x20 hal_source/sys_core.o
+ .debug_aranges
+                0x00000220       0x20 hal_source/sys_intvecs.o
+ .debug_aranges
+                0x00000240       0x20 hal_source/sys_pmu.o
+ .debug_aranges
+                0x00000260       0x20 ap_user_main_app.o
+ .debug_aranges
+                0x00000280       0x20 fsw_source/basic_pid_controller.o
+ .debug_aranges
+                0x000002a0       0x20 fsw_source/comp_filter.o
+ .debug_aranges
+                0x000002c0       0x20 fsw_source/iir_filters.o
+ .debug_aranges
+                0x000002e0       0x20 fsw_source/imu.o
+ .debug_aranges
+                0x00000300       0x20 fsw_source/interrupts.o
+ .debug_aranges
+                0x00000320       0x20 fsw_source/message_defs.o
+ .debug_aranges
+                0x00000340       0x20 fsw_source/misc_utils.o
+ .debug_aranges
+                0x00000360       0x20 fsw_source/mission_timekeeper.o
+ .debug_aranges
+                0x00000380       0x20 fsw_source/pwm_input.o
+ .debug_aranges
+                0x000003a0       0x20 fsw_source/rt_telemetry.o
+ .debug_aranges
+                0x000003c0       0x20 fsw_source/serial_comms_highlevel.o
+ .debug_aranges
+                0x000003e0       0x20 fsw_source/vehicle_gnc.o
+ .debug_aranges
+                0x00000400       0x20 fsw_source/vehicle_pid_controller.o
+ .debug_aranges
+                0x00000420       0x20 fsw_source/hal_interface/imu_HAL.o
+ .debug_aranges
+                0x00000440       0x20 fsw_source/hal_interface/pwm_input_hal.o
+ .debug_aranges
+                0x00000460       0x20 fsw_source/hal_interface/Quadcopter_PWM_HAL.o
+ .debug_aranges
+                0x00000480       0x20 fsw_source/hal_interface/serial_comms_highlevel_hal.o
+
+.debug_line     0x00000000     0x4d18
+ .debug_line    0x00000000      0x43f hal_source/can.o
+ .debug_line    0x0000043f      0x205 hal_source/esm.o
+ .debug_line    0x00000644      0x1bf hal_source/gio.o
+ .debug_line    0x00000803      0x29d hal_source/het.o
+ .debug_line    0x00000aa0      0x25a hal_source/i2c.o
+ .debug_line    0x00000cfa      0x3d5 hal_source/mibspi.o
+ .debug_line    0x000010cf      0x1bb hal_source/notification.o
+ .debug_line    0x0000128a      0x2a7 hal_source/pinmux.o
+ .debug_line    0x00001531      0x1f2 hal_source/rti.o
+ .debug_line    0x00001723      0x29d hal_source/sci.o
+ .debug_line    0x000019c0       0x49 hal_source/sys_phantom.o
+ .debug_line    0x00001a09      0x753 hal_source/sys_selftest.o
+ .debug_line    0x0000215c      0x1f5 hal_source/sys_startup.o
+ .debug_line    0x00002351      0x26e hal_source/system.o
+ .debug_line    0x000025bf      0x249 hal_source/sys_vim.o
+ .debug_line    0x00002808       0x76 hal_source/dabort.o
+ .debug_line    0x0000287e      0x143 hal_source/sys_core.o
+ .debug_line    0x000029c1       0x4f hal_source/sys_intvecs.o
+ .debug_line    0x00002a10       0x91 hal_source/sys_pmu.o
+ .debug_line    0x00002aa1      0x283 ap_user_main_app.o
+ .debug_line    0x00002d24      0x202 fsw_source/basic_pid_controller.o
+ .debug_line    0x00002f26      0x239 fsw_source/comp_filter.o
+ .debug_line    0x0000315f       0x86 fsw_source/iir_filters.o
+ .debug_line    0x000031e5      0x16d fsw_source/imu.o
+ .debug_line    0x00003352      0x16b fsw_source/interrupts.o
+ .debug_line    0x000034bd      0x1f3 fsw_source/message_defs.o
+ .debug_line    0x000036b0      0x199 fsw_source/misc_utils.o
+ .debug_line    0x00003849      0x1a8 fsw_source/mission_timekeeper.o
+ .debug_line    0x000039f1      0x333 fsw_source/pwm_input.o
+ .debug_line    0x00003d24      0x339 fsw_source/rt_telemetry.o
+ .debug_line    0x0000405d      0x20b fsw_source/serial_comms_highlevel.o
+ .debug_line    0x00004268      0x13b fsw_source/vehicle_gnc.o
+ .debug_line    0x000043a3      0x263 fsw_source/vehicle_pid_controller.o
+ .debug_line    0x00004606      0x22a fsw_source/hal_interface/imu_HAL.o
+ .debug_line    0x00004830      0x196 fsw_source/hal_interface/pwm_input_hal.o
+ .debug_line    0x000049c6      0x1a5 fsw_source/hal_interface/Quadcopter_PWM_HAL.o
+ .debug_line    0x00004b6b      0x1ad fsw_source/hal_interface/serial_comms_highlevel_hal.o
+
+.debug_str      0x00000000     0x6a4a
+ .debug_str     0x00000000      0x631 hal_source/can.o
+                                0x6ac (size before relaxing)
+ .debug_str     0x00000631      0x2fb hal_source/esm.o
+                                0x516 (size before relaxing)
+ .debug_str     0x0000092c      0x1cb hal_source/gio.o
+                                0x3db (size before relaxing)
+ .debug_str     0x00000af7      0x331 hal_source/het.o
+                                0x57e (size before relaxing)
+ .debug_str     0x00000e28      0x4cd hal_source/i2c.o
+                                0x743 (size before relaxing)
+ .debug_str     0x000012f5      0x580 hal_source/mibspi.o
+                                0x80d (size before relaxing)
+ .debug_str     0x00001875      0x4b0 hal_source/notification.o
+                                0xa42 (size before relaxing)
+ .debug_str     0x00001d25      0x281 hal_source/pinmux.o
+                                0x55d (size before relaxing)
+ .debug_str     0x00001fa6      0x4ad hal_source/rti.o
+                                0x740 (size before relaxing)
+ .debug_str     0x00002453      0x238 hal_source/sci.o
+                                0x5ae (size before relaxing)
+ .debug_str     0x0000268b       0x2a hal_source/sys_phantom.o
+                                0x197 (size before relaxing)
+ .debug_str     0x000026b5      0xcf2 hal_source/sys_selftest.o
+                               0x17ee (size before relaxing)
+ .debug_str     0x000033a7      0x278 hal_source/sys_startup.o
+                                0x5d0 (size before relaxing)
+ .debug_str     0x0000361f      0x62c hal_source/system.o
+                                0xce8 (size before relaxing)
+ .debug_str     0x00003c4b      0x213 hal_source/sys_vim.o
+                                0x5e0 (size before relaxing)
+ .debug_str     0x00003e5e      0x802 ap_user_main_app.o
+                                0xb6e (size before relaxing)
+ .debug_str     0x00004660      0x49c fsw_source/basic_pid_controller.o
+                                0x676 (size before relaxing)
+ .debug_str     0x00004afc      0x67a fsw_source/comp_filter.o
+                                0x8a5 (size before relaxing)
+ .debug_str     0x00005176       0x82 fsw_source/iir_filters.o
+                                0x253 (size before relaxing)
+ .debug_str     0x000051f8       0x66 fsw_source/imu.o
+                                0x37b (size before relaxing)
+ .debug_str     0x0000525e       0x69 fsw_source/interrupts.o
+                                0x33e (size before relaxing)
+ .debug_str     0x000052c7      0x150 fsw_source/message_defs.o
+                                0x361 (size before relaxing)
+ .debug_str     0x00005417       0x5e fsw_source/misc_utils.o
+                                0x2bc (size before relaxing)
+ .debug_str     0x00005475      0x128 fsw_source/mission_timekeeper.o
+                                0x37d (size before relaxing)
+ .debug_str     0x0000559d      0x239 fsw_source/pwm_input.o
+                                0x99d (size before relaxing)
+ .debug_str     0x000057d6      0x331 fsw_source/rt_telemetry.o
+                                0x7ac (size before relaxing)
+ .debug_str     0x00005b07      0x164 fsw_source/serial_comms_highlevel.o
+                                0x419 (size before relaxing)
+ .debug_str     0x00005c6b      0x439 fsw_source/vehicle_gnc.o
+                                0x8c7 (size before relaxing)
+ .debug_str     0x000060a4      0x452 fsw_source/vehicle_pid_controller.o
+                                0xa40 (size before relaxing)
+ .debug_str     0x000064f6      0x1c4 fsw_source/hal_interface/imu_HAL.o
+                                0x624 (size before relaxing)
+ .debug_str     0x000066ba       0xdf fsw_source/hal_interface/pwm_input_hal.o
+                                0x380 (size before relaxing)
+ .debug_str     0x00006799      0x1f2 fsw_source/hal_interface/Quadcopter_PWM_HAL.o
+                                0x44c (size before relaxing)
+ .debug_str     0x0000698b       0xbf fsw_source/hal_interface/serial_comms_highlevel_hal.o
+                                0x391 (size before relaxing)
+
+.comment        0x00000000       0x6e
+ .comment       0x00000000       0x6e hal_source/can.o
+                                 0x6f (size before relaxing)
+ .comment       0x0000006e       0x6f hal_source/esm.o
+ .comment       0x0000006e       0x6f hal_source/gio.o
+ .comment       0x0000006e       0x6f hal_source/het.o
+ .comment       0x0000006e       0x6f hal_source/i2c.o
+ .comment       0x0000006e       0x6f hal_source/mibspi.o
+ .comment       0x0000006e       0x6f hal_source/notification.o
+ .comment       0x0000006e       0x6f hal_source/pinmux.o
+ .comment       0x0000006e       0x6f hal_source/rti.o
+ .comment       0x0000006e       0x6f hal_source/sci.o
+ .comment       0x0000006e       0x6f hal_source/sys_phantom.o
+ .comment       0x0000006e       0x6f hal_source/sys_selftest.o
+ .comment       0x0000006e       0x6f hal_source/sys_startup.o
+ .comment       0x0000006e       0x6f hal_source/system.o
+ .comment       0x0000006e       0x6f hal_source/sys_vim.o
+ .comment       0x0000006e       0x6f ap_user_main_app.o
+ .comment       0x0000006e       0x6f fsw_source/basic_pid_controller.o
+ .comment       0x0000006e       0x6f fsw_source/comp_filter.o
+ .comment       0x0000006e       0x6f fsw_source/iir_filters.o
+ .comment       0x0000006e       0x6f fsw_source/imu.o
+ .comment       0x0000006e       0x6f fsw_source/interrupts.o
+ .comment       0x0000006e       0x6f fsw_source/message_defs.o
+ .comment       0x0000006e       0x6f fsw_source/misc_utils.o
+ .comment       0x0000006e       0x6f fsw_source/mission_timekeeper.o
+ .comment       0x0000006e       0x6f fsw_source/pwm_input.o
+ .comment       0x0000006e       0x6f fsw_source/rt_telemetry.o
+ .comment       0x0000006e       0x6f fsw_source/serial_comms_highlevel.o
+ .comment       0x0000006e       0x6f fsw_source/vehicle_gnc.o
+ .comment       0x0000006e       0x6f fsw_source/vehicle_pid_controller.o
+ .comment       0x0000006e       0x6f fsw_source/hal_interface/imu_HAL.o
+ .comment       0x0000006e       0x6f fsw_source/hal_interface/pwm_input_hal.o
+ .comment       0x0000006e       0x6f fsw_source/hal_interface/Quadcopter_PWM_HAL.o
+ .comment       0x0000006e       0x6f fsw_source/hal_interface/serial_comms_highlevel_hal.o
+
+.debug_frame    0x00000000     0x3750
+ .debug_frame   0x00000000      0x334 hal_source/can.o
+ .debug_frame   0x00000334      0x29c hal_source/esm.o
+ .debug_frame   0x000005d0      0x150 hal_source/gio.o
+ .debug_frame   0x00000720      0x23c hal_source/het.o
+ .debug_frame   0x0000095c      0x334 hal_source/i2c.o
+ .debug_frame   0x00000c90      0x1e0 hal_source/mibspi.o
+ .debug_frame   0x00000e70      0x250 hal_source/notification.o
+ .debug_frame   0x000010c0       0x58 hal_source/pinmux.o
+ .debug_frame   0x00001118      0x2dc hal_source/rti.o
+ .debug_frame   0x000013f4      0x28c hal_source/sci.o
+ .debug_frame   0x00001680       0x30 hal_source/sys_phantom.o
+ .debug_frame   0x000016b0      0x6b4 hal_source/sys_selftest.o
+ .debug_frame   0x00001d64       0x20 hal_source/sys_startup.o
+ .debug_frame   0x00001d84      0x154 hal_source/system.o
+ .debug_frame   0x00001ed8       0xd8 hal_source/sys_vim.o
+ .debug_frame   0x00001fb0       0x2c ap_user_main_app.o
+ .debug_frame   0x00001fdc      0x258 fsw_source/basic_pid_controller.o
+ .debug_frame   0x00002234      0x118 fsw_source/comp_filter.o
+ .debug_frame   0x0000234c       0x98 fsw_source/iir_filters.o
+ .debug_frame   0x000023e4       0x34 fsw_source/imu.o
+ .debug_frame   0x00002418       0x9c fsw_source/interrupts.o
+ .debug_frame   0x000024b4       0xb0 fsw_source/message_defs.o
+ .debug_frame   0x00002564       0x70 fsw_source/misc_utils.o
+ .debug_frame   0x000025d4      0x110 fsw_source/mission_timekeeper.o
+ .debug_frame   0x000026e4       0xe4 fsw_source/pwm_input.o
+ .debug_frame   0x000027c8      0x278 fsw_source/rt_telemetry.o
+ .debug_frame   0x00002a40       0xf0 fsw_source/serial_comms_highlevel.o
+ .debug_frame   0x00002b30      0x150 fsw_source/vehicle_gnc.o
+ .debug_frame   0x00002c80      0x178 fsw_source/vehicle_pid_controller.o
+ .debug_frame   0x00002df8       0xf0 fsw_source/hal_interface/imu_HAL.o
+ .debug_frame   0x00002ee8       0xa8 fsw_source/hal_interface/pwm_input_hal.o
+ .debug_frame   0x00002f90      0x230 fsw_source/hal_interface/Quadcopter_PWM_HAL.o
+ .debug_frame   0x000031c0       0xac fsw_source/hal_interface/serial_comms_highlevel_hal.o
+ .debug_frame   0x0000326c       0x44 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_cos.o)
+ .debug_frame   0x000032b0       0x2c /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_atan2.o)
+ .debug_frame   0x000032dc       0x4c /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-wf_sqrt.o)
+ .debug_frame   0x00003328       0x70 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-e_rem_pio2.o)
+ .debug_frame   0x00003398       0x4c /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_atan2.o)
+ .debug_frame   0x000033e4       0x38 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-ef_sqrt.o)
+ .debug_frame   0x0000341c       0x70 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_cos.o)
+ .debug_frame   0x0000348c       0x50 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_rem_pio2.o)
+ .debug_frame   0x000034dc       0x5c /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-k_sin.o)
+ .debug_frame   0x00003538       0x20 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_fabs.o)
+ .debug_frame   0x00003558       0x48 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_floor.o)
+ .debug_frame   0x000035a0       0x20 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_matherr.o)
+ .debug_frame   0x000035c0       0x54 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_scalbn.o)
+ .debug_frame   0x00003614       0x60 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_atan.o)
+ .debug_frame   0x00003674       0x20 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-sf_fabs.o)
+ .debug_frame   0x00003694       0x20 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libm.a(lib_a-s_copysign.o)
+ .debug_frame   0x000036b4       0x20 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/libgcc.a(_udivsi3.o)
+ .debug_frame   0x000036d4       0x20 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-errno.o)
+ .debug_frame   0x000036f4       0x3c /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libc.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00003730       0x20 /home/aghosh/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/libnosys.a(_exit.o)

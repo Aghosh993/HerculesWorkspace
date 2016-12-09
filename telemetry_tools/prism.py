@@ -1,3 +1,4 @@
+#!/usr/bin/python2
 # prism.py
 # This script directly connects to a serial port and receives telemetry and looks for desired messages with a specific message ID and descriptor
 # Messages satisfying the above filter are then displayed on the CLI

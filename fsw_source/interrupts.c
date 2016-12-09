@@ -14,13 +14,13 @@ void rti_callback(void)
 {
 	// gioToggleBit(mibspiPORT3, PIN_SIMO);
 	
-	static uint8_t can_msg[8] = {0, 1, 2, 3, 4, 5, 90, 7};
-	canTransmit(canREG3, canMESSAGE_BOX1, can_msg);
-	++can_msg[0];
-	canTransmit(canREG3, canMESSAGE_BOX2, can_msg);
-	++can_msg[1];
-	canTransmit(canREG3, canMESSAGE_BOX3, can_msg);
-	++can_msg[2];
+	// static uint8_t can_msg[8] = {0, 1, 2, 3, 4, 5, 90, 7};
+	// canTransmit(canREG3, canMESSAGE_BOX1, can_msg);
+	// ++can_msg[0];
+	// canTransmit(canREG3, canMESSAGE_BOX2, can_msg);
+	// ++can_msg[1];
+	// canTransmit(canREG3, canMESSAGE_BOX3, can_msg);
+	// ++can_msg[2];
 
 	flag_scheduler_callback();
 	update_mission_time_counter();

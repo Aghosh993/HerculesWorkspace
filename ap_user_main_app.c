@@ -15,8 +15,6 @@
 #include "telem_config.h"
 #include "vehicle_gnc.h"
 
-#include <stdio.h>
-
 #define ENABLE_MOTORS	1
 // #define ESC_CAL_MODE	1
 
@@ -70,6 +68,10 @@ int main(void)
 	#endif
 
 	/*
+		If ESC Calibration mode above is enabled, the program will never get here, so all subsequent procedures are irrelevant.
+	 */
+
+	/*
 	* Initialize the serial port (SCI module) and enable SCI Receive interrupts:
 	* (Explanation: mibSPI peripheral must be initialized as well since SCI requires mibSPI pins)
 	*/	
@@ -100,17 +102,17 @@ int main(void)
 
 	canInit();
 	uint8_t can_msg[9] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
-	uint32_t can_id_default = canGetID(canREG3, canMESSAGE_BOX1);
-	canUpdateID(canREG3, canMESSAGE_BOX1, 0x6000000A);
+	// uint32_t can_id_default = canGetID(canREG3, canMESSAGE_BOX1);
+	// canUpdateID(canREG3, canMESSAGE_BOX1, 0x6000000A);
 
-	can_id_default = canGetID(canREG3, canMESSAGE_BOX2);
-	canUpdateID(canREG3, canMESSAGE_BOX2, 0x6000000B);
+	// can_id_default = canGetID(canREG3, canMESSAGE_BOX2);
+	// canUpdateID(canREG3, canMESSAGE_BOX2, 0x6000000B);
 
-	can_id_default = canGetID(canREG3, canMESSAGE_BOX3);
-	canUpdateID(canREG3, canMESSAGE_BOX3, 0x6000000C);
+	// can_id_default = canGetID(canREG3, canMESSAGE_BOX3);
+	// canUpdateID(canREG3, canMESSAGE_BOX3, 0x6000000C);
 
-	can_id_default = canGetID(canREG3, canMESSAGE_BOX10);
-	canUpdateID(canREG3, canMESSAGE_BOX10, 0xC00000AB);
+	// can_id_default = canGetID(canREG3, canMESSAGE_BOX10);
+	// canUpdateID(canREG3, canMESSAGE_BOX10, 0xC00000AB);
 
 	init_mission_timekeeper();
 
@@ -229,7 +231,7 @@ int main(void)
 				send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"cmds", 4, motor_vals, 4);
 
 				#ifdef ENABLE_MOTORS
-					QuadRotor_motor1_setDuty((float)motor_output_commands[0]);
+					QuadRotor_motor1_setDuty((float)motor_output_commands[0]);                             
 					QuadRotor_motor2_setDuty((float)motor_output_commands[1]);
 					QuadRotor_motor3_setDuty((float)motor_output_commands[2]);
 					QuadRotor_motor4_setDuty((float)motor_output_commands[3]);
@@ -282,9 +284,9 @@ int main(void)
 						QuadRotor_motor2_stop();
 						QuadRotor_motor3_stop();
 						QuadRotor_motor4_stop();
-						sys_ledOn(SYS_LED1); // Red ERROR LED = ON
-						sys_ledOff(SYS_LED2); // Green OK LED = OFF
-						while(1); // Block here indefinitely pending system power-off/reset by user
+						sys_ledOn(SYS_LED1); 	// Red ERROR LED = ON
+						sys_ledOff(SYS_LED2); 	// Green OK LED = OFF
+						while(1); 				// Block here indefinitely pending system power-off/reset by user
 					}
 				}
 			}

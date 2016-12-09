@@ -21,7 +21,7 @@ class UDP_Boomerang:
 		sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 		sock.sendto(data, (ip, self.udp_port))
 
-	def redirect_telemetry_message(self):
+	def redirect_telemetry_message_stream(self):
 		message_buffer = ""
 		start = self.serport.read(1)
 		if start == 's':
@@ -77,6 +77,7 @@ def main():
 	udp_port = args.udp_port[0]
 
 	bouncer = UDP_Boomerang(udp_port, serial_port, serial_baud_rate)
+	bouncer.redirect_telemetry_message_stream()
 
 if __name__ == '__main__':
 	main()
