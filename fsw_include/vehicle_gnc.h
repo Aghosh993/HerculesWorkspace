@@ -89,8 +89,14 @@ typedef struct {
 
 void gnc_init(void);
 
+void gnc_enable(void);
+void gnc_disable(void);
+uint8_t gnc_enabled(void);
+
 void gnc_get_vehicle_state(void);
 // void velocity_controller_update(float vel_cmd_x, float vel_cmd_y, float vel_x, float vel_y, float *roll_cmd, float *pitch_cmd);
+void gnc_integral_disable(void);
+void gnc_integral_enable(void);
 void gnc_vehicle_stabilization_outerloop_update(float roll_cmd_in,
 											float pitch_cmd_in,
 											float yaw_cmd_in,

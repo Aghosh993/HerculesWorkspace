@@ -4,6 +4,8 @@
 /* Global variables                                                           */
 /* Borrowed from TI's HET Halcogen-generated code, to shut GCC up on errors...*/
 
+static float pwm0_pwm_val, pwm1_pwm_val, pwm2_pwm_val, pwm3_pwm_val;
+
 static const uint32 s_het1pwmPolarity[8U] =
 {
     3U,
@@ -66,6 +68,10 @@ static void pwmSetDuty_HighPrecision(hetRAMBASE_t * hetRAM, uint32 pwm, float pw
 void QuadRotor_PWM_init(void)
 {
 	hetInit();
+    pwm0_pwm_val = 0.0f;
+    pwm1_pwm_val = 0.0f;
+    pwm2_pwm_val = 0.0f;
+    pwm3_pwm_val = 0.0f;
 }
 
 // Functions to initialize PWM channels corresponding to individual motor/ESC's
@@ -115,28 +121,24 @@ void QuadRotor_motor4_stop(void)
 
 void QuadRotor_motor1_setDuty(float duty)
 {
-    // float duty_scaled = (duty + 1.0f) * 0.050f;
     float duty_scaled = (MAX_DUTY-MIN_DUTY)*duty + MIN_DUTY;
 	pwmSetDuty_HighPrecision(MOTOR1_HET_CHANNEL, duty_scaled);
 }
 
 void QuadRotor_motor2_setDuty(float duty)
 {
-    // float duty_scaled = (duty + 1.0f) * 0.050f;
     float duty_scaled = (MAX_DUTY-MIN_DUTY)*duty + MIN_DUTY;
 	pwmSetDuty_HighPrecision(MOTOR2_HET_CHANNEL, duty_scaled);
 }
 
 void QuadRotor_motor3_setDuty(float duty)
 {
-    // float duty_scaled = (duty + 1.0f) * 0.050f;
     float duty_scaled = (MAX_DUTY-MIN_DUTY)*duty + MIN_DUTY;
 	pwmSetDuty_HighPrecision(MOTOR3_HET_CHANNEL, duty_scaled);
 }
 
 void QuadRotor_motor4_setDuty(float duty)
 {
-    // float duty_scaled = (duty + 1.0f) * 0.050f;
     float duty_scaled = (MAX_DUTY-MIN_DUTY)*duty + MIN_DUTY;
 	pwmSetDuty_HighPrecision(MOTOR4_HET_CHANNEL, duty_scaled);
 }

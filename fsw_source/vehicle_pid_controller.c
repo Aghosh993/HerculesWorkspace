@@ -95,7 +95,7 @@ void controller_init_vars(void)
 	yaw_cmd_multiplier = PI_VAL;
 
 	roll_rate_cmd_multiplier = 2.0f*0.349065556f;
-	pitch_rate_cmd_multiplier = 2.0f*0.349065556f;
+	pitch_rate_cmd_multiplier = -2.0f*0.349065556f;
 	yaw_rate_cmd_multiplier = 1.250f;//0.785f;//0.349065556f;
 
 	height_cmd_multiplier = MAX_HEIGHT;
@@ -144,6 +144,13 @@ void controller_init_vars(void)
 													LATERAL_VELOCITY_CONTROL_DT, 1.5f, 0.70f);
 	init_pid_controller(&velocity_y_controller, 0.90f, 0.85f, 0.0f,
 													LATERAL_VELOCITY_CONTROL_DT, 1.5f, 0.70f);
+
+	pid_inhibit_integral(&roll_controller);
+	pid_inhibit_integral(&pitch_controller);
+
+	pid_inhibit_integral(&roll_rate_controller);
+	pid_inhibit_integral(&pitch_rate_controller);
+	pid_inhibit_integral(&yaw_rate_controller);
 }
 
 void check_output_saturation(double* motor_output_buffer)
@@ -334,4 +341,28 @@ void rate_controller_update(double * c_props, imu_scaled_data_struct* data, floa
 			c_props[i] = MOTOR_MIN_CMD;
 		}
 	}
+}
+
+void rate_controller_integral_disable()
+{
+	pid_inhibit_integral(&roll_rate_controller);
+	pid_inhibit_integral(&pitch_rate_controller);
+	pid_inhibit_integral(&yaw_rate_controller);
+}
+void attitude_controller_integral_disable()
+{
+	pid_inhibit_integral(&roll_controller);
+	pid_inhibit_integral(&pitch_controller);
+}
+
+void rate_controller_integral_enable()
+{
+	pid_enable_integral(&roll_rate_controller);
+	pid_enable_integral(&pitch_rate_controller);
+	pid_enable_integral(&yaw_rate_controller);
+}
+void attitude_controller_integral_enable()
+{
+	pid_enable_integral(&roll_controller);
+	pid_enable_integral(&pitch_controller);
 }

@@ -9,12 +9,15 @@
 #include <mission_timekeeper.h>
 #include <rt_telemetry.h>
 #include <sys_leds.h>
+#include <telem_config.h>
 
 /*
 	Requires UART to be set up and uses telemetry libs
  */
-#define DEBUG_OVER_UART				1
-#define PROVIDE_LED_USER_FEEDBACK 	1
+#ifdef SEND_PWM_INPUT_TELEMETRY
+	#define PWM_INPUT_DEBUG_OVER_UART		1
+#endif
+#define PROVIDE_LED_USER_FEEDBACK 		1
 
 
 /*

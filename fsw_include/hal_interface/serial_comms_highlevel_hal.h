@@ -13,7 +13,10 @@
 
 typedef enum {
 	PORT1,
-	PORT2
+	PORT2,
+	TM4C_PORT1,
+	TM4C_PORT2,
+	TM4C_PORT3
 } serialport_desc;
 
 /*

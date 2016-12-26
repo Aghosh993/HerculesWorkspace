@@ -93,6 +93,7 @@ extern void esmHighInterrupt(void) __attribute__ ((weak, interrupt("FIQ")));
 extern void phantomInterrupt(void) __attribute__ ((weak, interrupt("IRQ")));
 extern void rtiCompare0Interrupt(void) __attribute__ ((weak, interrupt("IRQ")));
 extern void linHighLevelInterrupt(void) __attribute__ ((weak, interrupt("IRQ")));
+extern void het1LowLevelInterrupt(void) __attribute__ ((weak, interrupt("IRQ")));
 extern void can3HighLevelInterrupt(void) __attribute__ ((weak, interrupt("IRQ")));
 extern void sciHighLevelInterrupt(void) __attribute__ ((weak, interrupt("IRQ")));
 
@@ -283,7 +284,7 @@ typedef struct vim_config_reg
                                     |(uint32)((uint32)0U << 21U)\
                                     |(uint32)((uint32)0U << 22U)\
                                     |(uint32)((uint32)0U << 23U)\
-                                    |(uint32)((uint32)0U << 24U)\
+                                    |(uint32)((uint32)1U << 24U)\
                                     |(uint32)((uint32)0U << 25U)\
                                     |(uint32)((uint32)0U << 26U)\
                                     |(uint32)((uint32)0U << 27U)\

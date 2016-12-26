@@ -56,7 +56,7 @@ void do_rc_channel_callibration(rc_joystick_data_struct* js, uint8_t axis)
 
 	int32_t telem_out = 0;
 
-	#ifdef DEBUG_OVER_UART
+	#ifdef PWM_INPUT_DEBUG_OVER_UART
 		telem_out = (int32_t)axis;
 		send_telem_msg_n_ints_blocking(&telem0, (uint8_t *)"RC_CAL", 6, &telem_out, 1);
 	#endif
@@ -72,7 +72,7 @@ void do_rc_channel_callibration(rc_joystick_data_struct* js, uint8_t axis)
 	{
 		get_rc_state(&st);
 	}
-	#ifdef DEBUG_OVER_UART
+	#ifdef PWM_INPUT_DEBUG_OVER_UART
 		send_telem_msg_string_blocking(&telem0, (uint8_t *)"RC_CAL", 6, (uint8_t *)"RC Input sane on this channel, proceeding\r\n", 43);
 	#endif
 	sys_ledOff(ERROR_LED);
@@ -81,7 +81,7 @@ void do_rc_channel_callibration(rc_joystick_data_struct* js, uint8_t axis)
 		Low limit calibration:
 	 */
 
-	#ifdef DEBUG_OVER_UART
+	#ifdef PWM_INPUT_DEBUG_OVER_UART
 	switch(axis)
 	{
 		case ROLL_CHANNEL:
@@ -117,7 +117,7 @@ void do_rc_channel_callibration(rc_joystick_data_struct* js, uint8_t axis)
 	 */
 	timekeeper_delay(500U);
 
-	#ifdef DEBUG_OVER_UART
+	#ifdef PWM_INPUT_DEBUG_OVER_UART
 		send_telem_msg_string_blocking(&telem0, (uint8_t *)"RC_CAL", 6, (uint8_t *)"Obtaining samples now\r\n", 23);
 	#endif
 
@@ -151,7 +151,7 @@ void do_rc_channel_callibration(rc_joystick_data_struct* js, uint8_t axis)
 	/*
 		Success!
 	 */
-	#ifdef DEBUG_OVER_UART
+	#ifdef PWM_INPUT_DEBUG_OVER_UART
 		switch(axis)
 		{
 			case ROLL_CHANNEL:
@@ -190,7 +190,7 @@ void do_rc_channel_callibration(rc_joystick_data_struct* js, uint8_t axis)
 		High limit calibration:
 	 */
 
-	#ifdef DEBUG_OVER_UART
+	#ifdef PWM_INPUT_DEBUG_OVER_UART
 	switch(axis)
 	{
 		case ROLL_CHANNEL:
@@ -225,7 +225,7 @@ void do_rc_channel_callibration(rc_joystick_data_struct* js, uint8_t axis)
 	 */
 	timekeeper_delay(500U);
 
-	#ifdef DEBUG_OVER_UART
+	#ifdef PWM_INPUT_DEBUG_OVER_UART
 		send_telem_msg_string_blocking(&telem0, (uint8_t *)"RC_CAL", 6, (uint8_t *)"Obtaining samples now\r\n", 23);
 	#endif
 
@@ -259,7 +259,7 @@ void do_rc_channel_callibration(rc_joystick_data_struct* js, uint8_t axis)
 	/*
 		Success!
 	 */
-	#ifdef DEBUG_OVER_UART
+	#ifdef PWM_INPUT_DEBUG_OVER_UART
 		switch(axis)
 		{
 			case ROLL_CHANNEL:

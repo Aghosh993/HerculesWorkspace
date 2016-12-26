@@ -1,3 +1,4 @@
+#!/usr/bin/python2
 # boomerang.py
 # This script forwards serial port telemetry over UDP in a broadcast fashion
 # (c) 2016, Abhimanyu Ghosh
@@ -5,25 +6,29 @@ import os
 import serial
 import struct
 import argparse
-import socket
-
-import numpy as np
-from matplotlib import pyplot as plt
-from matplotlib import animation
+from socket import *
 
 class UDP_Boomerang:
-	def __init__(self, udp_port, serportm, serbaud):
+	def __init__(self, udp_port, serport, serbaud):
 		self.udp_port = udp_port
 		self.serport = serial.Serial(serport, serbaud)
+		
+		self.sock = socket(AF_INET, SOCK_DGRAM)
+		self.sock.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
+		self.sock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
+		self.sock.bind(('', 0))
 
 	def send_packet(self, data):
-		ip = '255.255.255.255'
-		sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-		sock.sendto(data, (ip, self.udp_port))
+		self.sock.sendto(data, ('', self.udp_port))
 
 	def redirect_telemetry_message_stream(self):
+		redirect_msg = False
+
 		message_buffer = ""
 		start = self.serport.read(1)
+
+		computed_chksum = ord('s');
+
 		if start == 's':
 			message_buffer += start
 
@@ -32,24 +37,43 @@ class UDP_Boomerang:
 			descriptor = self.serport.read(desc_size)
 
 			message_buffer += desc_size_byte
+			computed_chksum += desc_size
+
 			message_buffer += descriptor
+			for i in range(len(descriptor)):
+				computed_chksum += ord(descriptor[i])
 
 			msg_id_byte = self.serport.read(1) 
 			msg_id = ord(msg_id_byte)
 
 			message_buffer += msg_id_byte
+			computed_chksum += msg_id
 
-			if(msg_id != 3 && msg_id != 4): # I.e. not matrix transfers
+			if msg_id != 3 and msg_id != 4: # I.e. not matrix transfers
 				data_len_byte = self.serport.read(1) 
-				data_len = ord( data_len_byte)
+				data_len = ord(data_len_byte)
 
 				message_buffer += data_len_byte
+				computed_chksum += data_len
 
-				msg_payload = self.serport.read(data_len)
+				if msg_id == 0: # Figure out how many bytes per unit in data_len based on message ID
+					msg_payload = self.serport.read(data_len)
+				if msg_id == 1 or msg_id == 2:
+					msg_payload = self.serport.read(data_len*4)
+
 				chksum = self.serport.read(2)
 
 				message_buffer += msg_payload
+				for i in range(len(msg_payload)):
+					computed_chksum += ord(msg_payload[i])
+
 				message_buffer += chksum
+
+				computed_chksum += 0x75
+
+				if (computed_chksum & 0xFFFF) == ord(chksum[1])<<8 | ord(chksum[0]):
+					redirect_msg = True
+					print(repr(computed_chksum)+" "+repr(ord(chksum[1])<<8 | ord(chksum[0])))
 
 			else:
 				rows_byte = self.serport.read(1)
@@ -62,7 +86,8 @@ class UDP_Boomerang:
 				message_buffer += msg_payload
 				message_buffer += chksum
 
-			self.send_packet(message_buffer)
+			if redirect_msg:
+				self.send_packet(message_buffer)
 
 def main():
 	parser = argparse.ArgumentParser(description='Redirect telemetry from serial port specified to UDP stream')
@@ -77,7 +102,8 @@ def main():
 	udp_port = args.udp_port[0]
 
 	bouncer = UDP_Boomerang(udp_port, serial_port, serial_baud_rate)
-	bouncer.redirect_telemetry_message_stream()
+	while True:
+		bouncer.redirect_telemetry_message_stream()
 
 if __name__ == '__main__':
 	main()

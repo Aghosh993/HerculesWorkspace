@@ -50,7 +50,7 @@
 //#define PROP_PITCH_4DOT5_DEGREES			1
 #define PROP_PITCH_3DOT8_DEGREES			1
 
-#define ATTITUDE_CONTROL_USE_LPF	1
+// #define ATTITUDE_CONTROL_USE_LPF	1
 
 #ifdef ATTITUDE_CONTROL_USE_LPF
  #define ROLL_PID_DERIV_LPF_FREQ	15.0f
@@ -84,7 +84,7 @@
 	#define PITCH_RATE_PID_DT 			ANGULAR_RATE_CONTROL_DT
 	#define YAW_RATE_PID_DT				ANGULAR_RATE_CONTROL_DT
 
-#define ANGULAR_POSITION_CONTROL_DT		0.008f						// 125 Hz
+#define ANGULAR_POSITION_CONTROL_DT		0.005f						// 125 Hz
 	#define ROLL_PID_DT					ANGULAR_POSITION_CONTROL_DT
 	#define PITCH_PID_DT 				ANGULAR_POSITION_CONTROL_DT
 	#define YAW_PID_DT 					ANGULAR_POSITION_CONTROL_DT
@@ -98,31 +98,26 @@
 /*
 	Gains for attitude rate and attitude controllers:
  */
-#define roll_rate_kP	0.2f//0.185f
-#define pitch_rate_kP	0.2f//0.185f
-
+#define roll_rate_kP	0.20f
+#define pitch_rate_kP	0.20f
 #define yaw_rate_kP		0.20f
 
-#define roll_rate_kI	0.20f //0.2f//0.240f //.08f
-#define pitch_rate_kI	0.20f //0.2f//0.240f //.08f
+#define roll_rate_kI	0.20f
+#define pitch_rate_kI	0.20f
 #define yaw_rate_kI		0.20f
 
 #define roll_rate_kD	0.0f
 #define pitch_rate_kD	0.0f
 #define yaw_rate_kD		0.0f
 
-// Last testing result: Seems to produce highly laggy step response... ????
-#define roll_kP 		1.40f //1.2000f
-#define pitch_kP 		1.40f //1.2000f
-// #define yaw_kP
+#define roll_kP 		1.70f //1.7
+#define pitch_kP 		1.70f //1.7
 
-#define roll_kI 		0.2f//0.12f //0.2050f
-#define pitch_kI 		0.2f//0.12f //0.2050f
-// #define yaw_kI
+#define roll_kI 		0.0f
+#define pitch_kI 		0.0f
 
-#define roll_kD 		0.0f //0.010f
-#define pitch_kD 		0.0f //0.010f
-// #define yaw_kD
+#define roll_kD 		0.0f
+#define pitch_kD 		0.0f
 
 
 #define GND_EFFECT_TRANSITION_POINT1		0.1f
@@ -200,4 +195,9 @@ void generate_thrust_commands(float actual_height, float target_height, float* t
 
 void generate_attitude_commands(float velocity_x, float velocity_y, float target_velocity_x, float target_velocity_y, float* roll_output, float* pitch_output);
 
+void rate_controller_integral_disable();
+void attitude_controller_integral_disable();
+
+void rate_controller_integral_enable();
+void attitude_controller_integral_enable();
 #endif /* VEHICLE_PID_CONTROLLER_H_ */

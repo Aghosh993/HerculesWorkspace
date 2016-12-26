@@ -2415,13 +2415,13 @@ void hetInit(void)
     */
     hetREG1->INTENAC = 0xFFFFFFFFU;
     hetREG1->INTENAS = (uint32) 0x00000000U
+                     | (uint32) 0x00000004U
                      | (uint32) 0x00000000U
+                     | (uint32) 0x00000010U
                      | (uint32) 0x00000000U
+                     | (uint32) 0x00000040U
                      | (uint32) 0x00000000U
-                     | (uint32) 0x00000000U
-                     | (uint32) 0x00000000U
-                     | (uint32) 0x00000000U
-                     | (uint32) 0x00000000U
+                     | (uint32) 0x00000100U
                      | (uint32) 0x00000000U
                      | (uint32) 0x00000000U
                      | (uint32) 0x00000000U
@@ -3299,6 +3299,36 @@ void het2GetConfigValue(het_config_reg_t *config_reg, config_value_type_t type)
 }
 
 
+/* USER CODE BEGIN (6) */
+/* USER CODE END */
+
+/** @fn void het1LowLevelInterrupt(void)
+*   @brief Level 1 Interrupt for HET1
+*/
+
+/* SourceId : HET_SourceId_019 */
+/* DesignId : HET_DesignId_017 */
+/* Requirements : HL_SR371, HL_SR380, HL_SR381 */
+void het1LowLevelInterrupt(void)
+{
+    uint32 vec = hetREG1->OFF2;
+
+    if (vec < 18U)
+    {
+        if ((vec & 1U) != 0U)
+        {
+            pwmNotification(hetREG1,(vec >> 1U) - 1U, pwmEND_OF_PERIOD);
+        }
+        else
+        {
+            pwmNotification(hetREG1,(vec >> 1U) - 1U, pwmEND_OF_DUTY);
+        }
+    }
+    else
+    {
+        edgeNotification(hetREG1,vec - 18U);
+    }
+}
 
 
 

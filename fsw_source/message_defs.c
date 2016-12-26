@@ -16,6 +16,11 @@ void create_telem_msg_string(telem_msg_string *dst, uint8_t *descriptor_string, 
 		dst->descriptor_string[i] = descriptor_string[i];
 	}
 
+	for(i=descriptor_string_len; i<DESCRIPTOR_STRING_MAX_LEN; ++i)
+	{
+		dst->descriptor_string[i] = 0U;
+	}
+
 	dst->msg_id = TELEM_MSG_ID_STRING;
 
 	dst->string_len = string_len;
@@ -23,6 +28,10 @@ void create_telem_msg_string(telem_msg_string *dst, uint8_t *descriptor_string, 
 	for(i=0U; i<string_len; ++i)
 	{
 		dst->string_to_transmit[i] = string_to_transmit[i];
+	}
+	for(i=string_len; i<MAX_MSG_PAYLOAD_SIZE - DESCRIPTOR_STRING_MAX_LEN - 3U; ++i)
+	{
+		dst->string_to_transmit[i] = 0U;
 	}
 }
 

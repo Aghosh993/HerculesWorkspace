@@ -1,3 +1,4 @@
+#!/usr/bin/python2
 # udp_prism.py
 # This script connects to a UDP port and receives telemetry and looks for desired messages with a specific message ID and descriptor
 # Messages satisfying the above filter are then displayed on the CLI
@@ -6,7 +7,8 @@ import os
 import sys
 import serial
 import argparse
-import socket
+from socket import *
+import select
 
 from struct import *
 from time import sleep
@@ -14,6 +16,16 @@ from time import sleep
 class telemetry_prism:
 	def __init__(self, udp_port):
 		self.udp_port = udp_port
+
+		self.sock = socket(AF_INET, SOCK_DGRAM)
+		self.sock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
+		self.sock.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
+		self.sock.bind(('', self.udp_port))
+		self.sock.setblocking(0)
+
+	def show_raw(self):
+		m = self.sock.recvfrom(1024)
+		print(m)
 
 	def get_string_message(self, desc):
 		st = self.serport.read(1)
@@ -33,98 +45,48 @@ class telemetry_prism:
 					sys.stdout.write("\n")
 
 	def get_n_floats_message(self, desc):
-		st = self.serport.read(1)
-		if st == 's':
-			desc_size = ord(self.serport.read(1))
-			descriptor = self.serport.read(desc_size)
+		res = select.select([self.sock],[],[])
+		msg = res[0][0].recvfrom(1024)
+		msg_data = msg[0]
+		if msg_data[0] == 's':
+			desc_size = ord(msg_data[1])
+			descriptor = ""
+			for i in range(desc_size):
+				descriptor += msg_data[i+2]
 
-			if descriptor == desc:
-				msg_id = ord(self.serport.read(1))
-				if msg_id == 1:
-					data_len = ord(self.serport.read(1))				
-					float_list = []
-					for i in range(data_len):
-						msg_payload_segment = self.serport.read(4)	
-						float_list.append(unpack('<f', msg_payload_segment)[0])
-
-					chksum = self.serport.read(2)
-
-					print(float_list)
+				if descriptor == desc:
+					msg_id = ord(msg_data[desc_size+2])
+					if msg_id == 1:
+						data_len = ord(msg_data[desc_size+3])				
+						float_list = []
+						for i in range(data_len):
+							msg_payload_segment = ""
+							for j in range(4):
+								msg_payload_segment += msg_data[desc_size+4+(i*4)+j]
+							float_list.append(unpack('<f', msg_payload_segment)[0])	
+							print(float_list)
 
 	def get_n_ints_message(self, desc):
-		st = self.serport.read(1)
-		if st == 's':
-			desc_size = ord(self.serport.read(1))
-			descriptor = self.serport.read(desc_size)
+		res = select.select([self.sock],[],[])
+		msg = res[0][0].recvfrom(1024)
+		msg_data = msg[0]
+		if msg_data[0] == 's':
+			desc_size = ord(msg_data[1])
+			descriptor = ""
+			for i in range(desc_size):
+				descriptor += msg_data[i+2]
 
-			if descriptor == desc:
-				msg_id = ord(self.serport.read(1))
-				if msg_id == 2:
-					data_len = ord(self.serport.read(1))				
-					int_list = []
-					for i in range(data_len):
-						msg_payload_segment = self.serport.read(4)	
-						int_list.append(unpack('<i', msg_payload_segment)[0])
-
-					chksum = self.serport.read(2)
-					
-					print(int_list)
-
-	def get_m_n_float_matrix_message(self, desc):
-		st = self.serport.read(1)
-		if st == 's':
-			desc_size = ord(self.serport.read(1))
-			descriptor = self.serport.read(desc_size)
-
-			if descriptor == desc:
-				msg_id = ord(self.serport.read(1))
-				if msg_id == 3:
-					rows = ord(self.serport.read(1))
-					print("ROWS: "+repr(rows))
-					cols = ord(self.serport.read(1))
-					print("COLS: "+repr(cols))
-					
-					mat = []
-					
-					for i in range(rows):
-						mat_col = []
-						for j in range(cols):
-							msg_payload_segment = self.serport.read(4)	
-							mat_col.append(unpack('<f', msg_payload_segment)[0])
-						mat.append(mat_col)
-						sys.stdout.write(repr(mat_col))
-						sys.stdout.write("\n")
-
-					chksum = self.serport.read(2)
-					sys.stdout.write("\n")
-
-	def get_m_n_int_matrix_message(self, desc):
-		st = self.serport.read(1)
-		if st == 's':
-			desc_size = ord(self.serport.read(1))
-			descriptor = self.serport.read(desc_size)
-
-			if descriptor == desc:
-				msg_id = ord(self.serport.read(1))
-				if msg_id == 4:
-					rows = ord(self.serport.read(1))
-					print("ROWS: "+repr(rows))
-					cols = ord(self.serport.read(1))
-					print("COLS: "+repr(cols))
-					
-					mat = []
-					
-					for i in range(rows):
-						mat_col = []
-						for j in range(cols):
-							msg_payload_segment = self.serport.read(4)	
-							mat_col.append(unpack('<i', msg_payload_segment)[0])
-						mat.append(mat_col)
-						sys.stdout.write(repr(mat_col))
-						sys.stdout.write("\n")
-
-					chksum = self.serport.read(2)
-					sys.stdout.write("\n")
+				if descriptor == desc:
+					msg_id = ord(msg_data[desc_size+2])
+					if msg_id == 2:
+						data_len = ord(msg_data[desc_size+3])				
+						int_list = []
+						for i in range(data_len):
+							msg_payload_segment = ""
+							for j in range(4):
+								msg_payload_segment += msg_data[desc_size+4+(i*4)+j]
+							int_list.append(unpack('<i', msg_payload_segment)[0])	
+							print(int_list)
 
 	def display_filtered_message(self, msg_id, desc_string_filter):
 		if msg_id == 0:
@@ -136,29 +98,23 @@ class telemetry_prism:
 		if msg_id == 2:
 			while True:
 				self.get_n_ints_message(desc_string_filter)
-		if msg_id == 3:
-			while True:
-				self.get_m_n_float_matrix_message(desc_string_filter)
-		if msg_id == 4:
-			while True:
-				self.get_m_n_int_matrix_message(desc_string_filter)
 
 def main():
 
 	parser = argparse.ArgumentParser(description='Display telemetry item with specified descriptor string and message id')
-	parser.add_argument('baud', metavar='baudrate', type=int, nargs=1, help='Set serial port baud rate')
-	parser.add_argument('port', metavar='serial_port', nargs=1, help='Path to serial port that is source of telemetry')
+	parser.add_argument('port', metavar='UDP_port', type=int, nargs=1, help='UDP Port to listen for broadcast messages on')
 	parser.add_argument('msg_id', metavar='messageID', nargs=1, type=int, help='Message ID of the telemetry item to be viewed')
 	parser.add_argument('desc_string', metavar='descriptor_string', nargs=1, help='Descriptor string of the telemetry message to be viewed')
 
 	args = parser.parse_args()
 
-	baud_rate = args.baud[0]
-	serial_port = args.port[0]
+	udp_port = args.port[0]
 	msgID = args.msg_id[0]
 	desc = args.desc_string[0]
 
-	s = telemetry_prism(serial_port, baud_rate)
+	print("Opening client on UDP port "+repr(udp_port))
+
+	s = telemetry_prism(udp_port)
 	s.display_filtered_message(msgID, desc)
 
 if __name__ == '__main__':

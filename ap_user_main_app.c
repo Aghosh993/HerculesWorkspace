@@ -14,6 +14,8 @@
 #include "sys_leds.h"
 #include "telem_config.h"
 #include "vehicle_gnc.h"
+#include "serial_comms_highlevel.h"
+#include "sf10_reader.h"
 
 /*
 	Quadcopter primary flight software file.
@@ -24,7 +26,7 @@
 	is licensed under the GPLv3 open-source software license. As such, this work is a DERIVED work of an existing GPLv3
 	project by the same copyright-holder, and is thus released under an identical license.
 
-	The end user of this file agreees to observe all applicable patent, intellectual property and export control laws
+	The end user of this file is responsible for observing all applicable patent, intellectual property and export control laws
 	in his/her jurisdiction, and releases the person named below from any liabilities, with the understanding that this
 	source code is provided "as-is".
 
@@ -33,6 +35,7 @@
 
 #define ENABLE_MOTORS	1
 // #define ESC_CAL_MODE	1
+#define TEST_TELEM		1
 
 /* USER CODE END */
 
@@ -40,7 +43,17 @@ serialport ftdi_dbg_port, tm4c_comms_aux_port;
 serialport *ftdi_dbg_port_ptr;
 serialport *tm4c_comms_aux_port_ptr;
 
+serialport tm4c_port1, tm4c_port2, tm4c_port3;
+serialport *tm4c_port1_ptr;
+serialport *tm4c_port2_ptr;
+serialport *tm4c_port3_ptr;
+
 rt_telemetry_comm_channel telem0;
+
+float roll_rate_cmd, pitch_rate_cmd, yaw_rate_cmd;
+float throttle_value_common;
+
+uint8_t gnc_innerloop_flag;
 
 int main(void)
 {
@@ -71,8 +84,21 @@ int main(void)
 	ftdi_dbg_port_ptr = &ftdi_dbg_port;
 	tm4c_comms_aux_port_ptr = &tm4c_comms_aux_port;
 
+	tm4c_port1_ptr = &tm4c_port1;
+	tm4c_port2_ptr = &tm4c_port2;
+	tm4c_port3_ptr = &tm4c_port3;
+
 	serialport_hal_init();
 	serialport_init(ftdi_dbg_port_ptr, PORT1);
+
+	// Uses TM4C UART port (virtual UART subsystem) #1:
+	sf10_sensor_data_handler sf10_handler;
+	sf10_hal_setup_ap2v4_serial();
+	init_new_sf10_data_handler(&sf10_handler, 200U, MAX_HEIGHT_SF11_C, send_byte_to_sf10A);
+
+	serialport_init(tm4c_port2_ptr, TM4C_PORT2);
+	serialport_init(tm4c_port3_ptr, TM4C_PORT3);
+
 	rt_telemetry_init_channel(&telem0, ftdi_dbg_port_ptr);
 
 	#ifdef ESC_CAL_MODE
@@ -112,36 +138,35 @@ int main(void)
 	 */
 	pwm_input_init();
 
-	/*
-		CAN Bus initialization for communications to the TM4C:
-	 */
-
-	canInit();
-	uint8_t can_msg[9] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
-	// uint32_t can_id_default = canGetID(canREG3, canMESSAGE_BOX1);
-	// canUpdateID(canREG3, canMESSAGE_BOX1, 0x6000000A);
-
-	// can_id_default = canGetID(canREG3, canMESSAGE_BOX2);
-	// canUpdateID(canREG3, canMESSAGE_BOX2, 0x6000000B);
-
-	// can_id_default = canGetID(canREG3, canMESSAGE_BOX3);
-	// canUpdateID(canREG3, canMESSAGE_BOX3, 0x6000000C);
-
-	// can_id_default = canGetID(canREG3, canMESSAGE_BOX10);
-	// canUpdateID(canREG3, canMESSAGE_BOX10, 0xC00000AB);
-
 	init_mission_timekeeper();
+
+	float roll_cmd, pitch_cmd, yaw_cmd;
+
+	roll_cmd = 0.0f;
+	pitch_cmd = 0.0f;
+	yaw_cmd = 0.0f;
+
+	throttle_value_common = 0.0f;
+
+	double motor_output_commands[4];
+
+	motor_output_commands[0] = 0.0f;
+	motor_output_commands[1] = 0.0f;
+	motor_output_commands[2] = 0.0f;
+	motor_output_commands[3] = 0.0f;
+
+	gnc_innerloop_flag = 0U;
 
 	_enable_interrupts();
 
 	float imudata_telemetry_output[7];
 
-	uint8_t telemetry_gnc_250hz_flag = create_flag(3U);
-	uint8_t gnc_125Hz_flag = create_flag(7U);
+	uint8_t telemetry_gnc_200hz_flag = create_flag(4U);
 	uint8_t rc_update_50hz_flag = create_flag(19U);
 	uint8_t imu_sample_1000hz_flag = create_flag(0U);
 	uint8_t rc_watchdog_10hz_flag = create_flag(99U);
 	uint8_t heartbeat_1hz_flag = create_flag(999U);
+	uint8_t sf10_25hz_trigger_flag = create_flag(39U);
 	
 	sys_ledOn(SYS_LED1);
 	sys_ledOff(SYS_LED2);
@@ -158,29 +183,93 @@ int main(void)
 
 	float sensor_data[6];
 
-	float roll_cmd, pitch_cmd, yaw_cmd;
-	float roll_rate_cmd, pitch_rate_cmd, yaw_rate_cmd;
-	float throttle_value_common;
-	double motor_output_commands[4];
-
-	roll_cmd = 0.0f;
-	pitch_cmd = 0.0f;
-	yaw_cmd = 0.0f;
-
-	throttle_value_common = 0.0f;
-
-	motor_output_commands[0] = 0.0f;
-	motor_output_commands[1] = 0.0f;
-	motor_output_commands[2] = 0.0f;
-	motor_output_commands[3] = 0.0f;
-
 	float motor_vals[4];
+
+	#ifdef TEST_TELEM
+		float flt_test = 0.0f;
+		int32_t int_test = 0;
+		uint8_t *str_test[2] = {"hello0", "hello1"};
+
+		while(1)
+		{
+			if(flt_test < 1.0f)
+			{
+				flt_test += 0.01f;
+			}
+			else
+			{
+				flt_test = 0.0f;
+			}
+
+			if(int_test < 100)
+			{
+				int_test += 1;
+			}
+			else
+			{
+				int_test = 0;
+			}
+
+			send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"flt", 3, &flt_test, 1);
+			send_telem_msg_n_ints_blocking(&telem0, (uint8_t *)"int", 3, &int_test, 1);
+			send_telem_msg_string_blocking(&telem0, (uint8_t *)"str0", 4, str_test[0], 6);
+			send_telem_msg_string_blocking(&telem0, (uint8_t *)"str1", 4, str_test[1], 6);
+
+			timekeeper_delay(20U);
+		}
+	#endif
 
 	rc_joystick_data_struct rc_data;
 	init_rc_inputs(&rc_data);
 
+	float roll_rate_cmd_local, pitch_rate_cmd_local, yaw_rate_cmd_local, throttle_value_common_local;
+	roll_rate_cmd_local = 0.0f;
+	pitch_rate_cmd_local = 0.0f;
+	yaw_rate_cmd_local = 0.0f;
+	throttle_value_common_local = 0.0f;
+
+	gnc_enable();
+
+	uint8_t msg_buf[10];
+	uint8_t i = 0U;
+	uint32_t bytes_read;
+
+	float height_sensor_reading = 0.0f;
+
 	while(1)
 	{
+		/*
+			Asynchronous events (primarily serial communications using encapsulation driver subsystem):
+		 */
+
+		/*
+			Process SF11/C height sensor data:
+		 */
+
+		bytes_read = serialport_receive_data_buffer(tm4c_port1_ptr, msg_buf, 10);
+
+		for(i=0; i<bytes_read; ++i)
+		{
+			sf10_reader_callback(&sf10_handler, msg_buf[i]);				
+		}
+
+		if(sf10_received_new_data(&sf10_handler))
+		{
+			height_sensor_reading = get_last_sf10_sensor_height(&sf10_handler);
+		}
+
+		/*
+			Process BNO055 Heading sensor data:
+		 */
+
+		// @TODO
+
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		/*
+			Synchronous (i.e. cyclic) events scheduled by timer (RTI or PWM) subsystem:
+		 */
+
 		if(get_flag_state(heartbeat_1hz_flag) == STATE_PENDING)
 		{
 			reset_flag(heartbeat_1hz_flag);
@@ -197,7 +286,13 @@ int main(void)
 				rc_input_validity_watchdog_callback(); // Check if sufficient number of RC rising edges have occurred in last 100 ms
 			}
 			
+			/* 
+				To actually query the IMU for raw data and populate internal GNC data structs.
+				This function call is blocking and takes about 600 us to run.
+			 */
 			gnc_get_vehicle_state();
+			
+			// For telemetry purposes:
 			gnc_get_raw_sensor_data(&rd);
 			gnc_get_state_vector_data(&sd);
 			att_data[0] = sd.roll;
@@ -210,53 +305,65 @@ int main(void)
 			sensor_data[3] = rd.roll_gyro;
 			sensor_data[4] = rd.pitch_gyro;
 			sensor_data[5] = rd.yaw_gyro;
-
-			sys_ledToggle(SYS_LED1);
 			
-			if(get_flag_state(telemetry_gnc_250hz_flag) == STATE_PENDING)
+			if(get_flag_state(telemetry_gnc_200hz_flag) == STATE_PENDING)
 			{
 				// Reset flag for next cycle:				
-				reset_flag(telemetry_gnc_250hz_flag);
+				reset_flag(telemetry_gnc_200hz_flag);
 
 				// Send telemetry items as configured:
 				#ifdef SEND_MPU_IMU_TELEMETRY
-					send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"state", 5, att_data, 2);
 					send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"imu", 3, sensor_data, 6);
+				#endif
+				#ifdef SEND_STATE_VECTOR_TELEMETRY
+					send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"state", 5, att_data, 2);
+				#endif
+
+				#ifdef SEND_HEIGHT_SENSOR_TELEMETRY
+					send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"sf11c", 5, &height_sensor_reading, 1);
 				#endif
 
 				// Run GNC angular outer loop control to generate rate commands for inner loop:
-				if(get_flag_state(gnc_125Hz_flag) == STATE_PENDING)
-				{
-					reset_flag(gnc_125Hz_flag);
-					gnc_vehicle_stabilization_outerloop_update(roll_cmd, pitch_cmd, yaw_cmd,
-																&roll_rate_cmd, &pitch_rate_cmd, &yaw_rate_cmd);
-				}
+				gnc_vehicle_stabilization_outerloop_update(roll_cmd, pitch_cmd, yaw_cmd,
+															&roll_rate_cmd_local, &pitch_rate_cmd_local, &yaw_rate_cmd_local);
 
-				/*
-					Run GNC inner loop to generate 4 motor PWM commands:
-				 */
-				gnc_vehicle_stabilization_innerloop_update(roll_rate_cmd, pitch_rate_cmd, yaw_rate_cmd,
-															throttle_value_common,
-															motor_output_commands);
+				_disable_interrupts();
+					roll_rate_cmd = roll_rate_cmd_local;
+					pitch_rate_cmd = pitch_rate_cmd_local;
+					yaw_rate_cmd = yaw_rate_cmd_local;
+					throttle_value_common = throttle_value_common_local;
+				_enable_interrupts();
 
+				#ifdef SEND_MOTOR_CMDS_TELEMETRY
 				motor_vals[0] = (float)motor_output_commands[0];
 				motor_vals[1] = (float)motor_output_commands[1];
 				motor_vals[2] = (float)motor_output_commands[2];
 				motor_vals[3] = (float)motor_output_commands[3];
 
 				send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"cmds", 4, motor_vals, 4);
-
-				#ifdef ENABLE_MOTORS
-					QuadRotor_motor1_setDuty((float)motor_output_commands[0]);                             
-					QuadRotor_motor2_setDuty((float)motor_output_commands[1]);
-					QuadRotor_motor3_setDuty((float)motor_output_commands[2]);
-					QuadRotor_motor4_setDuty((float)motor_output_commands[3]);
 				#endif
-
+				
 				if(get_flag_state(rc_update_50hz_flag) == STATE_PENDING)
 				{
 					reset_flag(rc_update_50hz_flag);
+
+					if(get_flag_state(sf10_25hz_trigger_flag) == STATE_PENDING)
+					{
+						reset_flag(sf10_25hz_trigger_flag);
+						request_sf10_sensor_update(&sf10_handler);
+					}
+
 					get_rc_input_values(&rc_data);
+					if(get_ch5_mode(rc_data)==MODE_FAILSAFE)
+					{
+						gnc_integral_enable();
+						set_controller_mode(MODE_ANGULAR_POSITION_CONTROL);
+					}
+					else
+					{
+						gnc_integral_enable();
+						set_controller_mode(MODE_ANGULAR_RATE_CONTROL);
+					}
 					if(rc_data.mode_switch_channel_validity == CHANNEL_VALID)
 					{
 						#ifdef SEND_RC_INPUT_TELEMETRY
@@ -278,7 +385,7 @@ int main(void)
 						roll_cmd = rc_data.roll_channel_value;
 						pitch_cmd = rc_data.pitch_channel_value;
 						yaw_cmd = rc_data.yaw_channel_value * -1.0f;
-						throttle_value_common = 0.50f*(rc_data.vertical_channel_value + 1.0f);
+						throttle_value_common_local = 0.50f*(rc_data.vertical_channel_value + 1.0f);
 					}
 					else
 					{
@@ -289,13 +396,13 @@ int main(void)
 							send_telem_msg_string_blocking(&telem0, (uint8_t *)"rcvalid", 7, "FALSE\r\n", 7);
 						#endif
 						
+						insert_delay(100);
+						_disable_interrupts();
 						QuadRotor_motor1_setDuty(0.0f);
 						QuadRotor_motor2_setDuty(0.0f);
 						QuadRotor_motor3_setDuty(0.0f);
 						QuadRotor_motor4_setDuty(0.0f);
 						// Wait for serial transmit of telemetry to complete, and give ESCs a chance to latch the last valid command prior to PWM shutdown.
-						insert_delay(100);
-						_disable_interrupts();
 						QuadRotor_motor1_stop();
 						QuadRotor_motor2_stop();
 						QuadRotor_motor3_stop();
@@ -307,30 +414,6 @@ int main(void)
 				}
 			}
 		}
-		/*
-			Serial port library and CAN functionality tests:
-		 */
-		// send_telem_msg_string_blocking(&telem0, "Test_msg1", 9, testmsg1, 16U);		
-		// while(!canIsRxMessageArrived(canREG3, canMESSAGE_BOX10))
-		// {
-		// 	serialport_send_data_buffer_blocking(ftdi_dbg_port_ptr, (uint8_t *)"Business as usual...\r\n", 22);
-		// }
-		// canGetData(canREG3, canMESSAGE_BOX10, can_msg);
-		// if(can_msg[7] == 100U)
-		// {
-		// 	serialport_send_data_buffer_blocking(ftdi_dbg_port_ptr, (uint8_t *)"Received CAN packet :)\r\n", 24);
-		// }
-
-		// Simple polling echo:
-		// serialport_receive_data_buffer_blocking(ftdi_dbg_port_ptr, msgbuf, 1);
-		// serialport_send_data_buffer_blocking(ftdi_dbg_port_ptr, msgbuf, 1);
-
-		// Simple asynch echo:
-		// int bytes_read = serialport_receive_data_buffer(ftdi_dbg_port_ptr, msgbuf, 100); // Attempt to read 100 bytes
-		// if(bytes_read > 0) // If bytes_read is nonzero, we have a byte!
-		// {
-		// 	serialport_send_data_buffer(ftdi_dbg_port_ptr, msgbuf, bytes_read);		
-		// }
 	}
 /* USER CODE END */
 }

@@ -3,6 +3,8 @@
 static volatile  imu_scaled_data_struct imu_data;
 static volatile filtered_quadrotor_state st_vector;
 
+static uint8_t gnc_en;
+
 // static float floating_pt_abs(float n)
 // {
 // 	if(n > 0.0f)
@@ -21,8 +23,25 @@ void gnc_init(void)
 	init_comp_filter(&st_vector);	// Initialize complementary filter data structs/vars
 	do_bias_calculation(&imu_data); // Bias calibration for IMU (gyro+accel)
 	controller_init_vars();			// Set controller gains
-	set_controller_mode(MODE_ANGULAR_POSITION_CONTROL); // Set controller to stabilize (i.e. angular control) mode
+	// set_controller_mode(MODE_ANGULAR_POSITION_CONTROL); // Set controller to stabilize (i.e. angular control) mode
+	set_controller_mode(MODE_ANGULAR_RATE_CONTROL); // Set controller to acro (i.e. angular rate control) mode
 	enable_controller(); // Enable all PID loops
+	gnc_disable();
+}
+
+void gnc_enable(void)
+{
+	gnc_en = 1U;
+}
+
+void gnc_disable(void)
+{
+	gnc_en = 0U;
+}
+
+uint8_t gnc_enabled(void)
+{
+	return gnc_en;
 }
 
 void gnc_get_vehicle_state(void)
@@ -62,6 +81,18 @@ void gnc_get_state_vector_data(gnc_state_data *ret)
 // {
 // 	generate_attitude_commands(vel_x, vel_y, vel_cmd_x, vel_cmd_y, roll_cmd, pitch_cmd);
 // }
+
+void gnc_integral_disable(void)
+{
+	rate_controller_integral_disable();
+	attitude_controller_integral_disable();
+}
+
+void gnc_integral_enable(void)
+{
+	rate_controller_integral_enable();
+	attitude_controller_integral_enable();
+}
 
 void gnc_vehicle_stabilization_outerloop_update(float roll_cmd_in,
 												float pitch_cmd_in,

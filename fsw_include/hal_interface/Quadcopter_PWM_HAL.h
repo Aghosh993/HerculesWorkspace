@@ -10,6 +10,7 @@
 #include <stdint.h>
 
 #include <hal_common_includes.h>
+#include <sys_leds.h>
 
 #define MIN_DUTY 0.35f
 #define MAX_DUTY 0.85f
