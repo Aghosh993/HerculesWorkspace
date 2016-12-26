@@ -71,8 +71,8 @@
 #define ROLL_ACCUM_ERR_ABS_MAX 			0.30f // Units: Radian*seconds
 #define PITCH_ACCUM_ERR_ABS_MAX 		0.30f // Units: Radian*seconds
 
-#define ROLL_MAX_ABS_ADJUSTMENT			2.00f // Unit: Radians/second
-#define PITCH_MAX_ABS_ADJUSTMENT		2.00f // Unit: Radians/second
+#define ROLL_MAX_ABS_ADJUSTMENT			4.00f // Unit: Radians/second
+#define PITCH_MAX_ABS_ADJUSTMENT		4.00f // Unit: Radians/second
 
 #define YAW_DEADBAND 0.055f
 
@@ -110,14 +110,14 @@
 #define pitch_rate_kD	0.0f
 #define yaw_rate_kD		0.0f
 
-#define roll_kP 		1.70f //1.7
-#define pitch_kP 		1.70f //1.7
+#define roll_kP 		1.70f
+#define pitch_kP 		1.70f
 
 #define roll_kI 		0.0f
 #define pitch_kI 		0.0f
 
-#define roll_kD 		0.0f
-#define pitch_kD 		0.0f
+#define roll_kD 		0.005f
+#define pitch_kD 		0.005f
 
 
 #define GND_EFFECT_TRANSITION_POINT1		0.1f

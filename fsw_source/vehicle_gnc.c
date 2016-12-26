@@ -77,6 +77,11 @@ void gnc_get_state_vector_data(gnc_state_data *ret)
 	ret->yaw = st_vector.yaw;
 }
 
+float gnc_get_vertical_dynamic_acceleration(void)
+{
+	return -1.0f * st_vector.vertical_dynamic_acceleration_post_lpf;
+}
+
 // void velocity_controller_update(float vel_cmd_x, float vel_cmd_y, float vel_x, float vel_y, float *roll_cmd, float *pitch_cmd)
 // {
 // 	generate_attitude_commands(vel_x, vel_y, vel_cmd_x, vel_cmd_y, roll_cmd, pitch_cmd);
@@ -207,6 +212,46 @@ float height_controller_thrust_offset(float rotor_dia_meters, float height_meter
 		return max_thrust_offset;
 	}
 	return min_thrust_offset;
+}
+
+float get_height_controller_throttle_command(float height_commanded, float height_estimate, float vertical_velocity_estimate)
+{
+	static float height_pid_err_accum = 0.0f;
+	float height_error = 0.0f;
+	float height_pid_adj = 0.0f;
+	float height_pid_max_adj = 0.275f;
+
+	// Compute height error in meters:
+	height_error = height_commanded - height_estimate;
+	// Compute height accumulated error in meter*seconds:
+	height_pid_err_accum += height_error * HEIGHT_CONTROL_DT;
+
+	// Saturate the height accumulated error integral:
+	if(height_pid_err_accum < -1.0f)
+	{
+		height_pid_err_accum = -1.0f;
+	}
+	if(height_pid_err_accum > 1.0f)
+	{
+		height_pid_err_accum = 1.0f;
+	}
+
+	// Compute height PID adjustment:
+	height_pid_adj = (0.75f * height_error) + (height_pid_err_accum * 0.01f) + (-0.41f * vertical_velocity_estimate);
+
+	// Saturate height PID adjustment:
+	if(height_pid_adj < -1.0f * height_pid_max_adj)
+	{
+		height_pid_adj = -1.0f * height_pid_max_adj;
+	}
+	if(height_pid_adj > height_pid_max_adj)
+	{
+		height_pid_adj = height_pid_max_adj;
+	}
+
+	float height_controller_throttle_cmd = height_controller_thrust_offset(0.3048f, height_estimate) + height_pid_adj;
+
+	return height_controller_throttle_cmd;
 }
 
 // float get_compensated_sf10_data(vehicle_relative_height_tracker *tr, 

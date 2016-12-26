@@ -35,7 +35,7 @@
 
 #define ENABLE_MOTORS	1
 // #define ESC_CAL_MODE	1
-#define TEST_TELEM		1
+// #define TEST_TELEM		1
 
 /* USER CODE END */
 
@@ -236,6 +236,11 @@ int main(void)
 
 	float height_sensor_reading = 0.0f;
 
+	height_kalman_data_struct height_estimator;
+	gnc_height_kalman_struct_init(&height_estimator, 0.005f, 0.05f);
+	float height_closedloop_throttle_cmd = 0.0f;
+	float max_height_cmd = 2.0f;
+
 	while(1)
 	{
 		/*
@@ -323,6 +328,16 @@ int main(void)
 					send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"sf11c", 5, &height_sensor_reading, 1);
 				#endif
 
+				// Run height estimation Kalman filter:
+				gnc_height_kalman_update(&height_estimator, height_sensor_reading, gnc_get_vertical_dynamic_acceleration(), sd.roll, sd.pitch);
+
+				send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"h_est", 5, &(height_estimator.height_estimated), 1);
+
+				// // Obtain new height throttle command:
+				// height_closedloop_throttle_cmd = get_height_controller_throttle_command(throttle_value_common_local*max_height_cmd, 
+				// 																		height_estimator.height_estimated,
+				// 																		height_estimator.vertical_velocity_estimated);
+
 				// Run GNC angular outer loop control to generate rate commands for inner loop:
 				gnc_vehicle_stabilization_outerloop_update(roll_cmd, pitch_cmd, yaw_cmd,
 															&roll_rate_cmd_local, &pitch_rate_cmd_local, &yaw_rate_cmd_local);
@@ -331,7 +346,8 @@ int main(void)
 					roll_rate_cmd = roll_rate_cmd_local;
 					pitch_rate_cmd = pitch_rate_cmd_local;
 					yaw_rate_cmd = yaw_rate_cmd_local;
-					throttle_value_common = throttle_value_common_local;
+					throttle_value_common = throttle_value_common_local; // For open-loop height control!!
+					// throttle_value_common = height_closedloop_throttle_cmd; // For closed-loop height control!!
 				_enable_interrupts();
 
 				#ifdef SEND_MOTOR_CMDS_TELEMETRY

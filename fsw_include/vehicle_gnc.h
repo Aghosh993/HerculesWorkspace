@@ -112,6 +112,7 @@ void height_kalman_struct_init(height_kalman_data_struct *str, float filter_dt_s
 void height_kalman_update(height_kalman_data_struct *str, float lidar_height_measurement, float accelerometer_z_measurement, float vehicle_roll_deg, float vehicle_pitch_deg);
 float bno055_get_relative_heading(float raw_heading, float prior_heading);
 float height_controller_thrust_offset(float rotor_dia_meters, float height_meters);
+float get_height_controller_throttle_command(float height_commanded, float height_estimate, float vertical_velocity_estimate);
 // float get_compensated_sf10_data(vehicle_relative_height_tracker *tr, 
 // 											float sf10_raw_measurement, float sf10_previous_raw_measurement,
 // 											float current_height_cmd, float previous_height_cmd);
@@ -122,5 +123,7 @@ float height_controller_thrust_offset(float rotor_dia_meters, float height_meter
 
 void gnc_get_raw_sensor_data(gnc_raw_data *ret);
 void gnc_get_state_vector_data(gnc_state_data *ret);
+
+float gnc_get_vertical_dynamic_acceleration(void);
 
 #endif
