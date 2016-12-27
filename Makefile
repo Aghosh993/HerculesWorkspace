@@ -1,6 +1,6 @@
 # Based on https://github.com/sergioprado/bare-metal-arm/blob/master/Makefile
 # But heavily-edited for our purposes:
-TOOLCHAIN_ROOT=/home/aghosh01/gcc-arm-none-eabi-5_4-2016q3
+TOOLCHAIN_ROOT=../gcc-arm-none-eabi-5_4-2016q3
 TOOLCHAIN=$(TOOLCHAIN_ROOT)/bin/
 PREFIX=$(TOOLCHAIN)/arm-none-eabi-
 
@@ -36,8 +36,12 @@ build: elf srec bin
 elf: $(TARGET).elf
 srec: $(TARGET).srec
 bin: $(TARGET).bin
+md5sums: all
+	md5sum $(TARGET).elf > rm48_fsw_md5sum
+check: all
+	md5sum $(TARGET).elf > tmp && diff tmp rm48_fsw_md5sum && rm tmp
 load: all
-	./load_fw.sh $(JLINK_ROOT) /usr/bin/ # The second argument here is the path to arm-none-eabi-gdb. This should really just be $(TOOLCHAIN) but Arch Linux throws a stupid libncurses.so error so we're just using the distro's shipped arm-none-eabi-gdb for the time being... :/
+	./load_fw.sh $(JLINK_ROOT) $(TOOLCHAIN) # The second argument here is the path to arm-none-eabi-gdb. This should really just be $(TOOLCHAIN) but Arch Linux throws a stupid libncurses.so error so we're just using the distro's shipped arm-none-eabi-gdb for the time being... :/
 
 clean:
 	$(RM) $(TARGET).srec $(TARGET).elf $(TARGET).bin $(TARGET).map $(OBJ) $(ASM_OBJS) $(NEWLIB_ASM_OBJ) $(USER_OBJ) $(FSW_OBJ)
