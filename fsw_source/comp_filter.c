@@ -8,6 +8,7 @@
  */
 
 #include "comp_filter.h"
+#include "mission_timekeeper.h"
 
 volatile lpf_data_struct acc_x_lpf;	// Low-pass filter data structure for X-axis accelerometer
 volatile lpf_data_struct acc_y_lpf;	// Low-pass filter data structure for Y-axis accelerometer

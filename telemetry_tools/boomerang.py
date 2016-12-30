@@ -2,6 +2,8 @@
 # boomerang.py
 # This script forwards serial port telemetry over UDP in a broadcast fashion
 # (c) 2016, Abhimanyu Ghosh
+# Based heavily on https://gist.github.com/Lothiraldan/3951784
+
 import os
 import serial
 import struct
@@ -11,15 +13,17 @@ from socket import *
 class UDP_Boomerang:
 	def __init__(self, udp_port, serport, serbaud):
 		self.udp_port = udp_port
-		self.serport = serial.Serial(serport, serbaud)
+		self.serport = serial.Serial(serport, serbaud, timeout=None)
 		
-		self.sock = socket(AF_INET, SOCK_DGRAM)
-		self.sock.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
+		self.sock = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)
+		self.sock.bind(("0.0.0.0", 0))
+		self.sock.setsockopt(IPPROTO_IP, IP_MULTICAST_TTL, 255)
 		self.sock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
-		self.sock.bind(('', 0))
 
 	def send_packet(self, data):
-		self.sock.sendto(data, ('', self.udp_port))
+		# print("Sending packet")
+		MCAST_ADDR = "237.252.249.227"
+		self.sock.sendto(data, (MCAST_ADDR, self.udp_port))
 
 	def redirect_telemetry_message_stream(self):
 		redirect_msg = False
@@ -27,7 +31,7 @@ class UDP_Boomerang:
 		message_buffer = ""
 		start = self.serport.read(1)
 
-		computed_chksum = ord('s');
+		computed_chksum = 0 #ord('s');
 
 		if start == 's':
 			message_buffer += start
@@ -56,12 +60,14 @@ class UDP_Boomerang:
 				message_buffer += data_len_byte
 				computed_chksum += data_len
 
+				msg_payload = ""
+
 				if msg_id == 0: # Figure out how many bytes per unit in data_len based on message ID
 					msg_payload = self.serport.read(data_len)
+					chksum = self.serport.read(2)
 				if msg_id == 1 or msg_id == 2:
 					msg_payload = self.serport.read(data_len*4)
-
-				chksum = self.serport.read(2)
+					chksum = self.serport.read(2)
 
 				message_buffer += msg_payload
 				for i in range(len(msg_payload)):
@@ -73,7 +79,7 @@ class UDP_Boomerang:
 
 				if (computed_chksum & 0xFFFF) == ord(chksum[1])<<8 | ord(chksum[0]):
 					redirect_msg = True
-					print(repr(computed_chksum)+" "+repr(ord(chksum[1])<<8 | ord(chksum[0])))
+					# print(repr(computed_chksum)+" "+repr(ord(chksum[1])<<8 | ord(chksum[0])))
 
 			else:
 				rows_byte = self.serport.read(1)

@@ -17,11 +17,17 @@ class telemetry_prism:
 	def __init__(self, udp_port):
 		self.udp_port = udp_port
 
-		self.sock = socket(AF_INET, SOCK_DGRAM)
-		self.sock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
-		self.sock.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
-		self.sock.bind(('', self.udp_port))
-		self.sock.setblocking(0)
+		self.sock = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)
+		self.sock.setsockopt(SOL_SOCKET, SO_REUSEPORT, 1)
+		# Bind on all interfaces:
+		self.sock.bind(("0.0.0.0", self.udp_port))
+
+		# Join multicast group:
+		self.sock.setsockopt(IPPROTO_IP, IP_MULTICAST_TTL, 255)
+
+		self.sock.setsockopt(IPPROTO_IP, IP_ADD_MEMBERSHIP, inet_aton("237.252.249.227") + inet_aton("0.0.0.0"))
+
+		# self.sock.setblocking(0)
 
 	def show_raw(self):
 		m = self.sock.recvfrom(1024)
@@ -48,6 +54,7 @@ class telemetry_prism:
 		res = select.select([self.sock],[],[])
 		msg = res[0][0].recvfrom(1024)
 		msg_data = msg[0]
+
 		if msg_data[0] == 's':
 			desc_size = ord(msg_data[1])
 			descriptor = ""
@@ -65,11 +72,12 @@ class telemetry_prism:
 								msg_payload_segment += msg_data[desc_size+4+(i*4)+j]
 							float_list.append(unpack('<f', msg_payload_segment)[0])	
 							print(float_list)
-
+		
 	def get_n_ints_message(self, desc):
 		res = select.select([self.sock],[],[])
 		msg = res[0][0].recvfrom(1024)
 		msg_data = msg[0]
+
 		if msg_data[0] == 's':
 			desc_size = ord(msg_data[1])
 			descriptor = ""
@@ -116,6 +124,8 @@ def main():
 
 	s = telemetry_prism(udp_port)
 	s.display_filtered_message(msgID, desc)
+	# while True:
+	# 	s.show_raw();
 
 if __name__ == '__main__':
 	main()

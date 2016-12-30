@@ -49,44 +49,44 @@ class telemetry_prism:
 
 					print(float_list)
 
-	# def get_n_ints_message(self, desc):
-	# 	st = self.serport.read(1)
-	# 	if st == 's':
-	# 		desc_size = ord(self.serport.read(1))
-	# 		print(desc_size)
-	# 		descriptor = self.serport.read(desc_size)
-
-	# 		if descriptor == desc:
-	# 			msg_id = ord(self.serport.read(1))
-	# 			if msg_id == 2:
-	# 				data_len = ord(self.serport.read(1))				
-	# 				int_list = []
-	# 				for i in range(data_len):
-	# 					msg_payload_segment = self.serport.read(4)	
-	# 					int_list.append(unpack('<i', msg_payload_segment)[0])
-
-	# 				chksum = self.serport.read(2)
-					
-	# 				print(int_list)
-
 	def get_n_ints_message(self, desc):
 		st = self.serport.read(1)
 		if st == 's':
 			desc_size = ord(self.serport.read(1))
 			# print(desc_size)
 			descriptor = self.serport.read(desc_size)
-			msg_id = ord(self.serport.read(1))
-			data_len = ord(self.serport.read(1))
-			# print(data_len)			
-			int_list = []
-			for i in range(data_len):
-				msg_payload_segment = self.serport.read(4)	
-				int_list.append(unpack('<i', msg_payload_segment)[0])
 
-			chksum = self.serport.read(2)
+			if descriptor == desc:
+				msg_id = ord(self.serport.read(1))
+				if msg_id == 2:
+					data_len = ord(self.serport.read(1))				
+					int_list = []
+					for i in range(data_len):
+						msg_payload_segment = self.serport.read(4)	
+						int_list.append(unpack('<i', msg_payload_segment)[0])
+
+					chksum = self.serport.read(2)
+					
+					print(int_list)
+
+	# def get_n_ints_message(self, desc):
+	# 	st = self.serport.read(1)
+	# 	if st == 's':
+	# 		desc_size = ord(self.serport.read(1))
+	# 		# print(desc_size)
+	# 		descriptor = self.serport.read(desc_size)
+	# 		msg_id = ord(self.serport.read(1))
+	# 		data_len = ord(self.serport.read(1))
+	# 		# print(data_len)			
+	# 		int_list = []
+	# 		for i in range(data_len):
+	# 			msg_payload_segment = self.serport.read(4)	
+	# 			int_list.append(unpack('<i', msg_payload_segment)[0])
+
+	# 		chksum = self.serport.read(2)
 			
-			# if descriptor == desc and msg_id == 2:
-			print(int_list)
+	# 		# if descriptor == desc and msg_id == 2:
+	# 		print(int_list)
 
 	def get_m_n_float_matrix_message(self, desc):
 		st = self.serport.read(1)

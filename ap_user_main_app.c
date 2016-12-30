@@ -16,6 +16,7 @@
 #include "vehicle_gnc.h"
 #include "serial_comms_highlevel.h"
 #include "sf10_reader.h"
+#include "bno055_reader.h"
 
 /*
 	Quadcopter primary flight software file.
@@ -33,11 +34,28 @@
 	(c) 2016, Abhimanyu Ghosh
  */
 
+/*
+	Central define that enables or disables the operation of motors under any circumstance.
+	Uncomment this if you want the motors to be able to rotate:
+ */
 #define ENABLE_MOTORS	1
+/*
+	Disable main program loop and run the ESC PWM channels through a pre-determined sequence to
+	calibrate them:
+ */
 // #define ESC_CAL_MODE	1
-// #define TEST_TELEM		1
+/* 
+	Disable main program loop and run an infinite loop emitting telemetry packets
+	at about 50 Hz for test purposes:
+ */
+#define TEST_TELEM		1 
 
 /* USER CODE END */
+
+/*
+	Some unavoidable global definitions that are also accessed by functions called from interrupt
+	handlers in interrupts.c:
+ */
 
 serialport ftdi_dbg_port, tm4c_comms_aux_port;
 serialport *ftdi_dbg_port_ptr;
@@ -162,12 +180,12 @@ int main(void)
 	float imudata_telemetry_output[7];
 
 	uint8_t telemetry_gnc_200hz_flag = create_flag(4U);
+	uint8_t sf10_20hz_trigger_flag = create_flag(49U);
 	uint8_t rc_update_50hz_flag = create_flag(19U);
 	uint8_t imu_sample_1000hz_flag = create_flag(0U);
 	uint8_t rc_watchdog_10hz_flag = create_flag(99U);
 	uint8_t heartbeat_1hz_flag = create_flag(999U);
-	uint8_t sf10_25hz_trigger_flag = create_flag(39U);
-	
+
 	sys_ledOn(SYS_LED1);
 	sys_ledOff(SYS_LED2);
 
@@ -228,9 +246,7 @@ int main(void)
 	yaw_rate_cmd_local = 0.0f;
 	throttle_value_common_local = 0.0f;
 
-	gnc_enable();
-
-	uint8_t msg_buf[10];
+	uint8_t msg_buf[30];
 	uint8_t i = 0U;
 	uint32_t bytes_read;
 
@@ -241,8 +257,25 @@ int main(void)
 	float height_closedloop_throttle_cmd = 0.0f;
 	float max_height_cmd = 2.0f;
 
+	float h_est_telem_msg[8] = {0.0f};
+	// h_est_telem_msg[0] = 0.0f;
+	// h_est_telem_msg[1] = 0.0f;
+	// h_est_telem_msg[2] = 0.0f;
+
+	float heading_sensor_reading = 0.0f;
+
+	uint8_t bno_bytes_read = 0U;
+	int bno_bytes_total = 0U;
+
+	BNO055_init();
+
 	while(1)
 	{
+		#ifdef ENABLE_MOTORS
+			gnc_enable();
+		#else
+			gnc_disable();
+		#endif
 		/*
 			Asynchronous events (primarily serial communications using encapsulation driver subsystem):
 		 */
@@ -250,7 +283,6 @@ int main(void)
 		/*
 			Process SF11/C height sensor data:
 		 */
-
 		bytes_read = serialport_receive_data_buffer(tm4c_port1_ptr, msg_buf, 10);
 
 		for(i=0; i<bytes_read; ++i)
@@ -260,6 +292,9 @@ int main(void)
 
 		if(sf10_received_new_data(&sf10_handler))
 		{
+			// float height_sensor_reading_raw = get_last_sf10_sensor_height(&sf10_handler);
+			// height_sensor_reading = sf10_reader_check_measurement(height_sensor_reading_raw);
+
 			height_sensor_reading = get_last_sf10_sensor_height(&sf10_handler);
 		}
 
@@ -267,7 +302,20 @@ int main(void)
 			Process BNO055 Heading sensor data:
 		 */
 
-		// @TODO
+		bno_bytes_read = serialport_receive_data_buffer(tm4c_port2_ptr, msg_buf, 30U);
+
+		for(i=0; i<bno_bytes_read; ++i)
+		{
+			BNO055_interrupt_handler(msg_buf[i]);
+		}
+
+		if(BNO055_received_new_data())
+		{
+			imu_data bno055_reading;
+			BNO055_get_imu_data(&bno055_reading);
+			heading_sensor_reading = bno055_reading.heading;
+			bno_bytes_total += 1;
+		}
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -283,6 +331,7 @@ int main(void)
 
 		if(get_flag_state(imu_sample_1000hz_flag) == STATE_PENDING)
 		{
+			// sys_ledToggle(SYS_LED1);
 			reset_flag(imu_sample_1000hz_flag);
 
 			if(get_flag_state(rc_watchdog_10hz_flag) == STATE_PENDING)
@@ -316,6 +365,8 @@ int main(void)
 				// Reset flag for next cycle:				
 				reset_flag(telemetry_gnc_200hz_flag);
 
+				// sys_ledToggle(SYS_LED1);
+
 				// Send telemetry items as configured:
 				#ifdef SEND_MPU_IMU_TELEMETRY
 					send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"imu", 3, sensor_data, 6);
@@ -324,19 +375,15 @@ int main(void)
 					send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"state", 5, att_data, 2);
 				#endif
 
-				#ifdef SEND_HEIGHT_SENSOR_TELEMETRY
-					send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"sf11c", 5, &height_sensor_reading, 1);
-				#endif
-
 				// Run height estimation Kalman filter:
 				gnc_height_kalman_update(&height_estimator, height_sensor_reading, gnc_get_vertical_dynamic_acceleration(), sd.roll, sd.pitch);
 
-				send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"h_est", 5, &(height_estimator.height_estimated), 1);
+				// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"h_est", 5, &(height_estimator.height_estimated), 1);
 
 				// // Obtain new height throttle command:
-				// height_closedloop_throttle_cmd = get_height_controller_throttle_command(throttle_value_common_local*max_height_cmd, 
-				// 																		height_estimator.height_estimated,
-				// 																		height_estimator.vertical_velocity_estimated);
+				height_closedloop_throttle_cmd = gnc_get_height_controller_throttle_command(throttle_value_common_local*max_height_cmd, 
+																						height_estimator.height_estimated,
+																						height_estimator.vertical_velocity_estimated);
 
 				// Run GNC angular outer loop control to generate rate commands for inner loop:
 				gnc_vehicle_stabilization_outerloop_update(roll_cmd, pitch_cmd, yaw_cmd,
@@ -358,18 +405,49 @@ int main(void)
 
 				send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"cmds", 4, motor_vals, 4);
 				#endif
+
+				if(get_flag_state(sf10_20hz_trigger_flag) == STATE_PENDING)
+				{
+					reset_flag(sf10_20hz_trigger_flag);
+
+					#ifdef SEND_HEIGHT_SENSOR_TELEMETRY
+						send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"sf11c", 5, &height_sensor_reading, 1);
+					#endif
+					
+					sys_ledToggle(SYS_LED1);
+					request_sf10_sensor_update(&sf10_handler);
+				}
 				
 				if(get_flag_state(rc_update_50hz_flag) == STATE_PENDING)
 				{
 					reset_flag(rc_update_50hz_flag);
 
-					if(get_flag_state(sf10_25hz_trigger_flag) == STATE_PENDING)
-					{
-						reset_flag(sf10_25hz_trigger_flag);
-						request_sf10_sensor_update(&sf10_handler);
-					}
+					BNO055_trigger_get_data();
+
+					#ifdef SEND_HEIGHT_ESTIMATOR_TELEMETRY
+						h_est_telem_msg[0] = height_estimator.height_estimated;
+						h_est_telem_msg[1] = height_estimator.vertical_velocity_estimated;
+						h_est_telem_msg[2] = height_closedloop_throttle_cmd;
+						h_est_telem_msg[3] = throttle_value_common_local*max_height_cmd;
+						h_est_telem_msg[4] = height_sensor_reading;
+						h_est_telem_msg[5] =  gnc_get_vertical_dynamic_acceleration();
+						h_est_telem_msg[6] =  sd.roll;
+						h_est_telem_msg[7] =  sd.pitch;
+						send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"h_est", 5, h_est_telem_msg, 8);
+					#endif
+
+					#ifdef SEND_HEADING_TELEMETRY
+						send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"heading", 7, &heading_sensor_reading, 1);
+					#endif
+
+					#ifdef SEND_BNO_SERIAL_STATS_TELEMETRY
+						send_telem_msg_n_ints_blocking(&telem0, (uint8_t *)"bno_tot", 7, &bno_bytes_total, 1);
+					#endif
+
+					// sys_ledToggle(SYS_LED1);
 
 					get_rc_input_values(&rc_data);
+
 					if(get_ch5_mode(rc_data)==MODE_FAILSAFE)
 					{
 						gnc_integral_enable();

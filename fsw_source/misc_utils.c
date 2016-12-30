@@ -4,6 +4,7 @@
 	(c) Abhimanyu Ghosh, 2016
  */
 #include "misc_utils.h"
+#include "mission_timekeeper.h"
 
 /*
  * Simple blocking delay. Normally not used, instead the timekeeper_delay() function in

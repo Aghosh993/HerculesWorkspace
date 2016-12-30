@@ -79,7 +79,7 @@ void gnc_get_state_vector_data(gnc_state_data *ret)
 
 float gnc_get_vertical_dynamic_acceleration(void)
 {
-	return -1.0f * st_vector.vertical_dynamic_acceleration_post_lpf;
+	return st_vector.vertical_dynamic_acceleration_post_lpf;
 }
 
 // void velocity_controller_update(float vel_cmd_x, float vel_cmd_y, float vel_x, float vel_y, float *roll_cmd, float *pitch_cmd)
@@ -174,6 +174,10 @@ void gnc_height_kalman_update(height_kalman_data_struct *str, float lidar_height
 	str->g11 = p11_predicted/(p11_predicted + str->r_lidar);
 	str->g21 = p21_predicted/(p11_predicted + str->r_lidar);
 
+	// for an observer, we instead just overwrite g11 and g21:
+	// str->g11 = 0.04f;
+	// str->g21 = 0.10f;
+
 	float innovation = str->h_lidar_global_coords - height_predicted;
 	str->height_estimated = height_predicted + str->g11 * innovation;
 	str->vertical_velocity_estimated = vertical_velocity_predicted + str->g21 * innovation;
@@ -184,7 +188,7 @@ void gnc_height_kalman_update(height_kalman_data_struct *str, float lidar_height
 	str->p22 = -1.0f * str->g21 * p12_predicted + p22_predicted;
 }
 
-float bno055_get_relative_heading(float raw_heading, float prior_heading)
+float gnc_bno055_get_relative_heading(float raw_heading, float prior_heading)
 {
 	float delta_theta = raw_heading - prior_heading;
 	if(delta_theta > 180.0f)
@@ -198,10 +202,10 @@ float bno055_get_relative_heading(float raw_heading, float prior_heading)
 	return delta_theta;
 }
 
-float height_controller_thrust_offset(float rotor_dia_meters, float height_meters)
+float gnc_height_controller_thrust_offset(float rotor_dia_meters, float height_meters)
 {
-	float min_thrust_offset = 0.50f;
-	float max_thrust_offset = 0.58f;
+	float min_thrust_offset = 0.49f;
+	float max_thrust_offset = 0.56f;
 	float slope = (float)(max_thrust_offset - min_thrust_offset)/(float)(rotor_dia_meters * 0.65f);
 	if(height_meters >= 0.0f && height_meters <= rotor_dia_meters * (float)0.65f)
 	{
@@ -214,7 +218,7 @@ float height_controller_thrust_offset(float rotor_dia_meters, float height_meter
 	return min_thrust_offset;
 }
 
-float get_height_controller_throttle_command(float height_commanded, float height_estimate, float vertical_velocity_estimate)
+float gnc_get_height_controller_throttle_command(float height_commanded, float height_estimate, float vertical_velocity_estimate)
 {
 	static float height_pid_err_accum = 0.0f;
 	float height_error = 0.0f;
@@ -237,7 +241,7 @@ float get_height_controller_throttle_command(float height_commanded, float heigh
 	}
 
 	// Compute height PID adjustment:
-	height_pid_adj = (0.75f * height_error) + (height_pid_err_accum * 0.01f) + (-0.41f * vertical_velocity_estimate);
+	height_pid_adj = (1.17 * height_error) + (height_pid_err_accum * 0.00f) + (-0.72f * vertical_velocity_estimate);
 
 	// Saturate height PID adjustment:
 	if(height_pid_adj < -1.0f * height_pid_max_adj)
@@ -249,7 +253,7 @@ float get_height_controller_throttle_command(float height_commanded, float heigh
 		height_pid_adj = height_pid_max_adj;
 	}
 
-	float height_controller_throttle_cmd = height_controller_thrust_offset(0.3048f, height_estimate) + height_pid_adj;
+	float height_controller_throttle_cmd = gnc_height_controller_thrust_offset(0.3048f, height_estimate) + height_pid_adj;
 
 	return height_controller_throttle_cmd;
 }

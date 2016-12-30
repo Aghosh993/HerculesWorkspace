@@ -107,5 +107,6 @@ void init_comp_filter(filtered_quadrotor_state* stvar);
 void get_corrected_scaled_gyro_data(imu_scaled_data_struct* input, float* output);
 void get_corrected_scaled_accelerometer_data(imu_scaled_data_struct* input, float* output);
 void get_filtered_vehicle_state(filtered_quadrotor_state* statevar, imu_scaled_data_struct* input);
+void do_bias_calculation(imu_scaled_data_struct *imu_data);
 
 #endif

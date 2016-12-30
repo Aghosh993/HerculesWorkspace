@@ -9,6 +9,7 @@
 #define SF10_READER_H_	1
 
 #include <stdint.h>
+#include <math.h>
 
 #include "sf10_hal_ap2v4.h"
 
@@ -59,6 +60,7 @@ void request_sf10_sensor_update(sf10_sensor_data_handler *dh);
 float get_last_sf10_sensor_height(sf10_sensor_data_handler *dh);
 float get_last_sf10_timestamp(sf10_sensor_data_handler *dh);
 int sf10_received_new_data(sf10_sensor_data_handler *dh); // returns 1 if new data received since last call to this function, returns 0 otherwise
+float sf10_reader_check_measurement(float raw_data);
 
 /*
  * (Internal) Helper functions:
