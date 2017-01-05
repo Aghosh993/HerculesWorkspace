@@ -1,7 +1,7 @@
 #!/usr/bin/python2
 # udp_prism.py
 # This script connects to a UDP port and receives telemetry and looks for desired messages with a specific message ID and descriptor
-# Messages satisfying the above filter are then displayed on the CLI
+# Messages satisfying the above filter are then graphed
 # (c) 2016, Abhimanyu Ghosh
 import os
 import sys
@@ -13,9 +13,16 @@ import select
 from struct import *
 from time import sleep
 
-MCAST_IP = "237.252.249.228"
+# Some portions of graphical plotting code adapted from http://matplotlib.org/examples/pylab_examples/polar_demo.html
+# and http://jakevdp.github.io/blog/2012/08/18/matplotlib-animation-tutorial/
+# Now revised heavily to reflect material in http://matplotlib.org/examples/animation/strip_chart_demo.html
 
-class telemetry_prism:
+import numpy as np
+from matplotlib.lines import Line2D
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+
+class UDP_scope:
 	def __init__(self, udp_port, msg_id, desc):
 		self.udp_port = udp_port
 
@@ -24,35 +31,17 @@ class telemetry_prism:
 		# Bind on all interfaces:
 		self.sock.bind(("0.0.0.0", self.udp_port))
 
-		# Join multicast group:
 		self.sock.setsockopt(IPPROTO_IP, IP_MULTICAST_TTL, 255)
 
-		self.sock.setsockopt(IPPROTO_IP, IP_ADD_MEMBERSHIP, inet_aton(MCAST_IP) + inet_aton("0.0.0.0"))
-
+		self.sock.setsockopt(IPPROTO_IP, IP_ADD_MEMBERSHIP, inet_aton("237.252.249.227") + inet_aton("0.0.0.0"))
+		
 		self.msg_id_filter = msg_id
 		self.descriptor_filter = desc
 
-	def get_string_message(self):
-		res = select.select([self.sock],[],[])
-		msg = res[0][0].recvfrom(1024)
-		msg_data = msg[0]
-
-		if msg_data[0] == 's':
-			desc_size = ord(msg_data[1])
-			descriptor = ""
-			for i in range(desc_size):
-				descriptor += msg_data[i+2]
-
-				if descriptor == self.descriptor_filter:
-					msg_id = ord(msg_data[desc_size+2])
-					if msg_id == self.msg_id_filter:
-						data_len = ord(msg_data[desc_size+3])				
-						data = ""
-						for i in range(data_len):
-							data += msg_data[desc_size+4+i]
-						print(data)
-
 	def get_n_floats_message(self):
+		global data_buf
+		global time_window
+
 		res = select.select([self.sock],[],[])
 		msg = res[0][0].recvfrom(1024)
 		msg_data = msg[0]
@@ -73,7 +62,11 @@ class telemetry_prism:
 							for j in range(4):
 								msg_payload_segment += msg_data[desc_size+4+(i*4)+j]
 							float_list.append(unpack('<f', msg_payload_segment)[0])	
-							print(float_list)
+
+						for i in range(time_window-1):
+							data_buf[i] = data_buf[i+1]; #Shift data back to make space for next element incoming
+
+						data_buf[time_window-1] = float_list[pos]
 		
 	def get_n_ints_message(self):
 		res = select.select([self.sock],[],[])
@@ -96,24 +89,36 @@ class telemetry_prism:
 							for j in range(4):
 								msg_payload_segment += msg_data[desc_size+4+(i*4)+j]
 							int_list.append(unpack('<i', msg_payload_segment)[0])	
-							print(int_list)
 
-	def display_filtered_message(self):
-		if self.msg_id_filter == 0:
-			while True:
-				self.get_string_message()
+						for i in range(time_window-1):
+							data_buf[i] = data_buf[i+1]; #Shift data back to make space for next element incoming
+
+						data_buf[time_window-1] = int_list[pos]
+
+	def push_data_to_buffer(self):
 		if self.msg_id_filter == 1:
 			while True:
-				self.get_n_floats_message()
+				self.get_n_floats_message(desc_string_filter, pos)
 		if self.msg_id_filter == 2:
 			while True:
-				self.get_n_ints_message()
+				self.get_n_ints_message(desc_string_filter, pos)
+
+	def update_fig(self, i):
+		global x_vals
+		global data_buf
+
+		self.push_data_to_buffer()
+
+		# Refresh the plot with recalculated points:
+		line.set_data(x_vals,data_buf)
+		return line,
 
 def main():
 
 	parser = argparse.ArgumentParser(description='Display telemetry item with specified descriptor string and message id')
 	parser.add_argument('port', metavar='UDP_port', type=int, nargs=1, help='UDP Port to listen for broadcast messages on')
-	parser.add_argument('msg_id', metavar='messageID', nargs=1, type=int, help='Message ID of the telemetry item to be viewed')
+	parser.add_argument('msg_id', metavar='messageID', nargs=1, type=int, help='Message ID of the telemetry item to be viewed. 1 for n-floats and 2 for n-ints')
+	parser.add_argument('pos', metavar='pos_identifier', nargs=1, type=int, help='Item within telemetry item to graph. Range from 0 to size(message)-1')
 	parser.add_argument('desc_string', metavar='descriptor_string', nargs=1, help='Descriptor string of the telemetry message to be viewed')
 
 	args = parser.parse_args()
@@ -121,11 +126,11 @@ def main():
 	udp_port = args.port[0]
 	msgID = args.msg_id[0]
 	desc = args.desc_string[0]
+	position_to_display = args.pos[0]
 
 	print("Opening client on UDP port "+repr(udp_port))
 
-	s = telemetry_prism(udp_port, msgID, desc)
-	s.display_filtered_message()
+	s = UDP_scope(udp_port, msgID, desc)
 
 if __name__ == '__main__':
 	main()
