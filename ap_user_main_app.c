@@ -203,37 +203,53 @@ int main(void)
 
 	float motor_vals[4];
 
+	time_val mission_time;
+	float mission_time_sec = 0.0f;
+	int32_t mission_time_msec = 0;
+
 	#ifdef TEST_TELEM
-		float flt_test = 0.0f;
-		int32_t int_test = 0;
+		float flt_test[2];
+		flt_test[0] = 0.0f;
+		flt_test[1] = 0.0f;
+
+		int32_t int_test[2];
+		int_test[0] = 0;
+		int_test[1] = 0;
+
 		uint8_t *str_test[2] = {"hello0", "hello1"};
 
 		while(1)
 		{
-			if(flt_test < 1.0f)
+			mission_time = get_mission_time();
+			mission_time_sec = (float)mission_time.seconds + (float)mission_time.ms*(float)0.001f;
+			mission_time_msec = (int32_t)mission_time.seconds*1000 + (int32_t)mission_time.ms;
+			flt_test[0] = mission_time_sec;
+			int_test[0] = mission_time_msec;
+
+			if(flt_test[1] < 1.0f)
 			{
-				flt_test += 0.01f;
+				flt_test[1] += 0.01f;
 			}
 			else
 			{
-				flt_test = 0.0f;
+				flt_test[1] = 0.0f;
 			}
 
-			if(int_test < 100)
+			if(int_test[1] < 100)
 			{
-				int_test += 1;
+				int_test[1] += 1;
 			}
 			else
 			{
-				int_test = 0;
+				int_test[1] = 0;
 			}
 
-			send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"flt", 3, &flt_test, 1);
-			send_telem_msg_n_ints_blocking(&telem0, (uint8_t *)"int", 3, &int_test, 1);
+			send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"flt", 3, flt_test, 2);
+			send_telem_msg_n_ints_blocking(&telem0, (uint8_t *)"int", 3, int_test, 2);
 			send_telem_msg_string_blocking(&telem0, (uint8_t *)"str0", 4, str_test[0], 6);
 			send_telem_msg_string_blocking(&telem0, (uint8_t *)"str1", 4, str_test[1], 6);
 
-			timekeeper_delay(20U);
+			timekeeper_delay(5U);
 		}
 	#endif
 

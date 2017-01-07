@@ -22,9 +22,9 @@ class UDP_Boomerang:
 
 	def send_packet(self, data):
 		# print("Sending packet")
-		MCAST_ADDR = "237.252.249.227"
+		# MCAST_ADDR = "237.252.249.227"
 		MCAST_ADDR_ETH = "237.252.249.228"
-		self.sock.sendto(data, (MCAST_ADDR, self.udp_port))
+		# self.sock.sendto(data, (MCAST_ADDR, self.udp_port))
 		self.sock.sendto(data, (MCAST_ADDR_ETH, self.udp_port))
 
 	def redirect_telemetry_message_stream(self):

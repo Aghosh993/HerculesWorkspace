@@ -73,7 +73,7 @@ class telemetry_prism:
 							for j in range(4):
 								msg_payload_segment += msg_data[desc_size+4+(i*4)+j]
 							float_list.append(unpack('<f', msg_payload_segment)[0])	
-							print(float_list)
+						print(float_list)
 		
 	def get_n_ints_message(self):
 		res = select.select([self.sock],[],[])
@@ -96,7 +96,7 @@ class telemetry_prism:
 							for j in range(4):
 								msg_payload_segment += msg_data[desc_size+4+(i*4)+j]
 							int_list.append(unpack('<i', msg_payload_segment)[0])	
-							print(int_list)
+						print(int_list)
 
 	def display_filtered_message(self):
 		if self.msg_id_filter == 0:
