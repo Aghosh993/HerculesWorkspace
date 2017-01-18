@@ -13,7 +13,11 @@ import select
 from struct import *
 from time import sleep
 
-MCAST_IP = "237.252.249.228"
+# For WiFi Multicast:
+MCAST_IP = "237.252.249.227"
+
+# For Ethernet Multicast:
+#MCAST_IP = "237.252.249.228"
 
 class telemetry_prism:
 	def __init__(self, udp_port, msg_id, desc):
