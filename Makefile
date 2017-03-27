@@ -41,7 +41,7 @@ md5sums: all
 check: all
 	md5sum $(TARGET).elf > tmp && diff tmp rm48_fsw_md5sum && rm tmp
 load: all
-	./load_fw.sh $(JLINK_ROOT) /usr/bin/ # The second argument here is the path to arm-none-eabi-gdb. This should really just be $(TOOLCHAIN) but Arch Linux throws a stupid libncurses.so error so we're just using the distro's shipped arm-none-eabi-gdb for the time being... :/
+	./load_fw.sh $(JLINK_ROOT) $(TOOLCHAIN) # The second argument here is the path to arm-none-eabi-gdb. This should really just be $(TOOLCHAIN) but Arch Linux throws a stupid libncurses.so error so we're just using the distro's shipped arm-none-eabi-gdb for the time being... :/
 
 clean:
 	$(RM) $(TARGET).srec $(TARGET).elf $(TARGET).bin $(TARGET).map $(OBJ) $(ASM_OBJS) $(NEWLIB_ASM_OBJ) $(USER_OBJ) $(FSW_OBJ)

@@ -38,7 +38,7 @@
 	Central define that enables or disables the operation of motors under any circumstance.
 	Uncomment this if you want the motors to be able to rotate:
  */
-#define ENABLE_MOTORS	1
+// #define ENABLE_MOTORS		1
 /*
 	Disable main program loop and run the ESC PWM channels through a pre-determined sequence to
 	calibrate them:
@@ -48,7 +48,13 @@
 	Disable main program loop and run an infinite loop emitting telemetry packets
 	at about 50 Hz for test purposes:
  */
-#define TEST_TELEM		1 
+// #define TEST_TELEM			1
+
+/*
+	Uncomment the following to enable the RC calibration and arming sequence, and 
+	subsequent control of vehicle using the RC controller:
+ */
+// #define ENABLE_RC_CONTROL 	1
 
 /* USER CODE END */
 
@@ -203,7 +209,6 @@ int main(void)
 
 	float motor_vals[4];
 
-	time_val mission_time;
 	float mission_time_sec = 0.0f;
 	int32_t mission_time_msec = 0;
 
@@ -220,9 +225,8 @@ int main(void)
 
 		while(1)
 		{
-			mission_time = get_mission_time();
-			mission_time_sec = (float)mission_time.seconds + (float)mission_time.ms*(float)0.001f;
-			mission_time_msec = (int32_t)mission_time.seconds*1000 + (int32_t)mission_time.ms;
+			mission_time_sec = get_mission_time_sec();
+			mission_time_msec = get_mission_time_msec();
 			flt_test[0] = mission_time_sec;
 			int_test[0] = mission_time_msec;
 
@@ -254,7 +258,9 @@ int main(void)
 	#endif
 
 	rc_joystick_data_struct rc_data;
-	init_rc_inputs(&rc_data);
+	#ifdef ENABLE_RC_CONTROL
+		init_rc_inputs(&rc_data);
+	#endif
 
 	float roll_rate_cmd_local, pitch_rate_cmd_local, yaw_rate_cmd_local, throttle_value_common_local;
 	roll_rate_cmd_local = 0.0f;
@@ -264,7 +270,7 @@ int main(void)
 
 	uint8_t msg_buf[30];
 	uint8_t i = 0U;
-	uint32_t bytes_read;
+	uint32_t bytes_read = 0U;
 
 	float height_sensor_reading = 0.0f;
 
@@ -283,7 +289,9 @@ int main(void)
 	uint8_t bno_bytes_read = 0U;
 	int bno_bytes_total = 0U;
 
-	BNO055_init();
+	// BNO055_init();
+
+	serialport_send_data_buffer(tm4c_port3_ptr, (uint8_t *)"Hello UART7!!\r\n", 15U);
 
 	while(1)
 	{
@@ -299,39 +307,39 @@ int main(void)
 		/*
 			Process SF11/C height sensor data:
 		 */
-		bytes_read = serialport_receive_data_buffer(tm4c_port1_ptr, msg_buf, 10);
+		// bytes_read = serialport_receive_data_buffer(tm4c_port2_ptr, msg_buf, 10);
 
-		for(i=0; i<bytes_read; ++i)
-		{
-			sf10_reader_callback(&sf10_handler, msg_buf[i]);				
-		}
+		// for(i=0; i<bytes_read; ++i)
+		// {
+		// 	sf10_reader_callback(&sf10_handler, msg_buf[i]);				
+		// }
 
-		if(sf10_received_new_data(&sf10_handler))
-		{
-			// float height_sensor_reading_raw = get_last_sf10_sensor_height(&sf10_handler);
-			// height_sensor_reading = sf10_reader_check_measurement(height_sensor_reading_raw);
+		// if(sf10_received_new_data(&sf10_handler))
+		// {
+		// 	// float height_sensor_reading_raw = get_last_sf10_sensor_height(&sf10_handler);
+		// 	// height_sensor_reading = sf10_reader_check_measurement(height_sensor_reading_raw);
 
-			height_sensor_reading = get_last_sf10_sensor_height(&sf10_handler);
-		}
+		// 	height_sensor_reading = get_last_sf10_sensor_height(&sf10_handler);
+		// }
 
 		/*
 			Process BNO055 Heading sensor data:
 		 */
 
-		bno_bytes_read = serialport_receive_data_buffer(tm4c_port2_ptr, msg_buf, 30U);
+		// bno_bytes_read = serialport_receive_data_buffer(tm4c_port2_ptr, msg_buf, 30U);
 
-		for(i=0; i<bno_bytes_read; ++i)
-		{
-			BNO055_interrupt_handler(msg_buf[i]);
-		}
+		// for(i=0; i<bno_bytes_read; ++i)
+		// {
+		// 	BNO055_interrupt_handler(msg_buf[i]);
+		// }
 
-		if(BNO055_received_new_data())
-		{
-			imu_data bno055_reading;
-			BNO055_get_imu_data(&bno055_reading);
-			heading_sensor_reading = bno055_reading.heading;
-			bno_bytes_total += 1;
-		}
+		// if(BNO055_received_new_data())
+		// {
+		// 	imu_data bno055_reading;
+		// 	BNO055_get_imu_data(&bno055_reading);
+		// 	heading_sensor_reading = bno055_reading.heading;
+		// 	bno_bytes_total += 1;
+		// }
 
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -352,7 +360,7 @@ int main(void)
 
 			if(get_flag_state(rc_watchdog_10hz_flag) == STATE_PENDING)
 			{
-				reset_flag(rc_watchdog_10hz_flag);
+				reset_flag(rc_watchdog_10hz_flag);				
 				rc_input_validity_watchdog_callback(); // Check if sufficient number of RC rising edges have occurred in last 100 ms
 			}
 			
@@ -431,14 +439,14 @@ int main(void)
 					#endif
 					
 					sys_ledToggle(SYS_LED1);
-					request_sf10_sensor_update(&sf10_handler);
+					// request_sf10_sensor_update(&sf10_handler);
 				}
 				
 				if(get_flag_state(rc_update_50hz_flag) == STATE_PENDING)
 				{
 					reset_flag(rc_update_50hz_flag);
 
-					BNO055_trigger_get_data();
+					// BNO055_trigger_get_data();
 
 					#ifdef SEND_HEIGHT_ESTIMATOR_TELEMETRY
 						h_est_telem_msg[0] = height_estimator.height_estimated;
@@ -460,67 +468,74 @@ int main(void)
 						send_telem_msg_n_ints_blocking(&telem0, (uint8_t *)"bno_tot", 7, &bno_bytes_total, 1);
 					#endif
 
-					// sys_ledToggle(SYS_LED1);
+					#ifdef ENABLE_RC_CONTROL
+						// Get RC Joystick data from last reception:
 
-					get_rc_input_values(&rc_data);
+						get_rc_input_values(&rc_data);
 
-					if(get_ch5_mode(rc_data)==MODE_FAILSAFE)
-					{
-						gnc_integral_enable();
-						set_controller_mode(MODE_ANGULAR_POSITION_CONTROL);
-					}
-					else
-					{
-						gnc_integral_enable();
-						set_controller_mode(MODE_ANGULAR_RATE_CONTROL);
-					}
-					if(rc_data.mode_switch_channel_validity == CHANNEL_VALID)
-					{
-						#ifdef SEND_RC_INPUT_TELEMETRY
-							// send_telem_msg_string_blocking(&telem0, (uint8_t *)"rcvalid", 7, "TRUE\r\n", 6);
-							// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"roll", 4, &(rc_data.roll_channel_value), 1);
-							// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"pitch", 5, &(rc_data.pitch_channel_value), 1);
-							// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"yaw", 3, &(rc_data.yaw_channel_value), 1);
-							// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"height", 6, &(rc_data.vertical_channel_value), 1);
+						if(get_ch5_mode(rc_data)==MODE_FAILSAFE)
+						{
+							gnc_integral_enable();
+							set_controller_mode(MODE_ANGULAR_POSITION_CONTROL);
+						}
+						else
+						{
+							gnc_integral_enable();
+							set_controller_mode(MODE_ANGULAR_RATE_CONTROL);
+						}
+						if(rc_data.mode_switch_channel_validity == CHANNEL_VALID)
+						{
+							#ifdef SEND_RC_INPUT_TELEMETRY
+								// send_telem_msg_string_blocking(&telem0, (uint8_t *)"rcvalid", 7, "TRUE\r\n", 6);
+								// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"roll", 4, &(rc_data.roll_channel_value), 1);
+								// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"pitch", 5, &(rc_data.pitch_channel_value), 1);
+								// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"yaw", 3, &(rc_data.yaw_channel_value), 1);
+								// send_telem_msg_n_floats_blocking(&telem0, (uint8_t *)"height", 6, &(rc_data.vertical_channel_value), 1);
 
-							if(get_ch5_mode(rc_data) == MODE_NORMAL)
-							{
-								send_telem_msg_string_blocking(&telem0, (uint8_t *)"CH5", 3, (uint8_t *)"Normal", 6);
-							}
-							if(get_ch5_mode(rc_data) == MODE_FAILSAFE)
-							{
-								send_telem_msg_string_blocking(&telem0, (uint8_t *)"CH5", 3, (uint8_t *)"FAILSAFE", 8);
-							}
-						#endif
-						roll_cmd = rc_data.roll_channel_value;
-						pitch_cmd = rc_data.pitch_channel_value;
-						yaw_cmd = rc_data.yaw_channel_value * -1.0f;
-						throttle_value_common_local = 0.50f*(rc_data.vertical_channel_value + 1.0f);
-					}
-					else
-					{
-						/*
-							Emergency-stop all motors upon loss of signal. In the future this may become something a bit more graceful...
-						 */
-						#ifdef SEND_RC_INPUT_TELEMETRY
-							send_telem_msg_string_blocking(&telem0, (uint8_t *)"rcvalid", 7, "FALSE\r\n", 7);
-						#endif
-						
-						insert_delay(100);
-						_disable_interrupts();
-						QuadRotor_motor1_setDuty(0.0f);
-						QuadRotor_motor2_setDuty(0.0f);
-						QuadRotor_motor3_setDuty(0.0f);
-						QuadRotor_motor4_setDuty(0.0f);
-						// Wait for serial transmit of telemetry to complete, and give ESCs a chance to latch the last valid command prior to PWM shutdown.
-						QuadRotor_motor1_stop();
-						QuadRotor_motor2_stop();
-						QuadRotor_motor3_stop();
-						QuadRotor_motor4_stop();
-						sys_ledOn(SYS_LED1); 	// Red ERROR LED = ON
-						sys_ledOff(SYS_LED2); 	// Green OK LED = OFF
-						while(1); 				// Block here indefinitely pending system power-off/reset by user
-					}
+								if(get_ch5_mode(rc_data) == MODE_NORMAL)
+								{
+									send_telem_msg_string_blocking(&telem0, (uint8_t *)"CH5", 3, (uint8_t *)"Normal", 6);
+								}
+								if(get_ch5_mode(rc_data) == MODE_FAILSAFE)
+								{
+									send_telem_msg_string_blocking(&telem0, (uint8_t *)"CH5", 3, (uint8_t *)"FAILSAFE", 8);
+								}
+							#endif
+								roll_cmd = rc_data.roll_channel_value;
+								pitch_cmd = rc_data.pitch_channel_value;
+								yaw_cmd = rc_data.yaw_channel_value * -1.0f;
+								throttle_value_common_local = 0.50f*(rc_data.vertical_channel_value + 1.0f);
+						}
+						else
+						{
+							/*
+								Emergency-stop all motors upon loss of signal. In the future this may become something a bit more graceful...
+							 */
+							#ifdef SEND_RC_INPUT_TELEMETRY
+								send_telem_msg_string_blocking(&telem0, (uint8_t *)"rcvalid", 7, "FALSE\r\n", 7);
+							#endif
+							
+							insert_delay(100);
+							_disable_interrupts();
+							QuadRotor_motor1_setDuty(0.0f);
+							QuadRotor_motor2_setDuty(0.0f);
+							QuadRotor_motor3_setDuty(0.0f);
+							QuadRotor_motor4_setDuty(0.0f);
+							// Wait for serial transmit of telemetry to complete, and give ESCs a chance to latch the last valid command prior to PWM shutdown.
+							QuadRotor_motor1_stop();
+							QuadRotor_motor2_stop();
+							QuadRotor_motor3_stop();
+							QuadRotor_motor4_stop();
+							sys_ledOn(SYS_LED1); 	// Red ERROR LED = ON
+							sys_ledOff(SYS_LED2); 	// Green OK LED = OFF
+							while(1); 				// Block here indefinitely pending system power-off/reset by user
+						}
+					#else
+						roll_cmd = 0.0f;
+						pitch_cmd = 0.0f;
+						yaw_cmd = 0.0f;
+						throttle_value_common_local = 0.0f;
+					#endif
 				}
 			}
 		}

@@ -40,7 +40,7 @@ void esc_cal()
 	uint32_t i = 0U;
 	uint32_t steps = 500U;
 
-	float duty = 0.85f;
+	float duty = 0.9f;
 
 	QuadRotor_PWM_init();
 	QuadRotor_motor1_setDuty_raw(max_pulse_ms);
@@ -52,7 +52,7 @@ void esc_cal()
 
 	for(i=0U; i<steps; ++i)
 	{
-		duty = max_pulse_ms - (float)i*(float)0.5f/(float)steps;
+		duty = max_pulse_ms - (float)i*(float)0.4f/(float)steps;
 		QuadRotor_motor1_setDuty_raw(duty);
 		QuadRotor_motor2_setDuty_raw(duty);
 		QuadRotor_motor3_setDuty_raw(duty);

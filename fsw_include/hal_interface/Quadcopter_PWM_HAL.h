@@ -15,10 +15,17 @@
 #define MIN_DUTY 0.35f
 #define MAX_DUTY 0.85f
 
-#define MOTOR4_HET_CHANNEL	hetRAM1, pwm0
-#define MOTOR1_HET_CHANNEL	hetRAM1, pwm1
-#define MOTOR2_HET_CHANNEL	hetRAM1, pwm2
-#define MOTOR3_HET_CHANNEL	hetRAM1, pwm3
+// For the old hardware  platform (With rev 1 interface board):
+// #define MOTOR4_HET_CHANNEL	hetRAM1, pwm0
+// #define MOTOR1_HET_CHANNEL	hetRAM1, pwm1
+// #define MOTOR2_HET_CHANNEL	hetRAM1, pwm2
+// #define MOTOR3_HET_CHANNEL	hetRAM1, pwm3
+
+// For new hardware platform (With rev 2 interface board containing power drivers and BNO055):
+#define MOTOR2_HET_CHANNEL	hetRAM1, pwm0
+#define MOTOR3_HET_CHANNEL	hetRAM1, pwm1
+#define MOTOR4_HET_CHANNEL	hetRAM1, pwm2
+#define MOTOR1_HET_CHANNEL	hetRAM1, pwm3
 
 // This configures all vehicle PWM channels:
 void QuadRotor_PWM_init(void);

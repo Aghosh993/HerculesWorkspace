@@ -74,11 +74,26 @@ time_val get_mission_time(void)
 	return mission_time_counter;
 }
 
+void zero_mission_time(void)
+{
+	_disable_interrupts();
+		mission_time_counter.seconds = 0U;
+		mission_time_counter.ms = 0U;
+	_enable_interrupts();
+}
+
+void set_mission_time(uint32_t sec, uint32_t msec)
+{
+	_disable_interrupts();
+		
+	_enable_interrupts();
+}
+
 void timekeeper_delay(uint16_t millis)
 {
 	_disable_interrupts();
-	delay_millis_to_go = millis;
-	delay_flag = 1U;
+		delay_millis_to_go = millis;
+		delay_flag = 1U;
 	_enable_interrupts();
 	while(delay_flag == 1U);
 }
@@ -114,4 +129,18 @@ flag_state reset_flag(uint8_t flag_id)
 		return FLAG_SET_SUCCESS;
 	}
 	return ERR_FLAG_NOT_FOUND;
+}
+
+float get_mission_time_sec(void)
+{
+	time_val mission_time;
+	mission_time = get_mission_time();
+	return (float)mission_time.seconds + (float)mission_time.ms*(float)0.001f;
+}
+
+int32_t get_mission_time_msec(void)
+{
+	time_val mission_time;
+	mission_time = get_mission_time();
+	return (int32_t)mission_time.seconds*1000 + (int32_t)mission_time.ms;
 }

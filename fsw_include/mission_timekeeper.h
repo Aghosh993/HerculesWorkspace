@@ -46,8 +46,12 @@ flag_state reset_flag(uint8_t flag_id);
 /*
 	Delay/timekeeping functions:
  */
+void zero_mission_time(void);
+void set_mission_time(uint32_t sec, uint32_t msec);
 time_val get_mission_time(void);
 void timekeeper_delay(uint16_t millis);
+float get_mission_time_sec(void);
+int32_t get_mission_time_msec(void); // WARNING!! This time rolls over at 2^31 milliseconds or about 24 days. Should be sufficient for most applications...
 
 /*
 	Interrupt callback functions to be installed in a 1 kHz RTI/other Timer ISR
